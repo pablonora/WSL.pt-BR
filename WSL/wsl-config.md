@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7ca59bd7-d9d3-4f6d-8b92-b8faa9bcf250
 ms.custom: seodec18
 ms.openlocfilehash: c806552750f413fcb75f989d868a57cc939af64a
-ms.sourcegitcommit: ca08a78925880ed3eccf88edb30def16c83f2543
+ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59063494"
 ---
 # <a name="manage-and-configure-windows-subsystem-for-linux"></a>Gerenciar e configurar o subsistema do Windows para Linux
@@ -23,7 +23,7 @@ ms.locfileid: "59063494"
 
 Há muitas maneiras de executar o Linux com o subsistema Windows para Linux.
 
-1. `[distro]` ie `ubuntu`
+1. `[distro]` IE `ubuntu`
 1. `wsl.exe` ou `bash.exe`
 1. `wsl [command]` ou `bash -c [command]`
 
@@ -270,8 +270,8 @@ Seção: `[automount]`
 
 | key        | value                          | padrão      | Notas                                                                                                                                                                                                                                                                                                                          |
 |:-----------|:-------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| habilitado    | booliano                        | verdadeiro         | `true` causas (isto é, de unidades fixas `C:/` ou `D:/`) deve ser montado automaticamente com DrvFs em `/mnt`.  `false` significa que unidades não ser montadas automaticamente, mas você ainda pode montá-los manualmente ou por meio de `fstab`.                                                                                                             |
-| mountFsTab | booliano                        | verdadeiro         | `true` define `/etc/fstab` a ser processada no início WSL. /etc/fstab é um arquivo em que você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de arquivos automaticamente em WSL no início do backup.                                                                                                                |
+| enabled    | boolean                        | verdadeiro         | `true` causas (isto é, de unidades fixas `C:/` ou `D:/`) deve ser montado automaticamente com DrvFs em `/mnt`.  `false` significa que unidades não ser montadas automaticamente, mas você ainda pode montá-los manualmente ou por meio de `fstab`.                                                                                                             |
+| mountFsTab | boolean                        | verdadeiro         | `true` define `/etc/fstab` a ser processada no início WSL. /etc/fstab é um arquivo em que você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de arquivos automaticamente em WSL no início do backup.                                                                                                                |
 | Raiz       | String                         | `/mnt/`      | Define o diretório em que unidades fixas serão montadas automaticamente. Por exemplo, se você tiver um diretório no WSL em `/windir/` e você especificar que como a raiz, você esperaria ver suas unidades fixas montadas em `/windir/c`                                                                                              |
 | opções    | lista separada por vírgulas de valores | Cadeia de caracteres vazia | Esse valor é acrescentado à cadeia de opções de montagem padrão DrvFs. **Somente as opções de DrvFs específicas podem ser especificadas.** Não há suporte para as opções que a montagem binária normalmente analisaria em um sinalizador. Se você quiser especificar explicitamente essas opções, você deve incluir cada unidade para o qual você deseja fazer isso em /etc/fstab. |
 
@@ -285,8 +285,8 @@ Rótulo de seção: `[network]`
 
 | key | value | padrão | Notas|
 |:----|:----|:----|:----|
-| generateHosts | booliano | `true` | `true` Define o WSL para gerar `/etc/hosts`. O `hosts` arquivo contém um mapa estático do endereço IP correspondente de nomes de host. |
-| generateResolvConf | booliano | `true` | `true` Definir WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que são capazes de resolver um determinado nome de host para seu endereço IP. | 
+| generateHosts | boolean | `true` | `true` Define o WSL para gerar `/etc/hosts`. O `hosts` arquivo contém um mapa estático do endereço IP correspondente de nomes de host. |
+| generateResolvConf | boolean | `true` | `true` Definir WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que são capazes de resolver um determinado nome de host para seu endereço IP. | 
 
 #### <a name="interop"></a>Interoperabilidade
 
@@ -296,5 +296,5 @@ Essas opções estão disponíveis no Insider Build 17713 e posterior.
 
 | key | value | padrão | Notas|
 |:----|:----|:----|:----|
-| habilitado | booliano | `true` | Configuração de chave nesse determinará se WSL oferece suporte a processos do Windows iniciar. |
-| appendWindowsPath | booliano | `true` | Configuração de chave nesse determinará se WSL adicionará os elementos de caminho do Windows para a variável de ambiente $PATH. | 
+| enabled | boolean | `true` | Configuração de chave nesse determinará se WSL oferece suporte a processos do Windows iniciar. |
+| appendWindowsPath | boolean | `true` | Configuração de chave nesse determinará se WSL adicionará os elementos de caminho do Windows para a variável de ambiente $PATH. | 

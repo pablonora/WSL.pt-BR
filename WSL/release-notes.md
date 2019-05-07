@@ -7,14 +7,27 @@ ms.date: 07/31/2017
 ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
-ms.openlocfilehash: 3eee7ff6d1f8302e98cde84fccabf5d9113c83f2
-ms.sourcegitcommit: ca08a78925880ed3eccf88edb30def16c83f2543
+ms.openlocfilehash: 2567e68ca0e9897a7b7bc7315760b81ff4923c1a
+ms.sourcegitcommit: 8c74868b8d8ff0106e15e4bce5e8337642883ec1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59063624"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64988259"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas de versão do subsistema do Windows para Linux
+
+## <a name="build-18890"></a>Compilação 18890
+Para Windows geral informações sobre compilação 18890, visite o [blog Windows](https://blogs.windows.com/windowsexperience/2019/05/01/announcing-windows-10-insider-preview-build-18890/).
+
+### <a name="wsl"></a>WSL
+* Vazamento de soquete sem bloqueio [GH 2913]
+* Entrada EOF para o terminal pode bloquear as leituras subsequentes [GH 3421]
+* Atualize resolv. conf cabeçalho para se referir a wsl.conf [discutidos GH 3928]
+* Um deadlock no código de exclusão epoll [GH 3922]
+* Lidar com espaços em argumentos para-- importar e – exportar [GH 3932]
+* Estendendo mmap arquivos não funciona corretamente [GH 3939]
+* Corrigir o problema com o ARM64 \\acesso de $ wsl não está funcionando corretamente
+* Adicionar um ícone padrão melhor wsl.exe
 
 ## <a name="build-18342"></a>Compilação 18342
 Para Windows geral informações sobre compilação 18342, visite o [blog Windows](https://blogs.windows.com/windowsexperience/2019/02/20/announcing-windows-10-insider-preview-build-18342/).
@@ -276,7 +289,7 @@ Para Windows geral informações sobre compilação 17704, visite o [Blog Window
     * Ver [blog](https://blogs.msdn.microsoft.com/commandline/2018/06/14/improved-per-directory-case-sensitivity-support-in-wsl/) para obter mais informações.
 * Adicionar wslconfig / encerrar para interromper a execução de distribuições.
 
-## <a name="build-17692"></a>Compilação 17692
+## <a name="build-17692"></a>Build 17692
 Para Windows geral informações sobre compilação 17692, visite o [Blog Windows](https://blogs.windows.com/windowsexperience/2018/06/14/announcing-windows-10-insider-preview-build-17692).
 
 ### <a name="wsl"></a>WSL
@@ -285,7 +298,7 @@ Para Windows geral informações sobre compilação 17692, visite o [Blog Window
 * ARM64: Emule as operações de manutenção do cache. Resolver [dotnet problema](https://github.com/dotnet/core/issues/1561).
 * DrvFs: unescape apenas caracteres no intervalo particular que correspondem ao caractere de escape.
 
-## <a name="build-17686"></a>Compilação 17686
+## <a name="build-17686"></a>Build 17686
 Para Windows geral informações sobre compilação 17686, visite o [Blog Windows](https://blogs.windows.com/windowsexperience/2018/06/06/announcing-windows-10-insider-preview-build-17686).
 
 ### <a name="wsl"></a>WSL
@@ -349,8 +362,7 @@ Para Windows geral informações sobre compilação 17627, visite o [Blog Window
 * Adicione suporte para as operações de reconhecimento de pi futex. [GH 1006]
     * Observe que as prioridades não são atualmente suporte para o recurso WSL portanto, há limitações, mas o uso padrão deve ser desbloqueado.
 * Suporte ao firewall do Windows para processos WSL. [GH 1852]
-    * Por exemplo, para permitir que o WSL python processar para escutar em qualquer porta, use o cmd do Windows com privilégios elevados:
-```netsh.exe advfirewall firewall add rule name=wsl_python dir=in action=allow program="C:\users\<username>\appdata\local\packages\canonicalgrouplimited.ubuntuonwindows_79rhkp1fndgsc\localstate\rootfs\usr\bin\python2.7" enable=yes```
+    * Por exemplo, para permitir que o WSL python processar para escutar em qualquer porta, use o cmd do Windows com privilégios elevados: ```netsh.exe advfirewall firewall add rule name=wsl_python dir=in action=allow program="C:\users\<username>\appdata\local\packages\canonicalgrouplimited.ubuntuonwindows_79rhkp1fndgsc\localstate\rootfs\usr\bin\python2.7" enable=yes```
     * Para obter detalhes adicionais sobre como adicionar regras de firewall, consulte [link](https://support.microsoft.com/en-us/help/947709/how-to-use-the-netsh-advfirewall-firewall-context-instead-of-the-netsh)
 * Respeite o shell padrão do usuário ao usar wsl.exe. [GH 2372]
 * Relatar todas as interfaces de rede ethernet. [GH 2996]
@@ -375,7 +387,7 @@ Para Windows geral informações sobre compilação 17618, visite o [Blog Window
 ### <a name="ltp-results"></a>LTP resultados:
 Teste em andamento.
 
-## <a name="build-17110"></a>Compilação 17110
+## <a name="build-17110"></a>Build 17110
 Para Windows geral informações sobre compilação 17110, visite o [Blog Windows](https://blogs.windows.com/windowsexperience/2018/02/27/announcing-windows-10-insider-preview-build-17110-fast/).
 
 ### <a name="wsl"></a>WSL
@@ -761,7 +773,7 @@ Testes ignorados do total: 209<br/>
 Total de falhas: 229<br/>
 [Logs de execução de teste LTP](https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/16273)<br/>
 
-## <a name="build-16257"></a>Compilação 16257
+## <a name="build-16257"></a>Build 16257
 
 Para Windows geral informações sobre compilação 16257, visite o [Blog Windows](https://blogs.windows.com/windowsexperience/2017/08/02/announcing-windows-10-insider-preview-build-16257-pc-build-15237-mobile/).<br/>
 
@@ -793,7 +805,7 @@ Abaixo está uma lista de syscalls novos ou aprimorados que têm uma implementa�
 `prlimit64`<br/>
 
 ### <a name="known-issues"></a>Problemas conhecidos
-#### [<a name="github-issue-2392-windows-folders-not-recognized-by-wsl-"></a>Problema do GitHub 2392: Pastas do Windows não reconhecido pelo WSL...](https://github.com/Microsoft/BashOnWindows/issues/2392)
+#### <a name="github-issue-2392-windows-folders-not-recognized-by-wsl-httpsgithubcommicrosoftbashonwindowsissues2392"></a>[Problema do GitHub 2392: Pastas do Windows não reconhecido pelo WSL...](https://github.com/Microsoft/BashOnWindows/issues/2392)
 No build 16257, o WSL tem problemas ao enumerar arquivos/pastas do Windows por meio de `/mnt/c/...`.
 Esse problema foi corrigido e devem ser liberado no build Insiders durante a semana começar 14/8/2017.
 
