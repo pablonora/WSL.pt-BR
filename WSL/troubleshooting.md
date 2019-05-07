@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6753f1b2-200e-49cc-93a5-4323e1117246
 ms.custom: seodec18
 ms.openlocfilehash: 055bdc02dcf8f078caa014abd6dd755a47c99cfe
-ms.sourcegitcommit: ca08a78925880ed3eccf88edb30def16c83f2543
+ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59063294"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas de subsistema Windows para Linux
@@ -114,11 +114,11 @@ Alguns usuários relataram problemas com aplicativos específicos de firewall bl
 Em alguns casos permite desativar o firewall para acesso.  Em alguns casos a simples presença do firewall instalado procura para bloquear o acesso.
 
 ### <a name="permission-denied-error-when-using-ping"></a>Erro de negado permissão ao usar o ping
-#### [<a name="anniversary-update"></a>Atualização de aniversário](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14388-to-windows-10-anniversary-update) 
+#### <a name="anniversary-updatehttpsmsdnmicrosoftcomen-uscommandlinewslreleasenotesbuild-14388-to-windows-10-anniversary-update"></a>[Atualização de aniversário](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14388-to-windows-10-anniversary-update) 
 
 São necessários privilégios de administrador no Windows para executar o ping no WSL.  Para executar o ping, execute o Bash no Ubuntu no Windows como administrador ou execute bash.exe em um prompt CMD/PowerShell com privilégios de administrador.
 
-#### [<a name="build-14926"></a>Compilação 14926 +](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14926)
+#### <a name="build-14926httpsmsdnmicrosoftcomen-uscommandlinewslreleasenotesbuild-14926"></a>[Compilação 14926 +](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14926)
   Privilégios de administrador não é mais necessários.
 
 ### <a name="bash-is-hung"></a>Bash está suspenso
