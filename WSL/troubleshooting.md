@@ -86,7 +86,7 @@ Para desativar o console herdado:
 1. Clique em OK
 
 ### <a name="error-0x80040154-after-windows-update"></a>"Error: 0x80040154 "após a atualização do Windows
-O subsistema do Windows para o recurso do Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o subsistema Windows para Linux pode ser encontrada na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
+O subsistema do Windows para o recurso do Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o subsistema Windows para Linux pode ser encontrada na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-guihttps://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
 
 ### <a name="changing-the-display-language"></a>Alterar o idioma de exibição
 Instalação do WSL tentará alterar automaticamente a localidade do Ubuntu para coincidir com a localidade de sua instalação do Windows.  Se você não quiser esse comportamento, você pode executar este comando para alterar a localidade do Ubuntu, após a conclusão da instalação.  Você precisará reiniciar bash.exe para que essa alteração tenha efeito.

@@ -146,7 +146,7 @@ WSL não oferece suporte à execução em um console herdado. Para desativar o c
 1. Clique em OK
 
 ## <a name="why-do-i-get-error-0x80040154-when-i-run-bashexe-after-upgrading-windows"></a>Por que recebo "Erro: 0x80040154 "ao executar bash.exe após a atualização do Windows?
-O recurso de "Subsistema Windows para Linux" pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o recurso de "Subsistema Windows para Linux" podem ser encontradas na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
+O recurso de "Subsistema Windows para Linux" pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o recurso de "Subsistema Windows para Linux" podem ser encontradas na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-guihttps://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
 
 ## <a name="how-do-i-change-the-display-language-of-wsl"></a>Como altero o idioma de exibição de WSL?
 Instalação do WSL tentará alterar automaticamente a localidade do Ubuntu para coincidir com a localidade de sua instalação do Windows. Se você não quiser esse comportamento, você pode executar este comando para alterar a localidade do Ubuntu, após a conclusão da instalação. Você precisará reiniciar bash.exe para que essa alteração tenha efeito.
