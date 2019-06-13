@@ -7,12 +7,12 @@ ms.author: taraj
 ms.date: 9/4/2018
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
-ms.openlocfilehash: 80675d8452b626ebe1d235774167c5ff27e4b44d
-ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
+ms.openlocfilehash: 07461f7db4a351f5b79ab0c5179d3d917ef1bdf7
+ms.sourcegitcommit: bb88269eb37405192625fa81ff91162393fb491f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59063264"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67035063"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o subsistema do Windows para Linux
 
@@ -82,7 +82,7 @@ Um dos benefícios de WSL está sendo capaz de acessar seus arquivos por meio de
 
 WSL monta a unidades fixas do seu computador sob o `/mnt/<drive>` pasta no seu distribuições do Linux. Por exemplo, seu `C:` unidade é montada em `/mnt/c/` 
 
-Usando suas unidades montadas, você pode editar o código, por exemplo, `C:\dev\myproj\` usando [Visual Studio](https://visualstudio.microsoft.com/vs/) / ou [VS Code](https://code.visualstudio.com/)e a compilação e teste desse código em Linux, acessando os mesmos arquivos por meio de `\mnt\c\dev\myproj`.
+Usando suas unidades montadas, você pode editar o código, por exemplo, `C:\dev\myproj\` usando [Visual Studio](https://visualstudio.microsoft.com/vs/) / ou [VS Code](https://code.visualstudio.com/)e a compilação e teste desse código em Linux, acessando os mesmos arquivos por meio de `/mnt/c/dev/myproj`.
 
 > **OBSERVAÇÃO IMPORTANTE**: Uma das principais limitações do uso de WSL é que não é suportado diretamente acessar/alterando arquivos no sistema de arquivos de suas distribuições do Linux usando aplicativos do Windows ou ferramentas. Consulte: [Não altere os arquivos do Linux usando ferramentas e aplicativos do Windows](https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/)
 
@@ -146,7 +146,7 @@ WSL não oferece suporte à execução em um console herdado. Para desativar o c
 1. Clique em OK
 
 ## <a name="why-do-i-get-error-0x80040154-when-i-run-bashexe-after-upgrading-windows"></a>Por que recebo "Erro: 0x80040154 "ao executar bash.exe após a atualização do Windows?
-O recurso de "Subsistema Windows para Linux" pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o recurso de "Subsistema Windows para Linux" podem ser encontradas na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-guihttps://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
+O recurso de "Subsistema Windows para Linux" pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deve ser habilitado novamente. Instruções para habilitar o recurso de "Subsistema Windows para Linux" podem ser encontradas na [guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
 
 ## <a name="how-do-i-change-the-display-language-of-wsl"></a>Como altero o idioma de exibição de WSL?
 Instalação do WSL tentará alterar automaticamente a localidade do Ubuntu para coincidir com a localidade de sua instalação do Windows. Se você não quiser esse comportamento, você pode executar este comando para alterar a localidade do Ubuntu, após a conclusão da instalação. Você precisará reiniciar bash.exe para que essa alteração tenha efeito.
