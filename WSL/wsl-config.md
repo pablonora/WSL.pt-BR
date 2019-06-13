@@ -8,12 +8,12 @@ ms.date: 02/7/2018
 ms.topic: article
 ms.assetid: 7ca59bd7-d9d3-4f6d-8b92-b8faa9bcf250
 ms.custom: seodec18
-ms.openlocfilehash: c806552750f413fcb75f989d868a57cc939af64a
-ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
+ms.openlocfilehash: a4f9649805051d9c1367fd5b0a5fe541d2d1e168
+ms.sourcegitcommit: db69625e26bc141ea379a830790b329e51ed466b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59063494"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040854"
 ---
 # <a name="manage-and-configure-windows-subsystem-for-linux"></a>Gerenciar e configurar o subsistema do Windows para Linux
 
@@ -23,7 +23,7 @@ ms.locfileid: "59063494"
 
 Há muitas maneiras de executar o Linux com o subsistema Windows para Linux.
 
-1. `[distro]` IE `ubuntu`
+1. `[distro]`, por exemplo `ubuntu`
 1. `wsl.exe` ou `bash.exe`
 1. `wsl [command]` ou `bash -c [command]`
 

@@ -8,12 +8,12 @@ ms.date: 09/11/2017
 ms.topic: article
 ms.assetid: f70e685f-24c6-4908-9546-bf4f0291d8fd
 ms.custom: seodec18
-ms.openlocfilehash: 5820d701d5c0e22f14bf76e3dc6fe70bacb5213a
-ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
+ms.openlocfilehash: 0d00b43d059e72edd4e2a5b9591c29441f461fca
+ms.sourcegitcommit: db69625e26bc141ea379a830790b329e51ed466b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59063594"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040828"
 ---
 # <a name="user-accounts-and-permissions-for-windows-subsystem-for-linux"></a>Contas de usuário e as permissões de subsistema Windows para Linux
 
@@ -128,11 +128,11 @@ Ao executar o Linux em WSL, Linux terão as mesmas permissões do Windows que o 
 * Normal (não elevada): Executa o Linux com as permissões do usuário conectado
 * Administrador/privilégios elevados: Executa o Linux com as permissões do administrador com privilégios elevados/Windows
 
-> Porque que elevados processos podem alterar/danos dados e configurações do sistema e podem acesso/Modificar protegidos de arquivos e pastas, **Evite** iniciando elevados processos, a menos que você tenha que absolutamente - se eles estão Windows ou Linux aplicativos/tools/shells!
+> Porque processos elevados podem acesso/modificar (e, portanto, danificar) configurações de todo o sistema e dados de sistema-todo/protegido, **Evite** iniciar processos com privilégios elevados, a menos que você tenha que absolutamente - se eles são Windows ou Linux ferramentas/aplicativos/shells!
 
 As permissões do Windows acima são independentes das permissões dentro de uma instância do Linux: Linux "privilégios de raiz" afetam apenas os direitos do usuário dentro do ambiente Linux & sistema de arquivos; eles não têm impacto sobre os privilégios do Windows concedidos. Assim, executar um processo de Linux como raiz (por exemplo, via `sudo`) apenas concede que processam os direitos de administrador no ambiente do Linux.
 
-**Exemplo:**    
+**Exemplo:**     
 Uma sessão de Bash com privilégios de administrador do Windows pode acessar `cd /mnt/c/Users/Administrator` enquanto uma sessão Bash sem privilégios de administrador vê um erro "Permissão negada".
 
 No Linux, digitando `sudo cd /mnt/c/Users/Administrator` não concederá acesso ao diretório do administrador, pois as permissões no Windows são gerenciadas pelo Windows.

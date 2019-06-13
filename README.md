@@ -19,3 +19,6 @@ Este projeto adotou o [Microsoft código de conduta de software livre](https://o
 Para obter mais informações, consulte o [código de conduta perguntas Frequentes](https://opensource.microsoft.com/codeofconduct/faq/) ou entre em contato com [ opencode@microsoft.com ](mailto:opencode@microsoft.com) com quaisquer outras perguntas ou comentários.
 
 Bem-vindo à fonte de markdown para shells de linha de comando da Microsoft e a documentação do console.
+
+## <a name="license"></a>Licença
+Distribuído sob a licença pública do Creative Commons Attribution 4.0 internacional (CC 4.0).

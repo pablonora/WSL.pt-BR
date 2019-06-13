@@ -7,12 +7,12 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
 ms.custom: seodec18
-ms.openlocfilehash: 5dcfe0987ecb6615fbe1ab67d178679ac6ad9317
-ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
+ms.openlocfilehash: e4608c25c6bcc63413d53b2c808c16fe2a62dd5c
+ms.sourcegitcommit: db69625e26bc141ea379a830790b329e51ed466b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59063244"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040821"
 ---
 # <a name="windows-subsystem-for-linux-interoperability-with-windows"></a>Subsistema do Windows para interoperabilidade do Linux com o Windows
 
@@ -37,7 +37,7 @@ Binários invocados desta forma:
 1. Execute como usuário padrão WSL.
 1. Ter os mesmos direitos administrativos do Windows como o processo de chamada e o terminal.
 
-Por exemplo: 
+Por exemplo:
 
 ```console
 C:\temp> wsl ls -la
@@ -198,7 +198,7 @@ Desabilitando a interoperabilidade não serão mantidos entre sessões WSL – i
 
 ## <a name="creators-update-and-anniversary-update"></a>Atualização para criadores e atualização de aniversário
 
-Enquanto a pré-queda de experiência de interoperabilidade Creators Update é semelhante para experiências de interoperabilidade mais recentes, há um handfull das principais diferenças.
+Enquanto a pré-queda de experiência de interoperabilidade Creators Update é semelhante para experiências de interoperabilidade mais recentes, há algumas diferenças importantes.
 
 Resumo:
 
