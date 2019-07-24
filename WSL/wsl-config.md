@@ -1,47 +1,47 @@
 ---
-title: Gerenciar as distribuições do Linux
-description: Fazer referência a listagem e configuração de várias distribuições do Linux em execução no subsistema do Windows para Linux.
-keywords: BashOnWindows, bash, o wsl, o windows, o subsistema do windows para linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
+title: Gerenciar distribuições do Linux
+description: Listagem de referência e configuração de várias distribuições do Linux em execução no subsistema do Windows para Linux.
+keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, WSL. conf, wslconfig
 author: scooley
 ms.author: scooley
 ms.date: 02/7/2018
 ms.topic: article
 ms.assetid: 7ca59bd7-d9d3-4f6d-8b92-b8faa9bcf250
 ms.custom: seodec18
-ms.openlocfilehash: a4f9649805051d9c1367fd5b0a5fe541d2d1e168
-ms.sourcegitcommit: db69625e26bc141ea379a830790b329e51ed466b
+ms.openlocfilehash: 0c9f9315b17d5156aa111e7619ee25534653b27e
+ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67040854"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499273"
 ---
 # <a name="manage-and-configure-windows-subsystem-for-linux"></a>Gerenciar e configurar o subsistema do Windows para Linux
 
-> Aplica-se ao Windows 10 Fall Creators Update e versões posteriores.  Consulte nossa atualizada [guia de instalação](./install_guide.md) Experimente os novos recursos de gerenciamento e inicie a execução de várias distribuições do Linux da Windows Store.
+> Aplica-se à atualização dos criadores de outono do Windows 10 e posterior.  Consulte nosso [Guia de instalação](./install_guide.md) atualizado para experimentar novos recursos de gerenciamento e iniciar a execução de várias distribuições do Linux na Microsoft Store.
 
 ## <a name="ways-to-run-wsl"></a>Maneiras de executar o WSL
 
-Há muitas maneiras de executar o Linux com o subsistema Windows para Linux.
+Há várias maneiras de executar o Linux com o subsistema do Windows para Linux.
 
-1. `[distro]`, por exemplo `ubuntu`
+1. `[distro]`, por exemplo`ubuntu`
 1. `wsl.exe` ou `bash.exe`
 1. `wsl [command]` ou `bash -c [command]`
 
-Qual método você deve usar depende do que você está fazendo.
+Qual método deve ser usado depende do que você está fazendo.
 
-### <a name="launch-wsl-by-distribution"></a>Inicie o WSL por distribuição
+### <a name="launch-wsl-by-distribution"></a>Iniciar o WSL por distribuição
 
-Executando uma distribuição usando o aplicativo do específica de distribuição dessa distribuição na sua própria janela de console é iniciado.
+A execução de uma distribuição usando o aplicativo específico do distribuição inicia essa distribuição na própria janela do console.
 
-![Inicie o WSL do menu Iniciar](media/start-launch.png)
+![Iniciar o WSL no menu iniciar](media/start-launch.png)
 
-É o mesmo que clicar em "Iniciar" na Windows Store.
+É o mesmo que clicar em "Launch" na Microsoft Store.
 
-![Inicie o WSL da Windows Store](media/store-launch.png)
+![Inicie o WSL da Microsoft Store](media/store-launch.png)
 
-Você também pode executar a distribuição da linha de comando executando `[distribution].exe`.
+Você também pode executar a distribuição na linha de comando executando `[distribution].exe`.
 
-A desvantagem de usar uma distribuição da linha de comando dessa maneira é que ele será alterado automaticamente seu diretório de trabalho do diretório atual para o diretório de base da distribuição.
+A desvantagem de executar uma distribuição da linha de comando dessa forma é que ela alterará automaticamente seu diretório de trabalho do diretório atual para o diretório base da distribuição.
 
 **Exemplo:**
 
@@ -62,9 +62,9 @@ logout
 PS C:\Users\sarah>
 ```
 
-### <a name="wsl-and-wsl-command"></a>wsl e wsl [comando]
+### <a name="wsl-and-wsl-command"></a>WSL e WSL [comando]
 
-A melhor maneira de executar o WSL da linha de comando está usando `wsl.exe`.
+A melhor maneira de executar o WSL na linha de comando é `wsl.exe`usar o.
 
 **Exemplo:**
 
@@ -81,7 +81,7 @@ scooley@scooley-elmer:/mnt/c/Users/sarah$ pwd
 /mnt/c/Users/sarah
 ```
 
-Não apenas `wsl` manter o diretório de trabalho atual no lugar, ele permite que você execute um único comando ao longo de comandos do Windows de lado.
+Não apenas `wsl` mantém o diretório de trabalho atual em vigor, ele permite que você execute um único comando ao longo dos comandos do Windows.
 
 **Exemplo:**
 
@@ -122,54 +122,54 @@ PS C:\Users\sarah>
 
 ## <a name="managing-multiple-linux-distributions"></a>Gerenciando várias distribuições do Linux
 
-### <a name="windows-10-version-1903-and-later"></a>Windows 10, versão 1903 e posterior
+### <a name="windows-10-version-1903-and-later"></a>Windows 10 versão 1903 e posterior
 
-Você pode usar `wsl.exe` para gerenciar suas distribuições no subsistema Windows para Linux (WSL), incluindo listagem distribuições disponíveis, definindo uma distribuição padrão e distribuições de desinstalação.
+Você pode usar `wsl.exe` o para gerenciar suas distribuições no subsistema do Windows para Linux (WSL), incluindo a listagem de distribuições disponíveis, a definição de uma distribuição padrão e a desinstalação de distribuições.
 
-Independentemente, cada distribuição Linux gerencia suas próprias configurações. Para ver comandos específicos de distribuição, execute `[distro.exe] /?`.  Por exemplo `ubuntu /?`.
+Cada distribuição do Linux gerencia de forma independente suas próprias configurações. Para ver comandos específicos de distribuição, execute `[distro.exe] /?`.  Por exemplo `ubuntu /?`.
 
-#### <a name="list-distributions"></a>Lista de distribuições
+#### <a name="list-distributions"></a>Listar distribuições
 
-`wsl -l` , `wsl --list`  
-Lista de distribuições do Linux disponíveis disponíveis para WSL.  Se uma distribuição estiver listada, ele é instalado e pronto para ser usado.
+`wsl -l`,`wsl --list`  
+Lista as distribuições disponíveis do Linux disponíveis para WSL.  Se uma distribuição estiver listada, ela será instalada e estará pronta para uso.
 
 `wsl --list --all`   
-Lista todas as distribuições, incluindo aqueles que não podem ser usados no momento.  Eles podem estar no processo de instalação, desinstalação, ou estiverem em um estado interrompido.  
+Lista todas as distribuições, incluindo aquelas que não são utilizáveis no momento.  Eles podem estar no processo de instalação, desinstalação ou em um estado desfeito.  
 
 `wsl --list --running`   
-Lista todas as distribuições que estão sendo executados.
+Lista todas as distribuições que estão em execução no momento.
 
-#### <a name="set-a-default-distribution"></a>Defina uma distribuição padrão
+#### <a name="set-a-default-distribution"></a>Definir uma distribuição padrão
 
-A distribuição de WSL padrão é o que é executado quando você executar `wsl` em uma linha de comando.
+A distribuição WSL padrão é aquela que é executada quando você executa `wsl` em uma linha de comando.
 
 `wsl -s <DistributionName>`, `wsl --setdefault <DistributionName>`
 
-Define a distribuição padrão para `<DistributionName>`.
+Define a distribuição padrão como `<DistributionName>`.
 
 **Exemplo:**  
-`wsl -s Ubuntu` definiria meu distribuição padrão para o Ubuntu.  Agora quando executo `wsl npm init` ele será executado no Ubuntu.  Se eu executar `wsl` ela será aberta uma sessão do Ubuntu.
+`wsl -s Ubuntu`definirei minha distribuição padrão como Ubuntu.  Agora, quando eu `wsl npm init` o executo, ele será executado no Ubuntu.  Se eu executá `wsl` -lo, abrirá uma sessão do Ubuntu.
 
 #### <a name="unregister-and-reinstall-a-distribution"></a>Cancelar o registro e reinstalar uma distribuição
 
-Ao Linux distribuições podem ser instaladas por meio do Windows, armazenamento, eles não podem ser desinstalados por meio da loja.  WSL Config permite distribuições ser desinstalado/desregistrado.
+Embora as distribuições do Linux possam ser instaladas por meio da Microsoft Store, elas não podem ser desinstaladas por meio da loja.  WSL config permite que as distribuições sejam canceladas/desinstaladas.
 
-O cancelamento do registro também permite que distribuições ser reinstalado.
+O cancelamento do registro também permite que as distribuições sejam reinstaladas.
 
-> **Cuidado:** Depois que o registro cancelado, todos os dados, configurações e software associado a essa distribuição serão permanentemente perdidas.  Reinstalar da loja instalará uma cópia limpa da distribuição.
+> **Cuidado:** Após o registro, todos os dados, as configurações e os softwares associados a essa distribuição serão permanentemente perdidos.  A reinstalação do repositório instalará uma cópia limpa da distribuição.
 
 `wsl --unregister <DistributionName>`  
-Cancela o registro a distribuição do WSL para que possa ser reinstalado ou limpos.
+Cancela o registro da distribuição do WSL para que possa ser reinstalado ou limpo.
 
-Por exemplo: `wsl -unregister Ubuntu` removeria Ubuntu das distribuições disponíveis no WSL.  Quando executo `wsl --list` não serão listado.
+Por exemplo: `wsl --unregister Ubuntu` removeria o Ubuntu das distribuições disponíveis no WSL.  Quando eu executo `wsl --list` , ele não será listado.
 
-Para reinstalar, localize a distribuição em que a Windows Store e selecione "Iniciar".
+Para reinstalar o, localize a distribuição na Microsoft Store e selecione "Iniciar".
 
 #### <a name="run-as-a-specific-user"></a>Executar como um usuário específico
 
 `wsl -u <Username>`, `wsl --user <Username>`
 
-Execute o WSL como o usuário especificado. Observe que o usuário deve existir dentro distribuição WSL.
+Execute WSL como o usuário especificado. Observe que o usuário deve existir dentro da distribuição WSL.
 
 #### <a name="run-a-specific-distribution"></a>Executar uma distribuição específica
 
@@ -177,13 +177,13 @@ Execute o WSL como o usuário especificado. Observe que o usuário deve existir 
 
 Executar uma distribuição especificada de WSL, pode ser usado para enviar comandos para uma distribuição específica sem precisar alterar o padrão.
 
-### <a name="versions-earlier-than-windows-10-version-1903"></a>Versões anteriores ao Windows 10, versão 1903
+### <a name="versions-earlier-than-windows-10-version-1903"></a>Versões anteriores ao Windows 10 versão 1903
 
-Configuração de WSL (`wslconfig.exe`) é uma ferramenta de linha de comando para gerenciar as distribuições do Linux em execução no subsistema do Windows para Linux (WSL).  Ele permite listar distribuições disponíveis, defina uma distribuição padrão e desinstalar as distribuições.
+WSL config (`wslconfig.exe`) é uma ferramenta de linha de comando para gerenciar distribuições do Linux em execução no subsistema do Windows para Linux (WSL).  Ele permite que você liste as distribuições disponíveis, defina uma distribuição padrão e desinstale as distribuições.
 
-Enquanto o WSL configuração é útil para as configurações que abrangem ou coordenam as distribuições, cada distribuição Linux independentemente gerencia suas próprias configurações.  Para ver comandos específicos de distribuição, execute `[distro.exe] /?`.  Por exemplo `ubuntu /?`.
+Embora a configuração do WSL seja útil para configurações que abrangem ou coordenam distribuições, cada distribuição do Linux gerencia de forma independente suas próprias configurações.  Para ver comandos específicos de distribuição, execute `[distro.exe] /?`.  Por exemplo `ubuntu /?`.
 
-Para ver todas as opções disponíveis para wslconfig, execute:  `wslconfig /?`
+Para ver todas as opções disponíveis para wslconfig, execute:`wslconfig /?`
 
 ```console
 wslconfig.exe
@@ -197,51 +197,51 @@ Usage:
     /u, /unregister <DistributionName> - Unregisters a distribution.
 ```
 
-#### <a name="list-distributions"></a>Lista de distribuições
+#### <a name="list-distributions"></a>Listar distribuições
 
 `wslconfig /list`  
-Lista de distribuições do Linux disponíveis disponíveis para WSL.  Se uma distribuição estiver listada, ele é instalado e pronto para ser usado.
+Lista as distribuições disponíveis do Linux disponíveis para WSL.  Se uma distribuição estiver listada, ela será instalada e estará pronta para uso.
 
 `wslconfig /list /all`  
-Lista todas as distribuições, incluindo aqueles que não podem ser usados no momento.  Eles podem estar no processo de instalação, desinstalação, ou estiverem em um estado interrompido.  
+Lista todas as distribuições, incluindo aquelas que não são utilizáveis no momento.  Eles podem estar no processo de instalação, desinstalação ou em um estado desfeito.  
 
-#### <a name="set-a-default-distribution"></a>Defina uma distribuição padrão
+#### <a name="set-a-default-distribution"></a>Definir uma distribuição padrão
 
-A distribuição de WSL padrão é o que é executado quando você executar `wsl` em uma linha de comando.
+A distribuição WSL padrão é aquela que é executada quando você executa `wsl` em uma linha de comando.
 
 `wslconfig /setdefault <DistributionName>`
 
-Define a distribuição padrão para `<DistributionName>`.
+Define a distribuição padrão como `<DistributionName>`.
 
 **Exemplo:**  
-`wslconfig /setdefault Ubuntu` definiria meu distribuição padrão para o Ubuntu.  Agora quando executo `wsl npm init` ele será executado no Ubuntu.  Se eu executar `wsl` ela será aberta uma sessão do Ubuntu.
+`wslconfig /setdefault Ubuntu`definirei minha distribuição padrão como Ubuntu.  Agora, quando eu `wsl npm init` o executo, ele será executado no Ubuntu.  Se eu executá `wsl` -lo, abrirá uma sessão do Ubuntu.
 
 #### <a name="unregister-and-reinstall-a-distribution"></a>Cancelar o registro e reinstalar uma distribuição
 
-Ao Linux distribuições podem ser instaladas por meio do Windows, armazenamento, eles não podem ser desinstalados por meio da loja.  WSL Config permite distribuições ser desinstalado/desregistrado.
+Embora as distribuições do Linux possam ser instaladas por meio da Microsoft Store, elas não podem ser desinstaladas por meio da loja.  WSL config permite que as distribuições sejam canceladas/desinstaladas.
 
-O cancelamento do registro também permite que distribuições ser reinstalado.
+O cancelamento do registro também permite que as distribuições sejam reinstaladas.
 
-> **Cuidado:** Depois que o registro cancelado, todos os dados, configurações e software associado a essa distribuição serão permanentemente perdidas.  Reinstalar da loja instalará uma cópia limpa da distribuição.
+> **Cuidado:** Após o registro, todos os dados, as configurações e os softwares associados a essa distribuição serão permanentemente perdidos.  A reinstalação do repositório instalará uma cópia limpa da distribuição.
 
 `wslconfig /unregister <DistributionName>`  
-Cancela o registro a distribuição do WSL para que possa ser reinstalado ou limpos.
+Cancela o registro da distribuição do WSL para que possa ser reinstalado ou limpo.
 
-Por exemplo: `wslconfig /unregister Ubuntu` removeria Ubuntu das distribuições disponíveis no WSL.  Quando executo `wslconfig /list` não serão listado.
+Por exemplo: `wslconfig /unregister Ubuntu` removeria o Ubuntu das distribuições disponíveis no WSL.  Quando eu executo `wslconfig /list` , ele não será listado.
 
-Para reinstalar, localize a distribuição em que a Windows Store e selecione "Iniciar".
+Para reinstalar o, localize a distribuição na Microsoft Store e selecione "Iniciar".
 
 ## <a name="set-wsl-launch-settings"></a>Definir configurações de inicialização WSL
 
 > **Disponível no Windows Insider Build 17093 e posterior**
 
-Configure automaticamente algumas funcionalidades em WSL que será aplicada sempre que iniciar o subsistema usando `wsl.conf`. 
+Configure automaticamente determinadas funcionalidades no WSL que serão aplicadas toda vez que você iniciar o subsistema usando `wsl.conf`. 
 
-Direita agora, isso inclui opções de montagem automática e configuração de rede.
+No momento, isso inclui opções de montagem automática e configuração de rede.
 
-`wsl.conf` está localizado em cada distribuição do Linux em `/etc/wsl.conf`. Se o arquivo não estiver lá, você pode criá-lo. WSL detectará a existência do arquivo e irá ler seu conteúdo. Se o arquivo está ausente ou malformado (ou seja, inadequada marcação formatação), WSL continuará iniciar como normal.
+`wsl.conf`está localizado em cada distribuição do Linux `/etc/wsl.conf`no. Se o arquivo não estiver lá, você mesmo poderá criá-lo. O WSL detectará a existência do arquivo e lerá seu conteúdo. Se o arquivo estiver ausente ou malformado (ou seja, formatação de marcação inadequada), o WSL continuará a ser iniciado normalmente.
 
-Aqui está um exemplo `wsl.conf` arquivo você pode adicionar em suas distribuições:
+Aqui está um arquivo `wsl.conf` de exemplo que você pode adicionar ao seu distribuições:
 
 ```console
 # Enable extra metadata options by default
@@ -261,40 +261,40 @@ generateResolvConf = true
 
 Para manter as convenções. ini, as chaves são declaradas em uma seção. 
 
-WSL dá suporte a duas seções: `automount` e `network`.
+O WSL dá suporte a `automount` duas `network`seções: e.
 
-#### <a name="automount"></a>Montagem automática
+#### <a name="automount"></a>montagem automática
 
-Seção: `[automount]`
+Section`[automount]`
 
 
-| key        | value                          | padrão      | Notas                                                                                                                                                                                                                                                                                                                          |
+| key        | value                          | default      | registra                                                                                                                                                                                                                                                                                                                          |
 |:-----------|:-------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| enabled    | boolean                        | verdadeiro         | `true` causas (isto é, de unidades fixas `C:/` ou `D:/`) deve ser montado automaticamente com DrvFs em `/mnt`.  `false` significa que unidades não ser montadas automaticamente, mas você ainda pode montá-los manualmente ou por meio de `fstab`.                                                                                                             |
-| mountFsTab | boolean                        | verdadeiro         | `true` define `/etc/fstab` a ser processada no início WSL. /etc/fstab é um arquivo em que você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de arquivos automaticamente em WSL no início do backup.                                                                                                                |
-| Raiz       | String                         | `/mnt/`      | Define o diretório em que unidades fixas serão montadas automaticamente. Por exemplo, se você tiver um diretório no WSL em `/windir/` e você especificar que como a raiz, você esperaria ver suas unidades fixas montadas em `/windir/c`                                                                                              |
-| opções    | lista separada por vírgulas de valores | Cadeia de caracteres vazia | Esse valor é acrescentado à cadeia de opções de montagem padrão DrvFs. **Somente as opções de DrvFs específicas podem ser especificadas.** Não há suporte para as opções que a montagem binária normalmente analisaria em um sinalizador. Se você quiser especificar explicitamente essas opções, você deve incluir cada unidade para o qual você deseja fazer isso em /etc/fstab. |
+| enabled    | boolean                        | true         | `true`causa unidades fixas (ou seja, `C:/`ou `D:/`) a ser montado automaticamente com DrvFs em `/mnt`.  `false`significa que as unidades não serão montadas automaticamente, mas você ainda poderá montá- `fstab`las manualmente ou por meio do.                                                                                                             |
+| mountFsTab | boolean                        | true         | `true`conjuntos `/etc/fstab` a serem processados no início do WSL. /etc/fstab é um arquivo no qual você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de fileautomaticamente no WSL na inicialização.                                                                                                                |
+| básica       | String                         | `/mnt/`      | Define o diretório em que as unidades fixas serão montadas automaticamente. Por exemplo, se você tiver um diretório em WSL em `/windir/` e especificar que, como a raiz, esperaria ver suas unidades fixas montadas em`/windir/c`                                                                                              |
+| opções    | lista de valores separados por vírgulas | Cadeia de caracteres vazia | Esse valor é acrescentado à cadeia de opções padrão de montagem DrvFs. **Somente opções específicas de DrvFs podem ser especificadas.** As opções que o binário de montagem normalmente analisam em um sinalizador não são suportadas. Se você quiser especificar explicitamente essas opções, deverá incluir todas as unidades para as quais deseja fazer isso no/etc/fstab. |
 
-Por padrão, o WSL define o uid e gid como o valor do usuário padrão (distribuição do Ubuntu, o usuário padrão é criado com o uid = 1000, gid = 1000). Se o usuário especificar uma opção gid ou uid explicitamente por meio dessa chave, o valor associado será substituído. Caso contrário, o valor padrão sempre será acrescentado.
+Por padrão, WSL define o UID e o GID como o valor do usuário padrão (no Ubuntu distribuição, o usuário padrão é criado com UID = 1000, GID = 1000). Se o usuário especificar uma opção GID ou uid explicitamente por meio dessa chave, o valor associado será substituído. Caso contrário, o valor padrão será sempre acrescentado.
 
-**Observação:** Essas opções são aplicadas como as opções de montagem para todas as unidades montadas automaticamente. Para alterar as opções para apenas uma unidade específica, use o /etc/fstab em vez disso.
+**Observação:** Essas opções são aplicadas como opções de montagem para todas as unidades montadas automaticamente. Para alterar as opções somente para uma unidade específica, use/etc/fstab em vez disso.
 
 #### <a name="network"></a>rede
 
-Rótulo de seção: `[network]`
+Rótulo da seção:`[network]`
 
-| key | value | padrão | Notas|
+| key | value | default | registra|
 |:----|:----|:----|:----|
-| generateHosts | boolean | `true` | `true` Define o WSL para gerar `/etc/hosts`. O `hosts` arquivo contém um mapa estático do endereço IP correspondente de nomes de host. |
-| generateResolvConf | boolean | `true` | `true` Definir WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que são capazes de resolver um determinado nome de host para seu endereço IP. | 
+| generateHosts | boolean | `true` | `true`define WSL para gerar `/etc/hosts`. O `hosts` arquivo contém um mapa estático do endereço IP correspondente de nomes de host. |
+| generateResolvConf | boolean | `true` | `true`Defina WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que é capaz de resolver um determinado nome de host para seu endereço IP. | 
 
-#### <a name="interop"></a>Interoperabilidade
+#### <a name="interop"></a>interoperabilidade
 
-Rótulo de seção: `[interop]`
+Rótulo da seção:`[interop]`
 
 Essas opções estão disponíveis no Insider Build 17713 e posterior.
 
-| key | value | padrão | Notas|
+| key | value | default | registra|
 |:----|:----|:----|:----|
-| enabled | boolean | `true` | Configuração de chave nesse determinará se WSL oferece suporte a processos do Windows iniciar. |
-| appendWindowsPath | boolean | `true` | Configuração de chave nesse determinará se WSL adicionará os elementos de caminho do Windows para a variável de ambiente $PATH. | 
+| enabled | boolean | `true` | Definir essa chave determinará se o WSL dará suporte à inicialização de processos do Windows. |
+| appendWindowsPath | boolean | `true` | Definir essa chave determinará se WSL adicionará elementos de caminho do Windows à variável de ambiente $PATH. | 

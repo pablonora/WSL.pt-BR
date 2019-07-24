@@ -1,66 +1,66 @@
 ---
-title: Inicializar uma nova distribuição do Linux de WSL
-description: Depois de instalar uma distribuição do Linux para WSL, concluir a inicialização, seguindo estas etapas simples
-keywords: BashOnWindows, bash, o wsl, o windows, o subsistema do windows para linux, windowssubsystem, ubuntu, debian, suse, windows 10
+title: Inicializar um novo WSL Linux distribuição
+description: Depois de instalar um distribuição do Linux para o WSL, conclua a inicialização seguindo estas etapas simples
+keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, Debian, Suse, Windows 10
 author: taraj
 ms.author: taraj
 ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 7f1ce521b248c873fa7f81c6363eb506c0363fed
-ms.sourcegitcommit: ae0956bc0543b1c45765f3620ce9a55c9afe55da
+ms.openlocfilehash: 30cb1de0a01fd46bc434061cd36794f4ece77e4b
+ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902043"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499292"
 ---
-# <a name="initializing-a-newly-installed-distro"></a>Inicializando uma distribuição recém-instalado
-Depois que sua distribuição foi baixada e instalada, você precisará concluir a inicialização da nova distribuição:
+# <a name="initializing-a-newly-installed-distro"></a>Inicializando um distribuição recentemente instalado
+Depois que o distribuição tiver sido baixado e instalado, você precisará concluir a inicialização do novo distribuição:
 
-## <a name="launch-a-distro"></a>Iniciar uma distribuição
-Para concluir a inicialização de sua distribuição recém-instalado, inicie uma nova instância. Você pode fazer isso clicando no botão "Iniciar" no aplicativo da Windows Store, ou iniciando a distribuição do menu Iniciar:
+## <a name="launch-a-distro"></a>Iniciar um distribuição
+Para concluir a inicialização do seu distribuição recentemente instalado, inicie uma nova instância. Você pode fazer isso clicando no botão "Iniciar" no aplicativo Microsoft Store ou iniciando o distribuição no menu iniciar:
 
-> Dica: Pode ser que você deseja fixar seu distribuições usadas com mais frequência ao menu Iniciar e/ou à barra de tarefas!
+> Dica: Talvez você queira fixar o distribuições usado com mais frequência no menu iniciar e/ou na barra de tarefas!
 
-![Inicie as distribuições do menu Iniciar](media/start-menu.png)
+![Iniciar o distribuições no menu iniciar](media/start-menu.png)
 
-> No Windows Server, você pode iniciar o inicializador do sua distribuição executável `<distro>.exe` da pasta de instalação de distribuição.
+> No Windows Server, você pode iniciar o executável `<distro>.exe` do inicializador do distribuição na pasta de instalação do distribuição.
 
-Na primeira vez em uma distribuição recém-instalado é executado, um Console do janela será aberta, e você terá que aguardar um minuto ou dois concluir a instalação.
+Na primeira vez em que um distribuição é executado recentemente, uma janela de console será aberta e você será solicitado a aguardar um minuto ou dois para que a instalação seja concluída.
 
-> Durante esse estágio final da instalação, os arquivos da distribuição são desprovisionar compactados e armazenados no seu PC, pronto para uso. Isso pode levar ao redor de um minuto ou mais conforme o desempenho do seu PC dispositivos de armazenamento. Fase de instalação inicial, só é necessário quando uma distribuição é limpo instalado - todas as inicializações futuras devem levar menos de um segundo.
+> Durante esse estágio final da instalação, os arquivos do distribuição são descompactados e armazenados em seu computador, prontos para uso. Isso pode levar cerca de um minuto ou mais, dependendo do desempenho dos dispositivos de armazenamento do seu computador. Essa fase de instalação inicial só é necessária quando um distribuição é limpo-instalado – todas as futuras inicializações devem levar menos de um segundo.
 
-## <a name="setting-up-a-new-linux-user-account"></a>Como configurar uma nova conta de usuário do Linux
+## <a name="setting-up-a-new-linux-user-account"></a>Configurando uma nova conta de usuário do Linux
 
-Depois que a instalação for concluída, você precisará criar uma nova conta de usuário (e sua senha). 
+Quando a instalação for concluída, você será solicitado a criar uma nova conta de usuário (e sua senha). 
 
-![Ubuntu desempacotar no console do Windows](media/UbuntuInstall.png)
+![Desempacotamento do Ubuntu no console do Windows](media/UbuntuInstall.png)
 
-Essa conta de usuário é para o usuário normal não-administrador que você vai estar conectado como por padrão ao iniciar uma distribuição.
+Essa conta de usuário é para o usuário não administrador normal no qual você fará logon por padrão ao iniciar um distribuição.
 
-> Você pode escolher qualquer nome de usuário e senha que você deseja – eles terem nenhuma influência sobre seu nome de usuário do Windows. 
+> Você pode escolher qualquer nome de usuário e senha que desejar-eles não têm nenhuma influência sobre seu nome de usuário do Windows. 
 
-Quando você abre uma nova instância de distribuição, não serão solicitados a senha, mas **se você elevar um processo usando `sudo`, você precisará inserir sua senha**, portanto, certifique-se de que você escolher uma senha que você se lembre facilmente! Consulte a [suporte ao usuário](user-support.md) página para obter mais informações.
+Quando você abrir uma nova instância do distribuição, não será solicitada sua senha, mas **se você elevar um processo usando `sudo`o, precisará inserir sua senha**, portanto, certifique-se de escolher uma senha que você possa lembrar facilmente! Consulte a página de [suporte ao usuário](user-support.md) para obter mais informações.
 
-## <a name="update--upgrade-your-distros-packages"></a>Atualizar & pacotes da sua distribuição de atualização
+## <a name="update--upgrade-your-distros-packages"></a>Atualizar & atualizar os pacotes do seu distribuição
 
-A maioria das distribuições são fornecidos com um catálogo de pacote vazio/mínimo. É altamente recomendável atualizar regularmente seu catálogo de pacote e atualizar seus pacotes instalados usando o Gerenciador de pacotes preferido da sua distribuição. No Debian/Ubuntu, use apt:
+A maioria dos distribuiçõess são fornecidos com um catálogo de pacotes vazio/mínimo. É altamente recomendável atualizar regularmente seu catálogo de pacotes e atualizar seus pacotes instalados usando o Gerenciador de pacotes preferencial do distribuição. No Debian/Ubuntu, você usa apt:
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
-> Windows automaticamente atualização ou upgrade distro(s) seu Linux: Essa é uma tarefa que preferir controlar se os usuários do Linux.
+> O Windows não atualiza ou atualiza automaticamente suas distribuição (s) Linux: Essa é uma tarefa que os usuários do Linux preferem controlar.
 
-Concluído! Aproveite usando sua nova distribuição do Linux no WSL. Para saber mais sobre o WSL, examine a outra [docs WSL](https://aka.ms/wsldocs), ou o [WSL página de recursos de aprendizado](https://aka.ms/learnwsl).
+Concluído! Aproveite o uso de seu novo distribuição Linux no WSL! Para saber mais sobre o WSL, examine os outros [documentos do WSL](https://aka.ms/wsldocs)ou a página de recursos do [WSL Learning](https://aka.ms/learnwsl).
 
-![Aproveite a usando o Linux no WSL](media/linux-on-wsl.png)
+![Aproveite o uso do Linux no WSL](media/linux-on-wsl.png)
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Abaixo estão os erros relacionados e correções sugeridas. Consulte a [página de solução de problemas de WSL](troubleshooting.md) para outros erros comuns e suas soluções.
+Abaixo estão os erros relacionados e as correções sugeridas. Consulte a [página de solução de problemas do WSL](troubleshooting.md) para obter outros erros comuns e suas soluções.
 
-> **Falha na instalação com o erro 0x8007007e** esse erro ocorre quando o sistema não dá suporte a Linux da loja.  Certifique-se de que:
-> * Você está executando o Windows build 16215 ou posterior. [Verificar seu build](troubleshooting.md#check-your-build-number).
-> * O subsistema do Windows para o componente opcional do Linux está habilitado e o computador for reiniciado.  [Verifique se WSL está habilitado](troubleshooting.md#confirm-wsl-is-enabled).
+> **Falha na instalação com o erro 0x8007007E** Esse erro ocorre quando o sistema não dá suporte ao Linux na loja.  Certifique-se de que:
+> * Você está executando o Windows Build 16215 ou posterior. [Verifique sua compilação](troubleshooting.md#check-your-build-number).
+> * O componente opcional do subsistema do Windows para Linux está habilitado e o computador foi reiniciado.  [Verifique se o WSL está habilitado](troubleshooting.md#confirm-wsl-is-enabled).

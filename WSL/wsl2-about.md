@@ -1,36 +1,38 @@
 ---
-title: Sobre WSL 2
-description: Sobre o WSL 2 a nova arquitetura para o subsistema Windows para Linux
-keywords: Instalar o BashOnWindows, bash, wsl, wsl2, windows, o subsistema do windows para linux, windowssubsystem, ubuntu, debian, suse, windows 10,
+title: Sobre o WSL 2
+description: Sobre o WSL 2 a nova arquitetura para o subsistema do Windows para Linux
+keywords: BashOnWindows, Bash, WSL, WSL 2, Windows, subsistema do Windows para Linux, subsistema do Windows, Ubuntu, Debian, Suse, Windows 10, instalar
 author: mscraigloewen
 ms.author: mscraigloewen
 ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: b3b0b1ce0f55fed0b4cf223ccc18a509dcf81788
-ms.sourcegitcommit: bb88269eb37405192625fa81ff91162393fb491f
+ms.openlocfilehash: e9c1f043207193a5c00ecf6176f54f240aa48680
+ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67038126"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499255"
 ---
-WSL 2 é uma nova versão da arquitetura que alimenta o subsistema do Windows para Linux executar binários ELF64 Linux no Windows. Seus objetivos principais são aumentar o desempenho do sistema de arquivos, bem como a adição de compatibilidade de chamadas completa do sistema. Essa nova arquitetura altera como esses binários de Linux interagem com o Windows e o hardware do computador, mas ainda fornece a mesma experiência de usuário como no WSL 1 (a versão atual amplamente disponível). Linux individual distribuições podem ser executadas como uma distribuição WSL 1, ou como uma distribuição WSL 2, pode ser atualizado ou desatualizado a qualquer momento, e você pode executar o WSL 1 e 2 WSL distribuições lado a lado. WSL 2 usa uma arquitetura totalmente nova que usa um kernel do Linux real.
+# <a name="about-wsl-2"></a>Sobre o WSL 2
+
+WSL 2 é uma nova versão da arquitetura que capacita o subsistema do Windows para Linux a executar binários do ELF64 Linux no Windows. Suas metas principais são aumentar o desempenho do sistema de arquivos, bem como adicionar compatibilidade completa com a chamada do sistema. Essa nova arquitetura altera como esses binários do Linux interagem com o Windows e o hardware do computador, mas ainda fornece a mesma experiência do usuário que no WSL 1 (a versão atual amplamente disponível). Os distribuições individuais do Linux podem ser executados como um WSL 1 distribuição, ou como um WSL 2 distribuição, podem ser atualizados ou rebaixados a qualquer momento, e você pode executar WSL 1 e WSL 2 distribuições lado a lado. O WSL 2 usa uma arquitetura totalmente nova que usa um kernel Linux real.
 
 ## <a name="linux-kernel-in-wsl-2"></a>Kernel do Linux no WSL 2
 
-O kernel do Linux no WSL 2 é criado internamente a partir da ramificação estável mais recente, com base no código-fonte disponível em kernel.org. Esse kernel foi ajustado especialmente para 2 WSL. Ele foi otimizado para o tamanho e desempenho para fornecer uma experiência incrível do Linux no Windows e será atendido por meio de atualizações do Windows, o que significa que você obterá as correções de segurança mais recentes e aprimoramentos do kernel sem a necessidade de gerenciá-lo.
+O kernel do Linux no WSL 2 é criado internamente a partir da ramificação estável mais recente, com base na origem disponível em kernel.org. Esse kernel foi especialmente ajustado para WSL 2. Ele foi otimizado quanto ao tamanho e ao desempenho para fornecer uma experiência incrível do Linux no Windows e será atendido por meio de atualizações do Windows, o que significa que você obterá as correções de segurança e melhorias de kernel mais recentes sem precisar gerenciá-las por conta própria.
 
-Além disso, este kernel estará livre. Você pode encontrar o código-fonte completo para o kernel do Linux [aqui](https://thirdpartysource.microsoft.com/download/Windows%20Subsystem%20for%20Linux%20v2/May%202019/WSLv2-Linux-Kernel-master.zip). Se você quiser ler mais sobre esse kernel, você pode fazer check-out [esta postagem de blog](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/) escrito pela equipe que criou.
+Além disso, esse kernel será de código aberto. Você pode encontrar o código-fonte completo para o kernel do Linux [aqui](https://github.com/microsoft/WSL2-Linux-Kernel). Se você quiser ler mais sobre esse kernel, poderá conferir [esta postagem de blog](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/) escrita pela equipe que a criou.
 
-## <a name="brief-overview-of-the-wsl-2-architecture"></a>Uma breve visão geral da arquitetura do WSL 2
+## <a name="brief-overview-of-the-wsl-2-architecture"></a>Visão geral resumida da arquitetura WSL 2
 
-WSL 2 usa o melhor e mais recente na tecnologia de virtualização para executar o kernel do Linux dentro de uma máquina virtual de utilitário leve (VM). No entanto, o WSL 2 não será uma experiência VM tradicional. Uma experiência tradicional de VM pode ser lenta inicializado, é isolada, consome muitos recursos e requer que seu tempo para gerenciá-lo. WSL 2 não tem esses atributos. Ele ainda fornecerá benefícios incríveis de WSL 1: Altos níveis de integração entre o Windows e Linux, tempos de inicialização extremamente rápidas, consumo de recursos pequeno e o melhor de tudo não exigirá nenhuma configuração de VM ou gerenciamento. Enquanto WSL 2 usa uma VM, ele será gerenciado e executar em segundo plano, deixando você com a mesma experiência de usuário que WSL 1.
+O WSL 2 usa a mais recente e mais alta tecnologia de virtualização para executar seu kernel do Linux dentro de uma VM (máquina virtual) do utilitário leve. No entanto, o WSL 2 não será uma experiência de VM tradicional. Uma experiência de VM tradicional pode ser lenta para inicializar, é isolada, consome muitos recursos e requer seu tempo para gerenciá-lo. WSL 2 não tem esses atributos. Ele ainda fornecerá os benefícios notáveis do WSL 1: Altos níveis de integração entre o Windows e o Linux, tempos de inicialização extremamente rápidos, superfície de recursos pequenos e o melhor de tudo não exigirão nenhuma configuração ou gerenciamento de VM. Embora o WSL 2 Use uma VM, ele será gerenciado e executado nos bastidores, deixando você com a mesma experiência do usuário que o WSL 1.
 
-## <a name="increased-file-io-performance"></a>Arquivo de maior desempenho de e/s
+## <a name="increased-file-io-performance"></a>Desempenho de e/s de arquivo aumentado
 
-Operações com uso intensivo de arquivo, como o clone do git, npm install, apt atualização, atualização apt e muito mais tudo será notavelmente mais rápidas. O aumento de velocidade real dependerá de qual aplicativo você está em execução e como ele está interagindo com o sistema de arquivos. Versões iniciais do WSL 2 executam até 20 vezes mais rápido em comparação com o WSL 1, ao descompactar um tarball compactado e, em torno de 2 a 5 vezes mais rápido de ao usar o clone do git, npm install e cmake em diversos projetos.
+Operações intensivas de arquivos, como git clone, instalação NPM, atualização de apt, atualização de apt e muito mais serão visivelmente mais rápidas. O aumento da velocidade real dependerá de qual aplicativo você está executando e de como ele está interagindo com o sistema de arquivos. As versões iniciais do WSL 2 executam até 20x mais rápidas em comparação com WSL 1 ao desempacotar um tarball compactado e cerca de 2 vezes mais rápido ao usar o git clone, NPM install e CMake em vários projetos.
 
-## <a name="full-system-call-compatibility"></a>Compatibilidade de chamadas completa do sistema
+## <a name="full-system-call-compatibility"></a>Compatibilidade total com a chamada do sistema
 
-Binários do Linux usam chamadas do sistema para executar várias funções, como acessar arquivos, solicitando a memória, criação de processos e muito mais. 1 WSL usado uma camada de conversão que foi criada pela equipe do WSL, o WSL 2 inclui seu próprio kernel do Linux com a compatibilidade de chamadas completa do sistema. Isso apresenta um novo conjunto de aplicativos que podem ser executados dentro de WSL, como Docker e muito mais. Além disso, todas as atualizações para o kernel do Linux podem ser imediatamente prontas para ser adicionado ao seu computador, em vez de aguardar a equipe WSL implementar as alterações e, então, eles adicionado.
+Os binários do Linux usam chamadas do sistema para executar muitas funções, como acessar arquivos, solicitar memória, criar processos e muito mais. Enquanto o WSL 1 usava uma camada de conversão criada pela equipe do WSL, o WSL 2 inclui seu próprio kernel do Linux com compatibilidade total com a chamada do sistema. Isso introduz um conjunto totalmente novo de aplicativos que você pode executar dentro do WSL, como o Docker e muito mais. Além disso, todas as atualizações para o kernel do Linux podem estar imediatamente prontas para serem adicionadas ao seu computador, em vez de esperar que a equipe do WSL implemente as alterações e, em seguida, as tenha adicionado.

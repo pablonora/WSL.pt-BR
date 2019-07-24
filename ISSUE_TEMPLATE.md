@@ -1,6 +1,6 @@
-Observe que o rastreador de problemas do repositório, esse é apenas para relatar problemas com a documentação WSL.
+Observe que o Issue Tracker do repositório é apenas para relatar problemas com os documentos do WSL.
 
-Outro problema relacionado repositório:
+Outros repositórios de problemas relacionados:
 
-* WSL: https://github.com/Microsoft/BashOnWindows/
+* WSL https://github.com/Microsoft/BashOnWindows/
 * Console do Windows: https://github.com/Microsoft/Console/

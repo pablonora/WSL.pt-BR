@@ -1,79 +1,91 @@
 ---
-title: Alterações UX entre WSL 1 e 2 do WSL
-description: Mudanças na experiência do usuário entre WSL 1 e 2 do WSL
-keywords: BashOnWindows, bash, wsl, wsl2, windows, o subsistema do windows para linux, windowssubsystem, ubuntu, debian, suse, windows 10
+title: Alterações de UX entre WSL 1 e WSL 2
+description: Alterações de experiência do usuário entre WSL 1 e WSL 2
+keywords: BashOnWindows, Bash, WSL, wsl2, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, Debian, Suse, Windows 10
 author: mscraigloewen
 ms.author: mscraigloewen
 ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 0660f9f726811008685de9f1ff457e7515add67a
-ms.sourcegitcommit: bb88269eb37405192625fa81ff91162393fb491f
+ms.openlocfilehash: a6c8f4fbbf21b4295e69fe3de2ecf0922ab20bbe
+ms.sourcegitcommit: 6086126c35a5518a7110935fa13592b5ed9dd6b7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67038096"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67891784"
 ---
-# <a name="user-experience-changes-between-wsl-1-and-wsl-2"></a>Mudanças na experiência do usuário entre WSL 1 e 2 do WSL
+# <a name="user-experience-changes-between-wsl-1-and-wsl-2"></a>Alterações de experiência do usuário entre WSL 1 e WSL 2
 
-Esta página ultrapassar as diferenças de experiência do usuário entre WSL 1 e a visualização de WSL 2. As principais alterações a serem consideradas são:
+Esta página passa pelas diferenças de experiência do usuário entre o WSL 1 e a versão prévia do WSL 2. As principais alterações a serem observadas são:
 
-- Colocar arquivos de que seus aplicativos Linux acessará no seu sistema de arquivos de raiz do Linux para velocidade de desempenho mais rápido do arquivo
-- Em compilações inicias da visualização 2 WSL você precisará acessar a aplicativos de rede usando um endereço IP e não usar localhost
+- Coloque os arquivos que seus aplicativos Linux acessarão no sistema de arquivos raiz do Linux para uma velocidade de desempenho de arquivo mais rápida
+- Em compilações iniciais da visualização do WSL 2, você precisará acessar aplicativos de rede usando um endereço IP e não usando localhost
 
-E, abaixo está a lista completa de outras alterações que podem ser observados:
+E abaixo está a lista completa de outras alterações que você pode observar:
 
-- WSL 2 usa um VHD para armazenar seus arquivos e se você atingir seu tamanho máximo que você pode precisar para expandi-lo
-- Ao iniciar, WSL 2 agora usarão uma pequena proporção de memória
-- Entre o sistema operacional, velocidade de acesso de arquivo será mais lenta em compilações de visualização inicial
+- O WSL 2 usa um [disco de hardware virtual](https://en.wikipedia.org/wiki/VHD_(file_format)) (VHD) para armazenar seus arquivos e, se você atingir seu tamanho máximo, talvez seja necessário expandi-lo
+- Ao iniciar, o WSL 2 agora usará uma pequena proporção de memória
+- A velocidade de acesso ao arquivo do sistema operacional será mais lenta em compilações iniciais de visualização
 
-## <a name="place-your-linux-files-in-your-linux-root-file-system"></a>Coloque os arquivos do Linux em seu sistema de arquivos de raiz do Linux
-Certifique-se de colocar os arquivos que você acessará frequentemente com o Linux aplicativos dentro de seu Linux raiz do sistema de arquivos para aproveitar os benefícios de desempenho do arquivo. Esses arquivos precisam estar dentro do sistema de arquivos raiz Linux para ter acesso de sistema de arquivos mais rápido. Podemos também tornam possível para aplicativos do Windows acessar o sistema de arquivos do Linux raiz (como o Explorador de arquivos! Tente executar: `explorer.exe /` em seu shell bash e veja o que acontece) que irá facilitar essa transição. 
+## <a name="place-your-linux-files-in-your-linux-root-file-system"></a>Coloque os arquivos do Linux no sistema de arquivos raiz do Linux
+Certifique-se de colocar os arquivos que serão acessados com frequência com aplicativos Linux dentro do seu sistema de arquivos raiz Linux para aproveitar os benefícios de desempenho do arquivo. Esses arquivos precisam estar dentro do sistema de arquivos raiz do Linux para ter acesso mais rápido ao sistema de arquivos. Também tornamos possível que os aplicativos do Windows acessem o sistema de arquivos raiz do Linux (como o explorador de arquivos! Tente executar: `explorer.exe .` no diretório base do seu distribuição do Linux e veja o que acontece), o que tornará essa transição significativamente mais fácil. 
 
-## <a name="accessing-network-applications"></a>Acesso a aplicativos de rede
-Nas compilações do preview 2 WSL inicias, você precisará acessar qualquer servidor do Linux do Windows usando o endereço IP de sua distribuição do Linux e qualquer servidor Windows do Linux usando o endereço IP do seu computador host. Isso é algo que é temporária e muito alta em nossa lista de prioridade para corrigir.
+## <a name="accessing-network-applications"></a>Acessando aplicativos de rede
+Nas compilações iniciais da versão prévia do WSL 2, você precisará acessar qualquer servidor Linux do Windows usando o endereço IP do seu distribuição do Linux e qualquer servidor Windows do Linux usando o endereço IP do seu computador host. Isso é algo temporário e muito alto em nossa lista de prioridades a ser corrigida.
 
-### <a name="accessing-linux-applications-from-windows"></a>Acesso a aplicativos do Linux do Windows
-Se você tiver um servidor em uma distribuição WSL, você precisará localizar o endereço IP da máquina virtual capacitar sua distribuição e conectá-lo com esse endereço IP. Você pode fazer isso seguindo estas etapas:
+### <a name="accessing-linux-applications-from-windows"></a>Acessando aplicativos Linux do Windows
+Se você tiver um servidor em um WSL distribuição, precisará encontrar o endereço IP da máquina virtual que está ligando seu distribuição e conectar-se a ele com esse endereço IP. Você pode fazer isso seguindo estas etapas:
 
-- Obter o endereço IP da sua distribuição, executando o comando `ip addr` dentro de sua distribuição WSL e localizá-lo sob o `inet` valor o `eth0` interface.
-   - Você pode encontrá-lo mais facilmente por meio da filtragem de saída do comando usando grep da seguinte forma: `ip addr | grep eth0`.
+- Obtenha o endereço IP do seu distribuição executando o comando `ip addr` dentro de seu WSL distribuição e encontrando-o sob o `inet` valor da `eth0` interface.
+   - Você pode encontrar isso mais facilmente filtrando a saída do comando usando grep da seguinte forma: `ip addr | grep eth0`.
 - Conecte-se ao seu servidor Linux usando o IP encontrado acima.
 
-A figura abaixo mostra um exemplo ao se conectar a um servidor de nodeJS usando o navegador Edge.
+A figura abaixo mostra um exemplo disso conectando-se a um servidor node. js usando o navegador Edge.
 
-![Acesso a aplicativos de rede do Linux do Windows](media/wsl2-network-w2l.jpg)
+![Acessando aplicativos de rede Linux do Windows](media/wsl2-network-w2l.jpg)
 
-### <a name="accessing-windows-applications-from-linux"></a>Acesso a aplicativos do Windows do Linux
+### <a name="accessing-windows-applications-from-linux"></a>Acessando aplicativos do Windows no Linux
 Para acessar um aplicativo de rede do Windows, você precisará usar o endereço IP do seu computador host. Você pode fazer isso com estas etapas:
 
-- Obter o endereço IP do seu computador host executando o comando `cat /etc/resolv.conf` e copiar o endereço IP após o termo `nameserver`. 
-- Conecte-se a qualquer servidor do Windows usando o endereço IP copiado.
+- Obtenha o endereço IP do seu computador host executando o comando `cat /etc/resolv.conf` e copiando o endereço IP após o termo. `nameserver` 
+- Conecte-se a qualquer servidor Windows usando o endereço IP copiado.
 
-A figura abaixo mostra um exemplo ao se conectar a um servidor de python em execução no Windows por meio de rotação. 
+A figura abaixo mostra um exemplo disso conectando-se a um servidor node. js em execução no Windows via ondulação. 
 
-![Acesso a aplicativos de rede do Linux do Windows](media/wsl2-network-l2w.png)
+![Acessando aplicativos de rede Linux do Windows](media/wsl2-network-l2w.png)
 
-## <a name="understanding-wsl-2-uses-a-vhd-and-what-to-do-if-you-reach-its-max-size"></a>Noções básicas sobre o WSL 2 usa um VHD e o que fazer se você atingir seu tamanho máximo
-2 de WSL armazena todos os arquivos do Linux dentro de um VHD que usa o sistema de arquivos ext4. Esse VHD é redimensionado automaticamente para atender às suas necessidades de armazenamento. Esse VHD também tem um tamanho inicial máximo de 256GB. Se a sua distribuição aumenta de tamanho seja maior que 256GB, você verá erros informando que você executou sem espaço em disco. Você pode corrigi-los expandindo o tamanho do VHD. As instruções sobre como fazer isso estão abaixo:
+### <a name="other-networking-considerations"></a>Outras considerações de rede
 
-1. Encerrar todas as instâncias WSL usando o `wsl --shutdown` comando
-2. Redimensionar o VHD de 2 WSL executando os comandos a seguir
-   - Abra um janela de prompt de comando com privilégios de administrador e execute os seguintes comandos:
+Ao usar endereços IP remotos para se conectar aos seus aplicativos, eles serão tratados como conexões da LAN (rede local). Isso significa que você precisará certificar-se de que seu aplicativo pode aceitar conexões de LAN, ou seja: Talvez seja necessário associar seu aplicativo ao em `0.0.0.0` vez de `127.0.0.1`ao. Por exemplo, no Python usando Flask, isso pode ser feito com o `app.run(host='0.0.0.0')`comando:. Tenha em mente a segurança ao fazer essas alterações, pois isso permitirá conexões de sua LAN. 
+
+## <a name="understanding-wsl-2-uses-a-vhd-and-what-to-do-if-you-reach-its-max-size"></a>Entender o WSL 2 usa um VHD e o que fazer se você atingir seu tamanho máximo
+O WSL 2 armazena todos os arquivos do Linux dentro de um VHD que usa o sistema de arquivos EXT4. Esse VHD é redimensionado automaticamente para atender às suas necessidades de armazenamento. Esse VHD também tem um tamanho máximo inicial de 256 GB. Se seu distribuição aumentar de tamanho para ser maior que 256 GB, você verá erros informando que você ficou sem espaço em disco. Você pode corrigi-los expandindo o tamanho do VHD. As instruções sobre como fazer isso estão abaixo:
+
+1. Encerrar todas as instâncias de WSL `wsl --shutdown` usando o comando
+2. Localize o nome do pacote de instalação do distribuição ' PackageFamilyName '
+   - Em um prompt do PowerShell (em que ' distribuição ' é o seu nome de distribuição), digite:
+      - `Get-AppxPackage -Name "*<distro>*" | Select PackageFamilyName`
+3. Localize o arquivo VHD FullPath usado pela sua instalação do WSL 2, que será o seu ' pathToVHD ':
+     - `%LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState\<disk>.vhdx`
+4. Redimensione o VHD do WSL 2 concluindo os seguintes comandos
+   - Abra uma janela de prompt de comando com privilégios de administrador e execute os seguintes comandos:
+      - `diskpart`
       - `Select vdisk file="<pathToVHD>"`
       - `expand vdisk maximum="<sizeInMegaBytes>"`
-3. Inicie sua distribuição WSL
-4. Verifique o WSL ciente de que ele pode expandir o tamanho do seu sistema de arquivos
-   - Execute estes comandos em sua distribuição WSL:
+5. Inicie o WSL distribuição
+6. Faça com que o WSL saiba que ele pode expandir o tamanho do seu sistema de arquivos
+   - Execute estes comandos em seu WSL distribuição:
       - `sudo mount -t devtmpfs none /dev`
       - `mount | grep ext4`
-         - Copie o nome desta entrada, que se parecerá com: / DES/sdXX (com o X que representa qualquer outro caractere)
+         - Copie o nome dessa entrada, que terá a seguinte aparência:/dev/sdXX (com o X representando qualquer outro caractere)
       - `sudo resize2fs /dev/sdXX`
-         - Certifique-se de usar o valor copiado anteriormente, e você talvez precise usar: `apt install resize2fs`.
+         - Certifique-se de usar o valor copiado anteriormente e talvez seja necessário usar: `apt install resize2fs`.
 
-## <a name="wsl-2-will-use-some-memory-on-startup"></a>2 WSL usará alguma memória na inicialização
-WSL 2 usa um utilitário leve de VM em um kernel do Linux real para fornecer o desempenho do sistema de arquivo grande e completa do sistema chamada compatibilidade enquanto ainda estar assim como a luz, rápida, integrada e ágeis como 1 WSL. Esse utilitário VM tem uma pegada pequena de memória e alocará memória de endereço Virtual feito na inicialização. Ele é configurado para iniciar com uma pequena proporção do total de memória.
+Observação: Em geral, não modifique, mova ou acesse os arquivos relacionados ao WSL localizados dentro da sua pasta AppData usando as ferramentas ou os editores do Windows. Isso pode fazer com que o distribuição do Linux fique corrompido.
 
-## <a name="cross-os-file-speed-will-be-slower-in-initial-preview-builds"></a>Entre o sistema operacional, velocidade do arquivo será mais lenta em compilações de visualização inicial
-Você observará que as velocidades de arquivo mais lentas em comparação com WSL 1 ao acessar arquivos do Windows de um aplicativo do Linux, ou acessar arquivos do Linux de um aplicativo do Windows. Isso é um resultado das alterações na arquitetura em WSL 2 e é algo que a equipe WSL ativamente está investigando nos como podemos melhorar essa experiência.
+## <a name="wsl-2-will-use-some-memory-on-startup"></a>WSL 2 usará alguma memória na inicialização
+O WSL 2 usa uma VM de utilitário leve em um kernel Linux real para fornecer excelente desempenho do sistema de arquivos e compatibilidade completa de chamada do sistema, enquanto ainda está sendo tão leve, rápido, integrado e responsivo como WSL 1. Essa VM do utilitário tem uma pequena superfície de memória e alocará memória com suporte de endereço virtual na inicialização. Ele é configurado para começar com uma pequena proporção da memória total.
+
+## <a name="cross-os-file-speed-will-be-slower-in-initial-preview-builds"></a>A velocidade do arquivo entre OS sistemas operacionais será mais lenta nas compilações iniciais de visualização
+Você perceberá velocidades de arquivo mais lentas em comparação com WSL 1 ao acessar arquivos do Windows de um aplicativo Linux ou acessar arquivos do Linux de um aplicativo do Windows. Isso é resultado das alterações de arquitetura no WSL 2 e é algo que a equipe de WSL está investigando ativamente sobre como podemos melhorar essa experiência.

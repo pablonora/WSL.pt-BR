@@ -1,74 +1,76 @@
 ---
-title: Instalar ou remover em atualização de aniversário do Windows 10 ou atualização para criadores
-description: Instruções de instalação e desinstalação para o herdado, a distribuição beta em atualização de aniversário do Windows 10 ou atualização para criadores
-keywords: BashOnWindows, bash, o wsl, o windows, o subsistema do windows para linux, windowssubsystem, ubuntu, debian, suse, windows 10, herdado, beta, instalar, remover, desinstalar, desinstalar, delete, preterido
+title: Instalar ou remover na atualização de aniversário do Windows 10 ou na atualização de criadores
+description: Instruções de instalação e desinstalação para a atualização da atualização de aniversário do Windows 10 ou do Creators
+keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, Debian, Suse, Windows 10, herdado, beta, instalação, remoção, desinstalação, desinstalação, exclusão, preterido
 author: taraj
 ms.author: taraj
 ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: fbb5bdc401a013b0853774cff6ad2dc84a36e412
-ms.sourcegitcommit: db69625e26bc141ea379a830790b329e51ed466b
+ms.openlocfilehash: 0d8fdabd61fadbfc58549a220ead23585a3d3656
+ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67040842"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67499267"
 ---
-# <a name="guide-to-install-or-uninstall-windows-subsystem-for-linux-on-windows-10-anniversary-update-and-creators-update"></a>Guia para instalar ou desinstalar o subsistema do Windows para Linux em atualização de aniversário do Windows 10 e atualização para criadores 
+# <a name="guide-to-install-or-uninstall-windows-subsystem-for-linux-on-windows-10-anniversary-update-and-creators-update"></a>Guia para instalar ou desinstalar o subsistema do Windows para Linux em atualização de aniversário do Windows 10 e o criador de atualizações 
 
-Se você estiver executando o Windows 10 Creators Update ou posterior, por favor [siga as instruções de instalação do Windows 10](install-win10.md).
+Se você estiver executando a atualização do Windows 10 para criadores ou posterior, [siga as instruções de instalação do Windows 10](install-win10.md).
 
-<strong><em><span style="color: #f28014">As instruções a seguir são para usuários que executam a atualização de aniversário do Windows 10 ou Windows 10 Creators Update</span></em></strong>
+<strong><em><span style="color: #f28014">As instruções a seguir são para usuários que executam a atualização de aniversário do Windows 10 ou a atualização do Windows 10 para criadores</span></em></strong>
 
-Antes do Windows 10 Fall Creators Update (versão 1709), o WSL foi lançado como um recurso beta e instalado uma única instância do Ubuntu, quando o "Bash no Ubuntu no Windows" (ou Bash.exe) foi executado pela primeira vez.
+Antes da atualização do Windows 10 outono Creators (versão 1709), o WSL foi lançado como um recurso beta e instalou uma única instância do Ubuntu quando o "bash no Ubuntu no Windows" (ou bash. exe) foi executado pela primeira vez.
 
-> Embora você possa usar o WSL em versões anteriores do Windows 10, essa versão beta "distribuição herdada" é considerada obsoleta. Recomendamos que você execute a versão mais recente do Windows 10 disponíveis. Cada nova versão do Windows 10 inclui várias centenas de correções e aprimoramentos no WSL sozinho, permitindo que o tornam cada vez mais ferramentas do Linux e aplicativos sejam executados corretamente no WSL.
+> Embora você possa usar o WSL em versões anteriores do Windows 10, essa versão beta "Legacy distribuição" agora é considerada obsoleta. É altamente recomendável que você execute a versão mais recente do Windows 10 disponível. Cada nova versão do Windows 10 inclui vários centenas de correções e melhorias no WSL sozinho, permitindo que mais ferramentas e aplicativos do Linux sejam executados corretamente no WSL.
 
-Se você não pode atualizar para o Fall Creators Update ou posterior, siga as etapas abaixo para habilitar e usar WSL:
+Se você não puder atualizar para a atualização de criadores de outono ou posterior, siga as etapas abaixo para habilitar e usar o WSL:
 
-1. Ativar o desenvolvedor modo para execução WSL em atualização de aniversário do Windows 10 ou atualização para criadores, você deve habilitar o modo de desenvolvedor:
+1. Ativar o modo de desenvolvedor para executar o WSL na atualização de aniversário do Windows 10 ou na atualização de criadores, você deve habilitar o modo de desenvolvedor:
 
-    Abra **as configurações** -> **atualização e segurança** -> **para desenvolvedores**
+    Abrir **configurações** -> **atualização e segurança** -> **para desenvolvedores**
 
-    Selecione o botão de opção de modo de desenvolvedor  
+    Selecione o botão de opção modo de desenvolvedor  
     ![Habilitar o modo de desenvolvedor](media/updateAndSecurity.png)
 
-    > O requisito para habilitar o modo de desenvolvedor foi [removido no Windows 10 Fall Creators Update](https://blogs.msdn.microsoft.com/commandline/2017/06/08/developer-mode-no-longer-required-for-windows-subsystem-for-linux/)
+    > A necessidade de habilitar o modo de desenvolvedor foi [removida na atualização dos criadores de outono do Windows 10](https://blogs.msdn.microsoft.com/commandline/2017/06/08/developer-mode-no-longer-required-for-windows-subsystem-for-linux/)
 
-1. Abra um prompt de comando.  Tipo `bash` e pressione enter
+1. Abra um prompt de comando.  Digite `bash` e pressione Enter
 
-    Na primeira vez que você executar o Bash no Ubuntu no Windows, você será solicitado a aceitar a licença da Canonical. Depois de aceita, WSL baixará e instalará a instância do Ubuntu em seu computador e um atalho "Bash no Ubuntu no Windows" será adicionado ao menu Iniciar.
+    Na primeira vez que você executar o bash no Ubuntu no Windows, será solicitado que você aceite a licença do Canonical. Depois de aceito, o WSL baixará e instalará a instância do Ubuntu em seu computador e um atalho "bash no Ubuntu no Windows" será adicionado ao menu iniciar.
 
-    ![Solicitar a instalação do Ubuntu](media/bashShellInstall.png)
+    ![Avisar para instalar o Ubuntu](media/bashShellInstall.png)
 
-    Na primeira vez que você executar o Bash no Ubuntu no Windows, você será solicitado a criar um nome de usuário do UNIX e uma senha. Siga as [novas instruções de instância de distribuição](initialize-distro.md) para concluir a instalação
+    Na primeira vez que você executar o bash no Ubuntu no Windows, será solicitado que você crie um nome de usuário e senha UNIX. Siga as [instruções da nova instância do distribuição](initialize-distro.md) para concluir a instalação
 
-1. Inicie um novo shell do Ubuntu, qualquer um:
-    * Executando `bash` em um prompt de comando
-    * Clicar o atalho "Bash no Ubuntu no Windows" do menu Iniciar
+1. Inicie um novo shell do Ubuntu por meio de:
+    * Executando `bash` a partir de um prompt de comando
+    * Clicando no atalho "bash no Ubuntu no Windows" do menu iniciar
 
     
-## <a name="uninstallingremoving-the-legacy-distro"></a>Desinstalando/remoção da distribuição herdada
-Se você atualizar para o Windows 10 Fall Creators Update de uma versão anterior do Windows 10 que você instalou o WSL, sua distribuição existente permanecerão intacta. No entanto, podemos FORTEMENTE encorajá-lo a instalar uma distribuição de nova entregues pelo Store urgente e migrar quaisquer arquivos necessários, dados, etc. de sua distribuição herdada para sua nova distribuição.
+## <a name="uninstallingremoving-the-legacy-distro"></a>Desinstalando/removendo o distribuição herdado
+Se você atualizar para a atualização dos criadores de outono do Windows 10 de uma versão anterior do Windows 10 na qual você instalou o WSL, seu distribuição existente permanecerá intacto. No entanto, é altamente recomendável que você instale uma nova loja entregue distribuição ASAP e migre todos os arquivos, dados, etc. necessários do seu distribuição herdado para o novo distribuição.
 
-Para remover da distribuição herdada do seu computador, execute o seguinte de uma instância de linha de comando ou o PowerShell:
+Para remover o distribuição herdado de seu computador, execute o seguinte em uma linha de comando ou instância do PowerShell:
 
 ```console
-lxrun /uninstall /full
+wsl --unregister Legacy
 ```
 
-### <a name="manually-deleting-the-legacy-distro"></a>A exclusão manual de distribuição herdada
-Se desejar, você poderá excluir manualmente sua instância herdada. Isso pode ser necessário se você encontrar problemas ao desinstalar usando a distribuição herdada `lxrun.exe`, ou estiver executando a atualização do Windows 10 primavera 2018 (ou posterior) que não são fornecidos com `lxrun.exe`.
+Se você não estiver usando o Windows versão 1903 ou superior, talvez seja necessário executar `wslconfig /u Legacy` ou `lxrun /uninstall /full` em vez disso. 
 
-Para forçar a exclusão de sua distribuição WSL herdada, exclua o `%localappdata%\lxss\` pasta (e todos os é um subdiretório de conteúdo) usando o Explorador de arquivos dos Windows ou da linha de comando:
+### <a name="manually-deleting-the-legacy-distro"></a>Excluindo manualmente o distribuição herdado
+Se desejar, você pode excluir manualmente sua instância herdada. Isso pode ser necessário se você encontrar problemas ao desinstalar o distribuição herdado usando `lxrun.exe`ou estiver executando a atualização do Windows 10 Spring 2018 (ou posterior) que não são fornecidos `lxrun.exe`com o.
+
+Para excluir de modo forçado seu distribuição WSL herdado, `%localappdata%\lxss\` exclua a pasta (e o seu subconteúdo) usando o Windows ' Explorador de arquivos ou a linha de comando:
 
 Usando o PowerShell
 ```powershell
 rm -Recurse $env:localappdata/lxss/
 ```
 
-Usando o Cmd:
+Usando o cmd:
 ```console
 DEL /S %localappdata%\lxss\
 ```
