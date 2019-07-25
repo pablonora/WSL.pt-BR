@@ -17,7 +17,7 @@ ms.locfileid: "67038066"
 ---
 # <a name="wsl-2"></a>WSL 2
 
-WSL 2 é uma nova versão da arquitetura no WSL que altera a forma como o Linux distribuições interage com o Windows. O WSL 2 tem os principais objetivos de aumentar o desempenho do sistema de arquivos e adicionar compatibilidade total com a chamada do sistema. Cada distribuição do Linux pode ser executado como um WSL 1 ou um distribuição WSL 2 e pode ser alternado entre a qualquer momento. O WSL 2 é uma importante revisão da arquitetura subjacente e usa a tecnologia de virtualização e um kernel do Linux para habilitar seus novos recursos.
+O WSL 2 é uma nova versão da arquitetura no WSL que altera como as distribuições Linux interagem com o Windows. O WSL 2 tem os principais objetivos de aumentar o desempenho do sistema de arquivos e adicionar compatibilidade total com a chamada do sistema. Cada distribuição do Linux pode ser executado como um WSL 1 ou um distribuição WSL 2 e pode ser alternado entre a qualquer momento. O WSL 2 é uma importante revisão da arquitetura subjacente e usa a tecnologia de virtualização e um kernel do Linux para habilitar seus novos recursos.
 
 Esta seção WSL 2 apresenta os seguintes tópicos:
 
