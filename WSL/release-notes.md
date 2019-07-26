@@ -7,15 +7,49 @@ ms.date: 07/31/2017
 ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
-ms.openlocfilehash: e2d9d5fc70c173e9b516ab7af01599b623b40b39
-ms.sourcegitcommit: cd239efc5c7c25ffbe5de25b2438d44181a838a9
+ms.openlocfilehash: d2d91db24c12fc674d695ccffc79eb5781a0721d
+ms.sourcegitcommit: be00abbb170aa569e008b804f15949344b378999
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67042428"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501581"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas de versão do subsistema Windows para Linux
 
+
+## <a name="build-18947"></a>Build 18947
+Para obter informações gerais do Windows sobre o Build 18947 visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/07/26/announcing-windows-10-insider-preview-build-18947/).
+
+### <a name="wsl"></a>WSL
+* [WSL2] Permitir que Soquetes TCP de escuta em WSL2 sejam acessíveis a partir do host usando localhost: Port
+* [WSL2] Correções para falhas de instalação/conversão e diagnóstico adicional para rastrear problemas futuros [GH 4105] 
+* [WSL2] Melhorar o diagnóstico de problemas de rede WSL2
+* [WSL2] Atualizar a versão do kernel para 4.19.55
+* [WSL2] Atualizar o kernel com as opções de configuração necessárias para o Docker [GH 4165]
+* [WSL2] Aumente o número de CPUs atribuídas à VM do utilitário leve para ser a mesma do host (anteriormente limitada em 8 por CONFIG_NR_CPUS na configuração do kernel) [GH 4137]
+* [WSL2] Criar um arquivo de permuta para a VM leve do WSL2
+* [WSL2] Permitir que as montagens de usuário fiquem visíveis \\por meio\\ \\de WSL $ distribuição (por exemplo, sshfs) [GH 4172]
+* [WSL2] Melhorar o desempenho do sistema de arquivos 9P
+* [WSL2] Garantir que a ACL do VHD não aumente o limite [GH 4126]
+* [WSL2] Atualizar a configuração do kernel para dar suporte a squashfs e xt_conntrack [GH 4107, 4123]
+* [WSL2] Correção para interoperabilidade. opção/etc/WSL.conf habilitada [GH 4140]
+* [WSL2] Retornar ENOTSUP se o sistema de arquivos não der suporte a EAs
+* [WSL2] Corrigir a parada CopyFile com \\ \\WSL $
+* Mude o umask padrão para 0022 e adicione a configuração FileSystem. umask a/etc/WSL.conf
+* Corrigir o wslpath para resolver corretamente o symlinks, isso foi regressivo no 19h1 [GH 4078]
+* Introduza o arquivo%\.USERPROFILE% wslconfig para ajustar as configurações de WSL2
+```
+[wsl2]
+kernel=<path>              # An absolute Windows path to a custom Linux kernel.
+memory=<size>              # How much memory to assign to the WSL2 VM.
+processors=<number>        # How many processors to assign to the WSL2 VM.
+swap=<size>                # How much swap space to add to the WSL2 VM. 0 for no swap file.
+swapFile=<path>            # An absolute Windows path to the swap vhd.
+localhostForwarding=<bool> # Boolean specifying if ports bound to wildcard or localhost in the WSL2 VM should be connectable from the host via localhost:port (default true).
+
+# <path> entries must be absolute Windows paths with escaped backslashes, for example C:\\Users\\Ben\\kernel
+# <size> entries must be size followed by unit, for example 8GB or 512MB
+```
 
 ## <a name="build-18917"></a>Build 18917
 Para obter informações gerais do Windows sobre o Build 18917 visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/06/12/announcing-windows-10-insider-preview-build-18917/).
