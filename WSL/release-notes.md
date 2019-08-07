@@ -7,12 +7,12 @@ ms.date: 07/31/2017
 ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
-ms.openlocfilehash: c262ddb359507c1654f0089050bfd15ec16402f9
-ms.sourcegitcommit: 44da0f435986598e6067e36ddca9369d27064793
+ms.openlocfilehash: b03d837e0ab3a371fd676e37b5c65a173824f84c
+ms.sourcegitcommit: 9175a28f04573f25338358faf61d73b1a5d1ade6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68523789"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68832120"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas de versão do subsistema Windows para Linux
 
@@ -37,7 +37,7 @@ Para obter informações gerais do Windows sobre o Build 18945 visite o [blog do
 * [WSL2] Corrigir a parada CopyFile com \\ \\WSL $
 * Mude o umask padrão para 0022 e adicione a configuração FileSystem. umask a/etc/WSL.conf
 * Corrigir o wslpath para resolver corretamente o symlinks, isso foi regressivo no 19h1 [GH 4078]
-* Introduza o arquivo%\.USERPROFILE% wslconfig para ajustar as configurações de WSL2
+* Introduza o arquivo%\\UserProfile%. wslconfig para ajustar as configurações de WSL2
 ```
 [wsl2]
 kernel=<path>              # An absolute Windows path to a custom Linux kernel.
@@ -506,7 +506,7 @@ Ao iniciar o WSL pela primeira vez após a atualização para essa compilação,
 #### <a name="wsl-is-more-configurable-with-wslconf"></a>WSL é mais configurável com WSL. conf
 Adicionamos um método para configurar automaticamente determinadas funcionalidades no WSL que serão aplicadas toda vez que você iniciar o subsistema. Isso inclui opções de montagem automática e configuração de rede. Saiba mais sobre isso em nossa postagem no blog em: https://aka.ms/wslconf
 
-#### <a name="afunix-allows-socket-connections-between-linux-processes-on-wsl-and-windows-native-processes"></a>AF_UNIX permite conexões de soquete entre processos do Linux em processos nativos do WSL e do Windows
+#### <a name="af_unix-allows-socket-connections-between-linux-processes-on-wsl-and-windows-native-processes"></a>AF_UNIX permite conexões de soquete entre processos do Linux em processos nativos do WSL e do Windows
 Os aplicativos WSL e Windows agora podem se comunicar entre si por meio de soquetes UNIX. Imagine que você deseja executar um serviço no Windows e disponibilizá-lo para aplicativos do Windows e do WSL. Agora, isso é possível com os soquetes do UNIX. Leia mais em nossa postagem no blog em https://aka.ms/afunixinterop
 
 ### <a name="wsl"></a>WSL
