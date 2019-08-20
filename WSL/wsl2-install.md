@@ -8,22 +8,21 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 3ad180ecc9deaa1566e9870700b26f82f631c7f1
-ms.sourcegitcommit: 9ad7a54668f39677e9660186e4f5172ea2597e2b
+ms.openlocfilehash: 0220d642854f9fc7fe2a85357ad2e70e0b888ed8
+ms.sourcegitcommit: f878e88921d36e01e32624a9c60ee9de3d706a2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246865"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620096"
 ---
 # <a name="installation-instructions-for-wsl-2"></a>Instruções de instalação do WSL 2
 
 Para instalar e começar a usar o WSL 2, conclua as etapas a seguir:
 
+- Verifique se você tem o WSL instalado (você pode encontrar instruções para fazer isso [aqui](./install-win10.md)) e se está executando o Windows 10 Build 18917 ou superior
 - Habilite o componente opcional "Plataforma de máquina virtual"
 - Defina uma distribuição para ser apoiada pelo WSL 2 usando a linha de comando
 - Verifique quais versões do WSL suas distribuições estão usando
-
-Observe que será necessário estar executando o Windows 10, Build 18917 ou mais recente para usar o WSL 2 e já ter o WSL instalado (instruções para fazer isso podem ser encontradas [aqui](./install-win10.md)). 
 
 ## <a name="enable-the-virtual-machine-platform-optional-component"></a>Habilite o componente opcional "Plataforma de máquina virtual"
 
