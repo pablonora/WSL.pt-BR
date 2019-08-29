@@ -8,12 +8,13 @@ ms.date: 07/23/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 82b5c0ccba7a444f13f186a2e33f210ac2cf48da
-ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
+ms.localizationpriority: high
+ms.openlocfilehash: 218e3e652d0849f944e8aaceef3fb954294222be
+ms.sourcegitcommit: 7af6b7a3f8cfa66cb25115bc26f44aa64ef22811
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499288"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122774"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Guia de instalação do subsistema do Windows para Linux para Windows 10
 
@@ -70,10 +71,10 @@ Abaixo estão os erros relacionados e as correções sugeridas. Consulte a [pág
 
 * **Falha na instalação com o erro 0x80070003**
     * O subsistema do Windows para Linux é executado somente na unidade do sistema (normalmente, `C:` essa é a unidade). Verifique se os distribuições estão armazenados na unidade do sistema:  
-    * Abra **configurações** ->  armazenamento -> mais configurações de armazenamento: ** Alterar onde o novo conteúdo é**salvo
+    * Abra **configurações** -> armazenamento -> mais configurações de armazenamento: ** Alterar onde o novo conteúdo é**salvo
     ![imagem das configurações do sistema para instalar aplicativos na unidade C:](media/AppStorage.png)
     
     
  * **WslRegisterDistribution falhou com o erro 0x8007019e**   
   * O componente opcional do subsistema do Windows para Linux não está habilitado: 
-   * Abra o **painel** -> de controle**programas e recursos** -> * * ativar ou desativar o recurso do Windows * *-> verificar o subsistema **do Windows para Linux** ou usar o cmdlet do PowerShell mencionado no início deste artigo.
+   * Abra **o painel** -> de controle**programas e recursos** -> **Ativar ou desativar o recurso do Windows** -> verificar o subsistema **do Windows para Linux** ou usar o cmdlet do PowerShell mencionado no início deste artigo.
