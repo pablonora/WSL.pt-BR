@@ -2,25 +2,25 @@
 title: Instalar o WSL 2
 description: Instruções de instalação do WSL 2
 keywords: BashOnWindows, Bash, WSL, WSL 2, Windows, subsistema do Windows para Linux, subsistema do Windows, Ubuntu, Debian, Suse, Windows 10, instalar
-author: mscraigloewen
-ms.author: mscraigloewen
+author: craigloewen-msft
+ms.author: crloewen
 ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 6b7ed18480ea88200d00b67a3a6dc859947397db
-ms.sourcegitcommit: 6f10b40f6199538c8eedf6301f02b7d70ead3fe7
+ms.openlocfilehash: 4ae5b8452ae2aec679c2f0450dc48644b77fc1c9
+ms.sourcegitcommit: ed5cf72d5ceb92edd50cf9260ac31fd4d95a02c8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70117837"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71020953"
 ---
 # <a name="installation-instructions-for-wsl-2"></a>Instruções de instalação do WSL 2
 
 Para instalar e começar a usar o WSL 2, conclua as etapas a seguir:
 
 - Verifique se você tem o WSL instalado (você pode encontrar instruções para fazer isso [aqui](./install-win10.md)) e se está executando o Windows 10 Build 18917 ou superior
-   - Para verificar se você está usando o Build 18917 ou superior, ingresse [no programa Windows](https://insider.windows.com/en-us/) Insider e selecione o anel "rápido". 
+   - Para verificar se você está usando o Build 18917 ou superior, ingresse [no programa Windows Insider](https://insider.windows.com/en-us/) e selecione o anel "rápido". 
    - Você pode verificar a versão do Windows abrindo o prompt de comando e `ver` executando o comando.
 - Habilite o componente opcional "Plataforma de máquina virtual"
 - Defina uma distribuição para ser apoiada pelo WSL 2 usando a linha de comando
