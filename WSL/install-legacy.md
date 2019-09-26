@@ -2,18 +2,16 @@
 title: Instalar ou remover na atualização de aniversário do Windows 10 ou na atualização de criadores
 description: Instruções de instalação e desinstalação para a atualização da atualização de aniversário do Windows 10 ou do Creators
 keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, Debian, Suse, Windows 10, herdado, beta, instalação, remoção, desinstalação, desinstalação, exclusão, preterido
-author: taraj
-ms.author: taraj
 ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 0d8fdabd61fadbfc58549a220ead23585a3d3656
-ms.sourcegitcommit: 5844c6dbf692780b86b30bd65e11820fff43b3bd
+ms.openlocfilehash: 416bed3ed3a0470da2eb5e6beb75e73eb6836200
+ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499267"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269767"
 ---
 # <a name="guide-to-install-or-uninstall-windows-subsystem-for-linux-on-windows-10-anniversary-update-and-creators-update"></a>Guia para instalar ou desinstalar o subsistema do Windows para Linux em atualização de aniversário do Windows 10 e o criador de atualizações 
 

@@ -2,18 +2,16 @@
 title: Baixar manualmente o subsistema do Windows para Linux (WSL) distribuições
 description: Instruções sobre como baixar manualmente o subsistema do Windows para distribuições do Linux.
 keywords: BashOnWindows, Bash, WSL, Windows, subsistema do Windows para Linux, WSL, subsistema do Windows, distribuição, Ubuntu, openSUSE, SLES, Debian, Kali
-author: taraj
-ms.author: taraj
 ms.date: 07/24/2018
 ms.topic: article
 ms.assetid: 9281ffa2-4fa9-4078-bf6f-b51c967617e3
 ms.custom: seodec18
-ms.openlocfilehash: ded81ec9672d75203e0d289c551c86cd90bde606
-ms.sourcegitcommit: 9175a28f04573f25338358faf61d73b1a5d1ade6
+ms.openlocfilehash: df47e656cf83e0b13aa8eb3f210e010d6a85bfd8
+ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68832099"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269789"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Baixar manualmente os pacotes do subsistema do Windows para Linux distribuição
 
@@ -35,7 +33,7 @@ Se o aplicativo Microsoft Store não estiver disponível, você poderá baixar e
 * [SUSE Linux Enterprise Server 12](https://aka.ms/wsl-sles-12)
 * [Fedora Remix para WSL](https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/)
 
-Isso fará com que `<distro>.appx` os pacotes sejam baixados em uma pasta de sua escolha. Siga as [instruções de instalação](#Installing-your-distro) para instalar suas distribuiçãos baixadas.
+Isso fará com que `<distro>.appx` os pacotes sejam baixados em uma pasta de sua escolha. Siga as [instruções de instalação](#installing-your-distro) para instalar suas distribuiçãos baixadas.
 
 ## <a name="downloading-distros-via-the-command-line"></a>Baixando o distribuições por meio da linha de comando
 Se preferir, você também pode baixar seus distribuição (s) preferenciais por meio da linha de comando:
@@ -51,7 +49,7 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 > Se o download estiver demorando muito, desative a barra de progresso definindo`$ProgressPreference = 'SilentlyContinue'`
 
 ### <a name="download-using-curl"></a>Baixar usando ondulação
-A atualização do Windows 10 Spring 2018 (ou posterior) inclui o [Utilitário de linha de comando](https://curl.haxx.se/) de ondulação popular com o qual você pode invocar solicitações da Web (ou seja, comandos http Get, post, put, etc.) da linha de comando. Você pode usar `curl.exe` o para baixar o distribuições acima:
+A atualização do Windows 10 Spring 2018 (ou posterior) inclui o [Utilitário de linha de comando de ondulação](https://curl.haxx.se/) popular com o qual você pode invocar solicitações da Web (ou seja, comandos http Get, post, put, etc.) da linha de comando. Você pode usar `curl.exe` o para baixar o distribuições acima:
 
 ```console
 curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
