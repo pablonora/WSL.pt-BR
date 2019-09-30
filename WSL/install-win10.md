@@ -1,7 +1,7 @@
 ---
-title: Instalar o subsistema do Windows para Linux (WSL) no Windows 10
-description: Instruções de instalação para o subsistema do Windows para Linux no Windows 10.
-keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu, Debian, Suse, Windows 10, instalar
+title: Instalar o WSL (Subsistema Windows para Linux) no Windows 10
+description: Instruções de instalação para o Subsistema Windows para Linux no Windows 10.
+keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, debian, suse, windows 10, install
 author: taraj
 ms.author: taraj
 ms.date: 07/23/2018
@@ -11,42 +11,42 @@ ms.custom: seodec18
 ms.localizationpriority: high
 ms.openlocfilehash: 218e3e652d0849f944e8aaceef3fb954294222be
 ms.sourcegitcommit: 7af6b7a3f8cfa66cb25115bc26f44aa64ef22811
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/28/2019
 ms.locfileid: "70122774"
 ---
-# <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Guia de instalação do subsistema do Windows para Linux para Windows 10
+# <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Guia de instalação do Subsistema Windows para Linux para Windows 10
 
-## <a name="install-the-windows-subsystem-for-linux"></a>Instalar o subsistema do Windows para Linux
+## <a name="install-the-windows-subsystem-for-linux"></a>Instalar o Subsistema Windows para Linux
 
-Antes de instalar qualquer distribuições do Linux para WSL, você deve garantir que o recurso opcional "subsistema do Windows para Linux" esteja habilitado:
+Antes de instalar distribuições do Linux para WSL, você deve garantir que o recurso opcional "Subsistema Windows para Linux" esteja habilitado:
 
 1. Abra o PowerShell como administrador e execute:
     ```powershell
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
     ```
 
-2. Reinicie o computador quando solicitado.
+2. Reinicie seu computador quando solicitado.
 
-## <a name="install-your-linux-distribution-of-choice"></a>Instale sua distribuição do Linux de sua escolha
-Para baixar e instalar seus distribuição (s) preferenciais, você tem três opções:
-1. Baixar e instalar do Microsoft Store (veja abaixo)
-1. Baixar e instalar a partir da linha de comando/script ([Leia as instruções de instalação manual](install-manual.md))
-1. Baixe e descompacte e instale manualmente (para Windows Server- [instruções aqui](install-on-server.md))
+## <a name="install-your-linux-distribution-of-choice"></a>Instale a distribuição do Linux de sua escolha
+Para baixar e instalar suas distribuições preferenciais, há três opções:
+1. Baixe e instale usando a Microsoft Store (consulte abaixo)
+1. Baixe e instale usando a linha de comando/script ([leia as instruções de instalação no manual](install-manual.md))
+1. Baixe e descompacte e instale manualmente (for Windows Server – [instruções aqui](install-on-server.md))
 
-### <a name="windows-10-fall-creators-update-and-later-install-from-the-microsoft-store"></a>Atualização dos criadores de outono do Windows 10 e posterior: Instalar do Microsoft Store
+### <a name="windows-10-fall-creators-update-and-later-install-from-the-microsoft-store"></a>Windows 10 Fall Creators Update e posteriores: Instale usando a Microsoft Store
 
-> Esta seção destina-se ao Windows Build 16215 ou posterior.  Siga estas etapas para [verificar sua compilação](troubleshooting.md#check-your-build-number). 
+> Esta seção destina-se ao Windows build 16215 ou posterior.  Siga estas etapas para [verificar seu build](troubleshooting.md#check-your-build-number). 
 
-1. Abra o Microsoft Store e escolha sua distribuição do Linux favorita.
+1. Abra a Microsoft Store e escolha sua distribuição do Linux favorita.
 
-    ![Exibição de distribuições do Linux no Microsoft Store](media/store.png)
+    ![Exibição das distribuições do Linux na Microsoft Store](media/store.png)
 
     Os links a seguir abrirão a página da Microsoft Store para cada distribuição:
 
-    * [Ubuntu 16, 4 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9)
-    * [Ubuntu 18, 4 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+    * [Ubuntu 16.04 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9)
+    * [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
     * [OpenSUSE Leap 15](https://www.microsoft.com/store/apps/9n1tb6fpvj8c)
     * [OpenSUSE Leap 42](https://www.microsoft.com/store/apps/9njvjts82tjx)
     * [SUSE Linux Enterprise Server 12](https://www.microsoft.com/store/apps/9p32mwbh6cns)
@@ -58,23 +58,23 @@ Para baixar e instalar seus distribuição (s) preferenciais, você tem três op
     * [Pengwin Enterprise](https://www.microsoft.com/store/apps/9N8LP0X93VCP)
     * [Alpine WSL](https://www.microsoft.com/store/apps/9p804crf0395)
 
-1. Na página do distribuição, selecione "obter"
+1. Na página da distribuição, selecione "Obter"
 
-    ![Exibição de distribuições do Linux na Microsoft Store](media/UbuntuStore.png)
+    ![Exibição das distribuições do Linux na Microsoft Store](media/UbuntuStore.png)
 
-## <a name="complete-initialization-of-your-distro"></a>Concluir a inicialização do seu distribuição
-Agora que o distribuição do Linux está instalado, você deve [inicializar a nova instância do distribuição](initialize-distro.md) uma vez, antes que possa ser usada.
+## <a name="complete-initialization-of-your-distro"></a>Conclua a inicialização de sua distribuição
+Agora que a distribuição do Linux está instalada, você deve [inicializar a nova instância de distribuição](initialize-distro.md) uma vez, antes que possa ser usada.
 
 ## <a name="troubleshooting"></a>Solução de problemas: 
 
-Abaixo estão os erros relacionados e as correções sugeridas. Consulte a [página de solução de problemas do WSL](troubleshooting.md) para obter outros erros comuns e suas soluções.
+Veja abaixo erros relacionados e correções sugeridas. Consulte a [página de solução de problemas do WSL](troubleshooting.md) para ver outros erros comuns e suas soluções.
 
 * **Falha na instalação com o erro 0x80070003**
-    * O subsistema do Windows para Linux é executado somente na unidade do sistema (normalmente, `C:` essa é a unidade). Verifique se os distribuições estão armazenados na unidade do sistema:  
-    * Abra **configurações** -> armazenamento -> mais configurações de armazenamento: ** Alterar onde o novo conteúdo é**salvo
-    ![imagem das configurações do sistema para instalar aplicativos na unidade C:](media/AppStorage.png)
+    * O Subsistema Windows para Linux é executado somente na unidade do sistema (normalmente, a unidade `C:`). Verifique se as distribuições estão armazenadas na unidade do sistema:  
+    * Abra **Configurações** -> **Armazenamento** -> **Mais configurações de armazenamento: Altere onde o novo conteúdo é salvo**
+    ![Imagem das configurações do sistema para instalar aplicativos na unidade C:](media/AppStorage.png)
     
     
  * **WslRegisterDistribution falhou com o erro 0x8007019e**   
-  * O componente opcional do subsistema do Windows para Linux não está habilitado: 
-   * Abra **o painel** -> de controle**programas e recursos** -> **Ativar ou desativar o recurso do Windows** -> verificar o subsistema **do Windows para Linux** ou usar o cmdlet do PowerShell mencionado no início deste artigo.
+  * O componente opcional do Subsistema Windows para Linux não está habilitado: 
+   * Abra **Painel de Controle** -> **Programas e Recursos** -> **Ativar ou desativar recursos do Windows** -> marque **Subsistema Windows para Linux** ou use o cmdlet do PowerShell mencionado no início deste artigo.

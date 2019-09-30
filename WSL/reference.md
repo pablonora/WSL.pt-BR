@@ -1,7 +1,7 @@
 ---
-title: Referência de comando do subsistema do Windows para Linux
-description: Lista de comandos que gerenciam o subsistema do Windows para Linux
-keywords: BashOnWindows, Bash, WSL, Windows, subsistema Windows para Linux, windowssubsystem, Ubuntu
+title: Subsistema Windows para referência de comandos do Linux
+description: Lista de comandos que gerenciam o Subsistema Windows para Linux
+keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
 author: scooley
 ms.author: scooley
 ms.date: 07/31/2017
@@ -11,138 +11,138 @@ ms.custom: seodec18
 ms.localizationpriority: high
 ms.openlocfilehash: edd4b8216a25f519e36b8b99b626b0a4315f6039
 ms.sourcegitcommit: 7af6b7a3f8cfa66cb25115bc26f44aa64ef22811
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/28/2019
 ms.locfileid: "70122746"
 ---
-# <a name="command-reference-for-windows-subsystem-for-linux"></a>Referência de comando para o subsistema do Windows para Linux
+# <a name="command-reference-for-windows-subsystem-for-linux"></a>Referência de comandos para o Subsistema Windows para Linux
 
-A melhor maneira de interagir com o subsistema do Windows para Linux é usar o `wsl.exe` comando. 
+A melhor maneira de interagir com o Subsistema Windows para Linux é usar o comando `wsl.exe`. 
 
 
 ## `wsl.exe`
 
-Abaixo está uma lista que contém todas as opções `wsl.exe` ao usar o da versão 1903 do Windows.
+Abaixo está uma lista que contém todas as opções ao usar o `wsl.exe` da versão 1903 do Windows.
 
-Usando`wsl [Argument] [Options...] [CommandLine]`
+Usando: `wsl [Argument] [Options...] [CommandLine]`
 
 ### <a name="arguments-for-running-linux-binaries"></a>Argumentos para executar binários do Linux
 
 * **Sem argumentos**
 
-  Se nenhuma linha de comando for fornecida, o WSL. exe iniciará o shell padrão.
+  Se nenhuma linha de comando for fornecida, o wsl.exe iniciará o shell padrão.
 
-* **--Exec,-e \<linha de comando >**
+* **--exec, -e \<CommandLine>**
   
-  Execute o comando especificado sem usar o Shell do Linux padrão.
+  Execute o comando especificado sem usar o shell do Linux padrão.
 
 * **--**
   
-  Passe a linha de comando restante como está.
+  Passe a linha de comando restante do modo como ela está.
 
 Os comandos acima também aceitam as seguintes opções:
 
-* **--Distribution,-d \<distribuição >**
+* **--distribution, -d \<Distro>**
 
   Execute a distribuição especificada.
 
-* **--User,-u \<nome de usuário >**
+* **--user, -u \<UserName>**
 
-  Executar como o usuário especificado.
+  Execute como o usuário especificado.
 
-### <a name="arguments-for-managing-windows-subsystem-for-linux"></a>Argumentos para gerenciar o subsistema do Windows para Linux
+### <a name="arguments-for-managing-windows-subsystem-for-linux"></a>Argumentos para gerenciar o Subsistema Windows para Linux
 
-* **--exportar \<distribuição > \<nome do arquivo >**
+* **--export \<Distro> \<FileName>**
   
-  Exporta a distribuição para um arquivo tar. O nome de arquivo pode ser-para saída padrão.
+  Exporta a distribuição para um arquivo tar. O nome de arquivo pode ser "-" para a saída padrão.
 
-* **--Import \<distribuição > \<InstallLocation > \<filename >**
+* **--import \<Distro> \<InstallLocation> \<FileName>**
   
-  Importa o arquivo tar especificado como uma nova distribuição. O nome de arquivo pode ser-para entrada padrão.
+  Importa o arquivo tar especificado como uma nova distribuição. O nome de arquivo pode ser "-" para a entrada padrão.
 
-* **--List,-l [opções]**
+* **--list, -l [Options]**
   
-  Lista distribuições.
+  Lista as distribuições.
 
   Opções:
-  * **--todos**
+  * **--all**
       
-    Listar todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
+    Liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
 
-  * **--executando**
+  * **--running**
       
-    Lista somente as distribuições que estão em execução no momento.
+    Liste somente as distribuições que estão em execução no momento.
 
-* **--Set-Default,-s \<distribuição >**
+* **--set-default, -s \<Distro>**
   
   Define a distribuição como o padrão.
 
-* **--Terminate,-t \<distribuição >**
+* **--terminate, -t \<Distro>**
   
-  Encerra a distribuição especificada.
+  Termina a distribuição especificada.
 
-* **--cancelar registro \<de distribuição >**
+* **--unregister \<Distro>**
   
   Cancela o registro da distribuição.
    
-* **--ajuda** Exibir informações de uso.
+* **--help** Exiba as informações de uso.
 
 ## <a name="additional-commands"></a>Comandos adicionais
 
-Também há comandos históricos para interagir com o subsistema do Windows para Linux. Sua funcionalidade é englobada no `wsl.exe`, mas ainda estão disponíveis para uso. 
+Também há comandos históricos para interagir com o Subsistema Windows para Linux. Sua funcionalidade é englobada no `wsl.exe`, mas ainda estão disponíveis para uso. 
 
 ### `wslconfig.exe`
 
-Esse comando permite que você configure a distribuição do WSL. Abaixo está uma lista de suas opções.
+Esse comando permite que você configure a distribuição do WSL. Veja abaixo uma lista das opções.
 
-Usando`wslconfig [Argument] [Options...]`
+Usando: `wslconfig [Argument] [Options...]`
 
-#### <a name="arguments"></a>Argumentos
-* **/l,/List [opções]**
+#### <a name="arguments"></a>Arguments
+* **/l, /list [Options]**
   
   Lista as distribuições registradas.
   
   Opções:
-    * **/All**
+    * **/all**
     
-      Opcionalmente, liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
+      Como opção, liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
 
     * **/running**
       
-      Lista somente as distribuições que estão em execução no momento.
+      Liste somente as distribuições que estão em execução no momento.
 
-* **/s,/SetDefault \<distribuição >**
+* **/s, /setdefault \<Distro>**
   
   Define a distribuição como o padrão.
 
-* **/t,/Terminate \<distribuição >**
+* **/t, /terminate \<Distro>**
   
-  Encerra a distribuição.
+  Termina a distribuição.
 
-* **/u,/Unregister \<distribuição >**
+* **/u, /unregister \<Distro>**
   
   Cancela o registro da distribuição.
    
-* **> \</upgrade distribuição**
+* **/upgrade \<Distro>**
   
   Atualiza a distribuição para o formato do sistema de arquivos WslFs.
 
 ### `bash.exe`
 
-Esse comando é usado para iniciar um shell bash. Abaixo estão as opções que você pode usar com este comando.
+Esse comando é usado para iniciar um shell Bash. Abaixo estão as opções que você pode usar com este comando.
 
-Usando`bash [Options...]`
+Usando: `bash [Options...]`
 
 * **Nenhuma opção fornecida**
   
-  Inicia o shell bash no diretório atual. Se o shell bash não for instalado automaticamente`lxrun /install`
+  Inicia o shell Bash no diretório atual. Se o shell Bash não estiver instalado automaticamente, ele executará o `lxrun /install`
 
 * **~**
   
-  `bash ~`inicia o shell bash no diretório base do usuário.  Semelhante à execução `cd ~`.
+  `bash ~` inicia o shell Bash no diretório base do usuário.  Semelhante à execução de `cd ~`.
 
-* **-c "\<> de comando"**
+* **-c "\<command>"**
   
   Executa o comando, imprime a saída e sai de volta para o prompt de comando do Windows.
     
@@ -150,14 +150,14 @@ Usando`bash [Options...]`
 
 ## <a name="deprecated-commands"></a>Comandos preteridos
 
-O `lxrun.exe` foi o primeiro comando usado para instalar e gerenciar o subsistema do Windows para Linux. Ele foi preterido a partir do Windows 10 1803 e posterior.
+O `lxrun.exe` foi o primeiro comando usado para instalar e gerenciar o Subsistema Windows para Linux. Ele foi preterido no Windows 10 1803 e versões posteriores.
 
-O comando `lxrun.exe` pode ser usado para interagir diretamente com o subsistema do [Windows para Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#what-windows-subsystem-for-linux-wsl-) .  Esses comandos são instalados no `\Windows\System32` diretório e podem ser executados em um prompt de comando do Windows ou no PowerShell.
+O comando `lxrun.exe` pode ser usado para interagir diretamente com o [WSL (Subsistema Windows para Linux)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#what-windows-subsystem-for-linux-wsl-).  Esses comandos são instalados no diretório `\Windows\System32` e podem ser executados em um prompt de comando do Windows ou no PowerShell.
 
 | Comando                     | Descrição                     |
 |:----------------------------|:---------------------------|
-| `lxrun`                     | O comando lxrun é usado para gerenciar a instância WSL. |
+| `lxrun`                     | O comando lxrun é usado para gerenciar a instância do WSL. |
 | `lxrun /install`            | Inicia o processo de download e instalação. <br/> **/y** pode ser adicionado para ignorar todos os prompts.  O prompt de confirmação é automaticamente aceito e o usuário padrão é definido como raiz.          |
-| `lxrun /uninstall`          | Desinstala e exclui a imagem do Ubuntu.  Por padrão, isso não remove o diretório inicial do Ubuntu do usuário. <br/> **/y** pode ser adicionado para aceitar automaticamente o prompt de confirmação <br/>**/Full** desinstala e exclui o diretório inicial do Ubuntu do usuário         |
-| `lxrun /setdefaultuser <userName>`     | Define o bash padrão no usuário do Ubuntu. Solicitará uma senha se o usuário especificado não existir.  Para obter mais informações, https://aka.ms/wslusers visite:. <br/> **/y** Ignora promping para a senha.  O usuário será criado sem uma senha.|
+| `lxrun /uninstall`          | Desinstala e exclui a imagem do Ubuntu.  Por padrão, isso não remove o diretório base do Ubuntu do usuário. <br/> **/y** pode ser adicionado para aceitar automaticamente o prompt de confirmação <br/>**/full** desinstala e exclui o diretório base do Ubuntu do usuário         |
+| `lxrun /setdefaultuser <userName>`     | Define o Bash padrão no usuário do Ubuntu. Solicitará uma senha se o usuário especificado não existir.  Para obter mais informações, confira https://aka.ms/wslusers. <br/> **/y** ignora a solicitação de senha.  O usuário será criado sem uma senha.|
 | `lxrun /update`            | Atualiza o índice do pacote do subsistema          |
