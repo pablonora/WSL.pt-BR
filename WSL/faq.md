@@ -2,18 +2,16 @@
 title: Perguntas frequentes (FAQ)
 description: Perguntas frequentes sobre o Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, faq
-author: taraj
-ms.author: taraj
 ms.date: 9/4/2018
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: e3376f8dff83262577bc52fb3ac368b70b21d922
-ms.sourcegitcommit: 7af6b7a3f8cfa66cb25115bc26f44aa64ef22811
+ms.openlocfilehash: 78d0dc3db6f0c173cec64c9830df981568320717
+ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122761"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269738"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o Subsistema Windows para Linux
 
