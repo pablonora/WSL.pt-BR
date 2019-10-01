@@ -6,18 +6,20 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: af70bf567cd548d0ca84bbe535003052ec49256b
-ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
+ms.openlocfilehash: 386b6793f00300bc9dabd1613cfd69b19d222f0b
+ms.sourcegitcommit: eb7b572388c6bddbf6e8ad8d01927660fe66aecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269580"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692463"
 ---
 # <a name="installation-instructions-for-wsl-2"></a>Instruções de instalação do WSL 2
 
 Para instalar e começar a usar o WSL 2, conclua as etapas a seguir:
 
-- Verifique se você tem o WSL instalado (você pode encontrar instruções para fazer isso [aqui](./install-win10.md)) e se está executando o Windows 10 Build 18917 ou superior
+> O WSL 2 só está disponível no Windows 10 Builds 18917 ou superior
+
+- Verifique se você tem o WSL instalado (você pode encontrar instruções para fazer isso [aqui](./install-win10.md)) e se está executando o Windows 10 **Build 18917** ou superior
    - Para verificar se você está usando o Build 18917 ou superior, ingresse [no programa Windows Insider](https://insider.windows.com/en-us/) e selecione o anel "rápido". 
    - Você pode verificar a versão do Windows abrindo o prompt de comando e `ver` executando o comando.
 - Habilite o componente opcional "Plataforma de máquina virtual"
@@ -51,7 +53,7 @@ Isso fará com que qualquer nova distribuição instalada seja inicializada como
 
 ## <a name="finish-with-verifying-what-versions-of-wsl-your-distro-are-using"></a>Termine verificando quais versões do WSL suas distribuições estão usando
 
-Para verificar quais versões do WSL cada distribuição está usando, execute o seguinte comando:
+Para verificar quais versões do WSL cada distribuição está usando, use o seguinte comando (disponível somente no Windows Build 18917 ou superior):
 
 `wsl --list --verbose` ou `wsl -l -v`
 
