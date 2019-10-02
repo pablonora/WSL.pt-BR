@@ -2,19 +2,17 @@
 title: Solução de problemas do Subsistema Windows para Linux
 description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
-author: scooley
-ms.author: scooley
 ms.date: 11/15/2017
 ms.topic: article
 ms.assetid: 6753f1b2-200e-49cc-93a5-4323e1117246
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: a73de13853c124de38cae1b9c6c51d0ee9978d44
-ms.sourcegitcommit: f1780bf174c67c531864497ae78cf3f26ef68503
+ms.openlocfilehash: 7b7938e7a6a636b012f4b84a8c93d5dfc0a4a4cf
+ms.sourcegitcommit: aef7bb1e851089b3311d497a3be0da79558feb4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205977"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279257"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
 
@@ -188,3 +186,10 @@ sudo apt-get purge openssh-server
 sudo apt-get install openssh-server
 ```
 
+### <a name="the-referenced-assembly-could-not-be-found-when-enabling-the-wsl-optional-feature"></a>"Não foi possível encontrar o assembly referenciado." ao habilitar o recurso opcional WSL (Subsistema Windows para Linux)
+
+Este erro está relacionado a um estado de instalação inadequado. Conclua as etapas a seguir para tentar corrigir esse problema:
+
+* Se você estiver executando o comando Habilitar recurso WSL do PowerShell, tente usar a GUI em vez de abrir o menu Iniciar, pesquisando "Ativar ou desativar recursos do Windows" e, na lista, selecione "Subsistema do Windows para Linux", que instalará o componente opcional.
+* Atualize sua versão do Windows acessando Configurações, Atualizações e clicando em "Verificar se há atualizações"
+* Se ambas falharem e você precisar acessar o WSL, considere atualizar no local reinstalando o Windows 10 com uma mídia de instalação e selecionando "Manter Tudo" para que seus aplicativos e arquivos sejam preservados. É possível encontrar instruções para fazer isso na [página Reinstalar o Windows 10](https://support.microsoft.com/en-us/help/4000735/windows-10-reinstall).
