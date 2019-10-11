@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7ca59bd7-d9d3-4f6d-8b92-b8faa9bcf250
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 51099f21fe44fd8c7e8682332c939fbe6d5e5827
-ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
+ms.openlocfilehash: e69810625d08baf734683ff06231f79132ce1519
+ms.sourcegitcommit: e1cc2fe4de0fa03d5aea14f6b328f1bb9d0c59be
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269874"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999397"
 ---
 # <a name="manage-and-configure-windows-subsystem-for-linux"></a>Gerenciar e configurar o Subsistema Windows para Linux
 
@@ -277,6 +277,20 @@ Seção: `[automount]`
 Por padrão, o WSL define o UID e o GID como o valor do usuário padrão (na distribuição do Ubuntu, o usuário padrão é criado com UID = 1.000, GID = 1.000). Se o usuário especificar uma opção GID ou UID explicitamente por meio dessa chave, o valor associado será substituído. Caso contrário, o valor padrão será sempre acrescentado.
 
 **Observação:** Essas opções são aplicadas como opções de montagem para todas as unidades montadas automaticamente. Para alterar as opções somente para uma unidade específica, use/etc/fstab.
+
+##### <a name="mount-options"></a>Opções de montagem
+
+A configuração de diferentes opções de montagem para unidades do Windows (DrvFs) pode controlar como as permissões de arquivos são calculadas para arquivos do Windows. As seguintes opções estão disponíveis:
+
+| Chave | Descrição | Padrão |
+|:----|:----|:----|
+|uid| A ID de usuário usada para o proprietário de todos os arquivos | A ID de usuário padrão de sua distribuição WSL (na primeira instalação, o padrão dela é 1000)
+|gid| A ID de grupo usada para o proprietário de todos os arquivos | A ID de grupo padrão de sua distribuição WSL (na primeira instalação, o padrão dela é 1000)
+|umask | Uma máscara octal de permissões a serem excluídas para todos os arquivos e diretórios | 000
+|fmask | Uma máscara octal de permissões a serem excluídas para todos os arquivos | 000
+|dmask | Uma máscara octal de permissões a serem excluídas para todos os diretórios | 000
+
+**Observação:** as máscaras de permissão passam por uma operação OR lógica antes de serem aplicadas a arquivos ou diretórios. 
 
 #### <a name="network"></a>rede
 
