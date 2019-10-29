@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 6753f1b2-200e-49cc-93a5-4323e1117246
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 7b7938e7a6a636b012f4b84a8c93d5dfc0a4a4cf
-ms.sourcegitcommit: aef7bb1e851089b3311d497a3be0da79558feb4e
+ms.openlocfilehash: 24a899df78e705630c6cb95f8719594aec340c5c
+ms.sourcegitcommit: 600853005bd2b42d6e47bf36ebed4b868ff2af26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279257"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72987522"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
 
@@ -124,7 +124,7 @@ São necessários privilégios de administrador no Windows para executar o ping 
 Se, ao trabalhar com o Bash, você descobrir que ele está suspenso (ou em deadlock) e não está respondendo às entradas, ajude-nos a diagnosticar o problema coletando e relatando um despejo de memória. Observe que essas etapas apresentarão falha no sistema. Não faça isso se não estiver familiarizado ou salve seu trabalho antes.  <br/>
 Para coletar um despejo de memória:
 1. Altere o tipo de despejo de memória para "despejo de memória completo". Ao alterar o tipo de despejo, anote seu tipo atual.
-2. Use as [etapas](https://blogs.technet.microsoft.com/askpfeplat/2015/04/05/how-to-force-a-diagnostic-memory-dump-when-a-computer-hangs/) para configurar a falha usando o controle de teclado.
+2. Use as [etapas](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/How-to-Force-a-Diagnostic-Memory-Dump-When-a-Computer-Hangs/ba-p/257809) para configurar a falha usando o controle de teclado.
 3. Reproduza o travamento ou o deadlock.
 4. Cause uma falha no sistema usando a sequência de teclas de (2).
 5. O sistema falhará e coletará o despejo de memória.
