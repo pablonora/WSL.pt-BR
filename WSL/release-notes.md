@@ -8,14 +8,27 @@ ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: dbc041c98081563d4f77b9fc186698fad8299c0d
-ms.sourcegitcommit: 4beb93f80749ab4c8c6f0e6920ab7f809567e243
+ms.openlocfilehash: 63c0e14dab73faf7f835e9ae1eb23eb490b13c44
+ms.sourcegitcommit: 48ca05ce1ac8bf35408af3bc2a2b92a43adba0af
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72549574"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73166664"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
+
+## <a name="build-19013"></a>Build 19013
+Para obter informações gerais sobre o Windows no build 19013, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/10/29/announcing-windows-10-insider-preview-build-19013/).
+
+* [WSL2] Melhorar o desempenho de memória da VM do utilitário WSL. A memória que não está mais em uso será liberada de volta para o host.
+* [WSL2] Atualização da versão do kernel para 4.19.79. (adicione CONFIG_HIGH_RES_TIMERS, CONFIG_TASK_XACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_SCHED_HRTICK e CONFIG_BRIDGE_VLAN_FILTERING).
+* [WSL2] Corrija a retransmissão de entrada para lidar com casos em que stdin é um identificador de pipe que não está fechado [GH 4424]
+* Faça a verificação de \\\\wsl$ case-insensitive.
+```
+[wsl2]
+pageReporting = <bool>    # Enable or disable the free memory page reporting feature (default true).
+idleThreshold = <integer> # Set the idle threshold for memory compaction, 0 disables the feature (default 1).
+```
 
 ## <a name="build-19002"></a>Build 19002
 Para obter informações gerais do Windows sobre o Build 19002, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/10/17/announcing-windows-10-insider-preview-build-19002/).
@@ -38,7 +51,6 @@ Para obter informações gerais do Windows sobre o build 18995, acesse o [blog d
 ```
 [wsl2]
 kernelCommandLine = <string> # Additional kernel command line arguments
-
 ```
 
 ## <a name="build-18990"></a>Build 18990
