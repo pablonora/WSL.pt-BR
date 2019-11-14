@@ -8,14 +8,22 @@ ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 63c0e14dab73faf7f835e9ae1eb23eb490b13c44
-ms.sourcegitcommit: 48ca05ce1ac8bf35408af3bc2a2b92a43adba0af
+ms.openlocfilehash: 299b939383a98752cb54cafa23bb8b7662d53e0a
+ms.sourcegitcommit: ac6029d7d7440b8ed0e866fcea5b693edfdc163e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73166664"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73633850"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
+
+## <a name="build-19018"></a>Build 19018
+Para obter informações gerais do Windows sobre o build 19018, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/11/05/announcing-windows-10-insider-preview-build-19018/).
+
+* [WSL2] Uso do cache=mmap como padrão em montagens 9p para corrigir aplicativos dotnet
+* [WSL2] Correções para retransmissão de localhost [GH 4340]
+* [WSL2] Introdução de uma montagem tmpfs compartilhada entre distribuições para compartilhar o estado entre elas
+* Correção da restauração de uma unidade de rede persistente para \\\\wsl$
 
 ## <a name="build-19013"></a>Build 19013
 Para obter informações gerais sobre o Windows no build 19013, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/10/29/announcing-windows-10-insider-preview-build-19013/).
