@@ -6,12 +6,12 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 9ed24b185ad6aef3589b23a114853b6f78b5899f
-ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
+ms.openlocfilehash: 7122fcbd73e064871eba2ac80c727178aaf3ca7b
+ms.sourcegitcommit: 5c92b820f84de57a04ab11faf4dd0d24fff6b320
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269834"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74161475"
 ---
 # <a name="about-wsl-2"></a>Sobre o WSL 2
 
@@ -25,11 +25,11 @@ Além disso, esse kernel será de código aberto. Você pode encontrar o código
 
 ## <a name="brief-overview-of-the-wsl-2-architecture"></a>Visão geral resumida da arquitetura WSL 2
 
-O WSL 2 usa a mais recente e mais alta tecnologia de virtualização para executar seu kernel do Linux dentro de uma VM (máquina virtual) do utilitário leve. No entanto, o WSL 2 não será uma experiência de VM tradicional. Uma experiência de VM tradicional pode ser lenta para inicializar, é isolada, consome muitos recursos e requer seu tempo para gerenciá-lo. WSL 2 não tem esses atributos. Ele ainda fornecerá os benefícios notáveis do WSL 1: Altos níveis de integração entre o Windows e o Linux, tempos de inicialização extremamente rápidos, superfície de recursos pequenos e o melhor de tudo não exigirão nenhuma configuração ou gerenciamento de VM. Embora o WSL 2 Use uma VM, ele será gerenciado e executado nos bastidores, deixando você com a mesma experiência do usuário que o WSL 1.
+O WSL 2 usa a mais recente e mais alta tecnologia de virtualização para executar seu kernel do Linux dentro de uma VM (máquina virtual) do utilitário leve. No entanto, o WSL 2 não será uma experiência de VM tradicional. Uma experiência de VM tradicional pode ser lenta para inicializar, é isolada, consome muitos recursos e requer seu tempo para gerenciá-lo. WSL 2 não tem esses atributos. Ele ainda fornecerá os benefícios notáveis do WSL 1: altos níveis de integração entre o Windows e o Linux, tempos de inicialização extremamente rápidos, superfície de recursos pequenos e o melhor de tudo não exigirão nenhuma configuração ou gerenciamento de VM. Embora o WSL 2 Use uma VM, ele será gerenciado e executado nos bastidores, deixando você com a mesma experiência do usuário que o WSL 1.
 
 ## <a name="increased-file-io-performance"></a>Desempenho de e/s de arquivo aumentado
 
-Operações intensivas de arquivos, como git clone, instalação NPM, atualização de apt, atualização de apt e muito mais serão visivelmente mais rápidas. O aumento da velocidade real dependerá de qual aplicativo você está executando e de como ele está interagindo com o sistema de arquivos. As versões iniciais do WSL 2 executam até 20x mais rápidas em comparação com WSL 1 ao desempacotar um tarball compactado e cerca de 2 vezes mais rápido ao usar o git clone, NPM install e CMake em vários projetos.
+Operações com uso intensivo de arquivos, como `git clone`, `npm install`, `apt update`, `apt upgrade`e muito mais, serão visivelmente mais rápidas. O aumento da velocidade real dependerá de qual aplicativo você está executando e de como ele está interagindo com o sistema de arquivos. As versões iniciais do WSL 2 executam até 20x mais rápidas em comparação com WSL 1 ao desempacotar um tarball compactado e cerca de 2 vezes mais rápido ao usar `git clone`, `npm install` e `cmake` em vários projetos.
 
 ## <a name="full-system-call-compatibility"></a>Compatibilidade total com a chamada do sistema
 

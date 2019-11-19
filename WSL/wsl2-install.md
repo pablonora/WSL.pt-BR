@@ -6,12 +6,12 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: e3593aaf0e1c176cbeec2d3ba7d8eca1ede6b1ec
-ms.sourcegitcommit: d74fab7469f4e589ab0bf4418be575381a3f72a0
+ms.openlocfilehash: 91994f3a075436c022acb9dadeea072142687b72
+ms.sourcegitcommit: cf6d8e277ed3102f8f879b9f39ba0966d4ea6135
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73240366"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74164336"
 ---
 # <a name="installation-instructions-for-wsl-2"></a>Instruções de instalação do WSL 2
 
@@ -28,16 +28,24 @@ Para instalar e começar a usar o WSL 2, conclua as etapas a seguir:
 
 ## <a name="enable-the-virtual-machine-platform-optional-component-and-make-sure-wsl-is-enabled"></a>Habilite o componente opcional ' plataforma de máquina virtual ' e verifique se o WSL está habilitado
 
-Abra o PowerShell como administrador e execute:
+Para habilitar o componente ' plataforma de máquina virtual ', abra o PowerShell como administrador e execute o comando a seguir. Se você estiver instalando o WSL pela primeira vez, selecione ' não ' quando for solicitada uma reinicialização, pois será necessário reiniciar o computador assim mesmo após instalar o componente opcional ' subsistema do Windows para Linux '.
 
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 ```
 
-Isso garantirá que os componentes opcionais da plataforma de máquina virtual e do subsistema do Windows para Linux estejam instalados. Depois de executar esses comandos, você precisará reiniciar o computador. 
+Você também precisará certificar-se de que o componente opcional do subsistema do Windows para Linux esteja habilitado. Você pode fazer isso executando o seguinte comando em uma janela do PowerShell com privilégios de administrador: 
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
+Reinicie o computador para concluir a instalação dos dois componentes.
+
 
 ## <a name="set-a-distro-to-be-backed-by-wsl-2-using-the-command-line"></a>Defina uma distribuição para ser apoiada pelo WSL 2 usando a linha de comando
+
+Se você não tiver um distribuição do Linux instalado, consulte a página [instalar no Windows 10](./install-win10.md#install-your-linux-distribution-of-choice) docs para obter instruções sobre como instalar um. 
 
 No PowerShell, execute:
 
