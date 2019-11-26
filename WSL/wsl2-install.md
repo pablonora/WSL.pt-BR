@@ -17,32 +17,32 @@ ms.locfileid: "74309053"
 
 Para instalar e começar a usar o WSL 2, conclua as etapas a seguir:
 
-> WSL 2 is only available in Windows 10 builds 18917 or higher
+> O WSL 2 só está disponível no Windows 10 Builds 18917 ou superior
 
-- Ensure that you have WSL installed (you can find instructions to do so [here](./install-win10.md)) and that you are running Windows 10 **build 18917** or higher
-   - To make sure you are using build 18917 or higher please join [the Windows Insider Program](https://insider.windows.com/en-us/) and select the 'Fast' ring. 
-   - You can check your Windows version by opening Command Prompt and running the `ver` command.
+- Verifique se você tem o WSL instalado (você pode encontrar instruções para fazer isso [aqui](./install-win10.md)) e se está executando o Windows 10 **Build 18917** ou superior
+   - Para verificar se você está usando o Build 18917 ou superior, ingresse [no programa Windows Insider](https://insider.windows.com/en-us/) e selecione o anel "rápido". 
+   - Você pode verificar a versão do Windows abrindo o prompt de comando e executando o comando `ver`.
 - Habilite o componente opcional "Plataforma de máquina virtual"
 - Defina uma distribuição para ser apoiada pelo WSL 2 usando a linha de comando
 - Verifique quais versões do WSL suas distribuições estão usando
 
-## <a name="enable-the-virtual-machine-platform-optional-component-and-make-sure-wsl-is-enabled"></a>Enable the 'Virtual Machine Platform' optional component and make sure WSL is enabled
+## <a name="enable-the-virtual-machine-platform-optional-component-and-make-sure-wsl-is-enabled"></a>Habilite o componente opcional ' plataforma de máquina virtual ' e verifique se o WSL está habilitado
 
-You will need to make sure that you have both the Windows Subsystem for Linux and the Virtual Machine Platform optional components installed. You can do that by running the following command in PowerShell: 
+Você precisará certificar-se de ter os componentes opcionais do subsistema do Windows para Linux e da plataforma de máquina virtual instalados. Você pode fazer isso executando o seguinte comando no PowerShell: 
 
 ```powershell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-Please restart your machine to finish installing both components.
+Reinicie o computador para concluir a instalação dos dois componentes.
 
 
 ## <a name="set-a-distro-to-be-backed-by-wsl-2-using-the-command-line"></a>Defina uma distribuição para ser apoiada pelo WSL 2 usando a linha de comando
 
-If you do not have a Linux distro installed, please refer to the [Install on Windows 10](./install-win10.md#install-your-linux-distribution-of-choice) docs page for instructions on installing one. 
+Se você não tiver um distribuição do Linux instalado, consulte a página [instalar no Windows 10](./install-win10.md#install-your-linux-distribution-of-choice) docs para obter instruções sobre como instalar um. 
 
-To set a distro please run: 
+Para definir um distribuição, execute: 
 
 ```
 wsl --set-version <Distro> 2
@@ -60,7 +60,7 @@ Isso fará com que qualquer nova distribuição instalada seja inicializada como
 
 ## <a name="finish-with-verifying-what-versions-of-wsl-your-distro-are-using"></a>Termine verificando quais versões do WSL suas distribuições estão usando
 
-To verify what versions of WSL each distro is using use the following command (only available in Windows Build 18917 or higher):
+Para verificar quais versões do WSL cada distribuição está usando, use o seguinte comando (disponível somente no Windows Build 18917 ou superior):
 
 `wsl --list --verbose` ou `wsl -l -v`
 
@@ -76,8 +76,8 @@ Veja abaixo erros relacionados e correções sugeridas ao instalar o WSL 2. Cons
 * **Erro ao tentar fazer upgrade: `Invalid command line option: wsl --set-version Ubuntu 2`**
     * Verifique se você tem o subsistema do Windows para Linux habilitado e se está usando o Build do Windows versão 18917 ou mais recente. Para habilitar o WSL, execute este comando em um prompt do PowerShell com privilégios de administrador: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`. Você pode encontrar as instruções de instalação completas do WSL [aqui](./install-win10.md).
 
-* **The requested operation could not be completed due to a virtual disk system limitation. Virtual hard disk files must be uncompressed and unencrypted and must not be sparse.**
-    * Please check [WSL Github thread #4103](https://github.com/microsoft/WSL/issues/4103) where this issue is being tracked for updated information.
+* **A operação solicitada não pôde ser concluída devido a uma limitação do sistema de disco virtual. Os arquivos do disco rígido virtual devem ser descompactados e descriptografados e não devem ser esparsos.**
+    * Verifique o [thread do GitHub WSL #4103](https://github.com/microsoft/WSL/issues/4103) onde esse problema está sendo acompanhado para obter informações atualizadas.
 
-* **The term 'wsl' is not recognized as the name of a cmdlet, function, script file, or operable program.** 
-    * Ensure that the [Windows Subsystem for Linux Optional Component is installed](./wsl2-install.md#enable-the-virtual-machine-platform-optional-component-and-make-sure-wsl-is-enabled).<br> Additionally, if you are using an Arm64 device and running this command from PowerShell, you will receive this error. Instead run `wsl.exe` from [PowerShell Core](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6), or Command Prompt. 
+* **O termo ' WSL ' não é reconhecido como o nome de um cmdlet, função, arquivo de script ou programa operável.** 
+    * Verifique se o [componente opcional do subsistema do Windows para Linux está instalado](./wsl2-install.md#enable-the-virtual-machine-platform-optional-component-and-make-sure-wsl-is-enabled).<br> Além disso, se você estiver usando um dispositivo Arm64 e executar esse comando do PowerShell, receberá esse erro. Em vez disso, execute `wsl.exe` do [PowerShell Core](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6)ou do prompt de comando. 
