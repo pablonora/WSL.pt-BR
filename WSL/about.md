@@ -7,45 +7,45 @@ ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 4e63fd186f11545937a4ce0a0fbd6071a4bf268d
-ms.sourcegitcommit: 0b5a9f8982dfff07fc8df32d74d97293654f8e12
+ms.openlocfilehash: fbb1ce5cf5d5c83e25d0a6a0cece7b70537a44a1
+ms.sourcegitcommit: 3be576f946611cf36e27745bdb7c4c52af1b9928
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269717"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74200198"
 ---
-# <a name="windows-subsystem-for-linux-documentation"></a><span data-ttu-id="2248a-104">Documentação do Subsistema Windows para Linux</span><span class="sxs-lookup"><span data-stu-id="2248a-104">Windows Subsystem for Linux Documentation</span></span>
+# <a name="windows-subsystem-for-linux-documentation"></a><span data-ttu-id="c94be-104">Documentação do Subsistema Windows para Linux</span><span class="sxs-lookup"><span data-stu-id="c94be-104">Windows Subsystem for Linux Documentation</span></span>
 
-<span data-ttu-id="2248a-105">O Subsistema Windows para Linux permite que os desenvolvedores executem um ambiente GNU/Linux, incluindo a maioria das ferramentas de linha de comando, utilitários e aplicativos, diretamente no Windows, sem modificações e sem a sobrecarga de uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="2248a-105">The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a virtual machine.</span></span>  
+<span data-ttu-id="c94be-105">O Subsistema Windows para Linux permite que os desenvolvedores executem um ambiente GNU/Linux, incluindo a maioria das ferramentas de linha de comando, utilitários e aplicativos, diretamente no Windows, sem modificações e sem a sobrecarga de uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="c94be-105">The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a virtual machine.</span></span>  
 
-<span data-ttu-id="2248a-106">Você pode:</span><span class="sxs-lookup"><span data-stu-id="2248a-106">You can:</span></span>
+<span data-ttu-id="c94be-106">Você pode:</span><span class="sxs-lookup"><span data-stu-id="c94be-106">You can:</span></span>
 
-1. <span data-ttu-id="2248a-107">Escolha sua distribuição do Linux/GNU favorita [na Microsoft Store](https://aka.ms/wslstore).</span><span class="sxs-lookup"><span data-stu-id="2248a-107">Choose your favorite GNU/Linux distributions [from the Microsoft Store](https://aka.ms/wslstore).</span></span>
-1. <span data-ttu-id="2248a-108">Execute o software de linha de comando comum gratuito, como `grep`, `sed`, `awk` ou outros binários ELF-64.</span><span class="sxs-lookup"><span data-stu-id="2248a-108">Run common command-line free software such as `grep`, `sed`, `awk`, or other ELF-64 binaries.</span></span> 
-1. <span data-ttu-id="2248a-109">Execute scripts de shell do Bash e aplicativos de linha de comando do GNU/Linux, incluindo:</span><span class="sxs-lookup"><span data-stu-id="2248a-109">Run Bash shell scripts and GNU/Linux command-line applications including:</span></span>  
-    * <span data-ttu-id="2248a-110">Ferramentas: vim, emacs, tmux</span><span class="sxs-lookup"><span data-stu-id="2248a-110">Tools: vim, emacs, tmux</span></span>
-    * <span data-ttu-id="2248a-111">Linguagens: Javascript/Node.js, Ruby, Python, C/C++, C# & F#, Rust, Go, etc.</span><span class="sxs-lookup"><span data-stu-id="2248a-111">Languages: Javascript/node.js, Ruby, Python, C/C++, C# & F#, Rust, Go, etc.</span></span>
-    * <span data-ttu-id="2248a-112">Serviços: SSHD, MySQL, Apache, lighttpd</span><span class="sxs-lookup"><span data-stu-id="2248a-112">Services: sshd, MySQL, Apache, lighttpd</span></span>
-1. <span data-ttu-id="2248a-113">Instale o software adicional usando o gerenciador de pacotes de distribuição do GNU/Linux.</span><span class="sxs-lookup"><span data-stu-id="2248a-113">Install additional software using own GNU/Linux distribution package manager.</span></span>
-1. <span data-ttu-id="2248a-114">Invoque aplicativos do Windows usando um shell de linha de comando do UNIX.</span><span class="sxs-lookup"><span data-stu-id="2248a-114">Invoke Windows applications using a Unix-like command-line shell.</span></span>
-1. <span data-ttu-id="2248a-115">Invoque aplicativos do GNU/Linux no Windows.</span><span class="sxs-lookup"><span data-stu-id="2248a-115">Invoke GNU/Linux applications on Windows.</span></span>
+1. <span data-ttu-id="c94be-107">Escolha sua distribuição do Linux/GNU favorita [na Microsoft Store](https://aka.ms/wslstore).</span><span class="sxs-lookup"><span data-stu-id="c94be-107">Choose your favorite GNU/Linux distributions [from the Microsoft Store](https://aka.ms/wslstore).</span></span>
+1. <span data-ttu-id="c94be-108">Execute o software de linha de comando comum gratuito, como `grep`, `sed`, `awk` ou outros binários ELF-64.</span><span class="sxs-lookup"><span data-stu-id="c94be-108">Run common command-line free software such as `grep`, `sed`, `awk`, or other ELF-64 binaries.</span></span> 
+1. <span data-ttu-id="c94be-109">Execute scripts de shell do Bash e aplicativos de linha de comando do GNU/Linux, incluindo:</span><span class="sxs-lookup"><span data-stu-id="c94be-109">Run Bash shell scripts and GNU/Linux command-line applications including:</span></span>  
+    * <span data-ttu-id="c94be-110">Ferramentas: vim, emacs, tmux</span><span class="sxs-lookup"><span data-stu-id="c94be-110">Tools: vim, emacs, tmux</span></span>
+    * <span data-ttu-id="c94be-111">Linguagens: Javascript/Node.js, Ruby, Python, C/C++, C# & F#, Rust, Go, etc.</span><span class="sxs-lookup"><span data-stu-id="c94be-111">Languages: Javascript/node.js, Ruby, Python, C/C++, C# & F#, Rust, Go, etc.</span></span>
+    * <span data-ttu-id="c94be-112">Serviços: SSHD, MySQL, Apache, lighttpd</span><span class="sxs-lookup"><span data-stu-id="c94be-112">Services: sshd, MySQL, Apache, lighttpd</span></span>
+1. <span data-ttu-id="c94be-113">Instale o software adicional usando o gerenciador de pacotes de distribuição do GNU/Linux.</span><span class="sxs-lookup"><span data-stu-id="c94be-113">Install additional software using own GNU/Linux distribution package manager.</span></span>
+1. <span data-ttu-id="c94be-114">Invoque aplicativos do Windows usando um shell de linha de comando do UNIX.</span><span class="sxs-lookup"><span data-stu-id="c94be-114">Invoke Windows applications using a Unix-like command-line shell.</span></span>
+1. <span data-ttu-id="c94be-115">Invoque aplicativos do GNU/Linux no Windows.</span><span class="sxs-lookup"><span data-stu-id="c94be-115">Invoke GNU/Linux applications on Windows.</span></span>
 
-## <a name="getting-started"></a><span data-ttu-id="2248a-116">Introdução</span><span class="sxs-lookup"><span data-stu-id="2248a-116">Getting Started</span></span>
+## <a name="getting-started"></a><span data-ttu-id="c94be-116">Introdução</span><span class="sxs-lookup"><span data-stu-id="c94be-116">Getting Started</span></span>
 
-* [<span data-ttu-id="2248a-117">Instale o Linux no Windows 10</span><span class="sxs-lookup"><span data-stu-id="2248a-117">Install Linux on Windows 10</span></span>](install-win10.md)
-* [<span data-ttu-id="2248a-118">Visite a referência de comandos</span><span class="sxs-lookup"><span data-stu-id="2248a-118">Visit the command reference</span></span>](reference.md)
-* [<span data-ttu-id="2248a-119">Leia as perguntas frequentes</span><span class="sxs-lookup"><span data-stu-id="2248a-119">Read frequently asked questions</span></span>](faq.md)
+* [<span data-ttu-id="c94be-117">Instale o Linux no Windows 10</span><span class="sxs-lookup"><span data-stu-id="c94be-117">Install Linux on Windows 10</span></span>](install-win10.md)
+* [<span data-ttu-id="c94be-118">Visite a referência de comandos</span><span class="sxs-lookup"><span data-stu-id="c94be-118">Visit the command reference</span></span>](reference.md)
+* [<span data-ttu-id="c94be-119">Leia as perguntas frequentes</span><span class="sxs-lookup"><span data-stu-id="c94be-119">Read frequently asked questions</span></span>](faq.md)
 
-## <a name="team-blogs"></a><span data-ttu-id="2248a-120">Blogs da equipe</span><span class="sxs-lookup"><span data-stu-id="2248a-120">Team Blogs</span></span>
-*  [<span data-ttu-id="2248a-121">Postagem de visão geral com uma coleção de vídeos e blogs</span><span class="sxs-lookup"><span data-stu-id="2248a-121">Overview post with a collection of videos and blogs</span></span>](https://blogs.msdn.microsoft.com/commandline/learn-about-windows-console-and-windows-subsystem-for-linux-wsl/)
-* <span data-ttu-id="2248a-122">[Blog de linha de comando](https://blogs.msdn.microsoft.com/commandline/) (ativo)</span><span class="sxs-lookup"><span data-stu-id="2248a-122">[Command-Line blog](https://blogs.msdn.microsoft.com/commandline/) (Active)</span></span>
-* <span data-ttu-id="2248a-123">[Blog do Subsistema Windows para Linux](https://blogs.msdn.microsoft.com/wsl/) (histórico)</span><span class="sxs-lookup"><span data-stu-id="2248a-123">[Windows Subsystem for Linux Blog](https://blogs.msdn.microsoft.com/wsl/) (Historical)</span></span>
+## <a name="team-blogs"></a><span data-ttu-id="c94be-120">Blogs da equipe</span><span class="sxs-lookup"><span data-stu-id="c94be-120">Team Blogs</span></span>
+*  [<span data-ttu-id="c94be-121">Postagem de visão geral com uma coleção de vídeos e blogs</span><span class="sxs-lookup"><span data-stu-id="c94be-121">Overview post with a collection of videos and blogs</span></span>](https://blogs.msdn.microsoft.com/commandline/learn-about-windows-console-and-windows-subsystem-for-linux-wsl/)
+* <span data-ttu-id="c94be-122">[Blog de linha de comando](https://blogs.msdn.microsoft.com/commandline/) (ativo)</span><span class="sxs-lookup"><span data-stu-id="c94be-122">[Command-Line blog](https://blogs.msdn.microsoft.com/commandline/) (Active)</span></span>
+* <span data-ttu-id="c94be-123">[Blog do Subsistema Windows para Linux](https://blogs.msdn.microsoft.com/wsl/) (histórico)</span><span class="sxs-lookup"><span data-stu-id="c94be-123">[Windows Subsystem for Linux Blog](https://blogs.msdn.microsoft.com/wsl/) (Historical)</span></span>
 
-## <a name="posts--articles"></a><span data-ttu-id="2248a-124">Postagens e artigos</span><span class="sxs-lookup"><span data-stu-id="2248a-124">Posts & Articles</span></span>
-* [<span data-ttu-id="2248a-125">Execute o Bash do Ubuntu no Windows</span><span class="sxs-lookup"><span data-stu-id="2248a-125">Run Bash on Ubuntu on Windows</span></span>](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
-* [<span data-ttu-id="2248a-126">Os desenvolvedores podem executar os binários do Bash e do UserMode do Ubuntu Linux no Windows 10</span><span class="sxs-lookup"><span data-stu-id="2248a-126">Developers Can Run Bash And Usermode Ubuntu Linux Binaries On Windows 10</span></span>](https://www.hanselman.com/blog/DevelopersCanRunBashShellAndUsermodeUbuntuLinuxBinariesOnWindows10.aspx)
-* [<span data-ttu-id="2248a-127">Ubuntu no Windows – o espaço do usuário do Ubuntu para desenvolvedores Windows</span><span class="sxs-lookup"><span data-stu-id="2248a-127">Ubuntu on Windows – The Ubuntu Userspace for Windows Developers</span></span>](https://insights.ubuntu.com/2016/03/30/ubuntu-on-windows-the-ubuntu-userspace-for-windows-developers/) 
+## <a name="posts--articles"></a><span data-ttu-id="c94be-124">Postagens e artigos</span><span class="sxs-lookup"><span data-stu-id="c94be-124">Posts & Articles</span></span>
+* [<span data-ttu-id="c94be-125">Execute o Bash do Ubuntu no Windows</span><span class="sxs-lookup"><span data-stu-id="c94be-125">Run Bash on Ubuntu on Windows</span></span>](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
+* [<span data-ttu-id="c94be-126">Os desenvolvedores podem executar os binários do Bash e do UserMode do Ubuntu Linux no Windows 10</span><span class="sxs-lookup"><span data-stu-id="c94be-126">Developers Can Run Bash And Usermode Ubuntu Linux Binaries On Windows 10</span></span>](https://www.hanselman.com/blog/DevelopersCanRunBashShellAndUsermodeUbuntuLinuxBinariesOnWindows10.aspx)
+* [<span data-ttu-id="c94be-127">Ubuntu no Windows – o espaço do usuário do Ubuntu para desenvolvedores Windows</span><span class="sxs-lookup"><span data-stu-id="c94be-127">Ubuntu on Windows – The Ubuntu Userspace for Windows Developers</span></span>](https://insights.ubuntu.com/2016/03/30/ubuntu-on-windows-the-ubuntu-userspace-for-windows-developers/) 
 
-## <a name="provide-feedback"></a><span data-ttu-id="2248a-128">Envie comentários</span><span class="sxs-lookup"><span data-stu-id="2248a-128">Provide Feedback</span></span>
-* [<span data-ttu-id="2248a-129">Rastreador de problemas do GitHub</span><span class="sxs-lookup"><span data-stu-id="2248a-129">GitHub issue tracker</span></span>](https://github.com/Microsoft/BashOnWindows/issues)
-* [<span data-ttu-id="2248a-130">Portal UserVoice de linha de comando</span><span class="sxs-lookup"><span data-stu-id="2248a-130">Command-line UserVoice portal</span></span>](https://wpdev.uservoice.com/forums/266908-command-prompt-console-bash-on-ubuntu-on-windo/category/161892-bash)
+## <a name="provide-feedback"></a><span data-ttu-id="c94be-128">Envie comentários</span><span class="sxs-lookup"><span data-stu-id="c94be-128">Provide Feedback</span></span>
+* [<span data-ttu-id="c94be-129">Rastreador de problemas do GitHub</span><span class="sxs-lookup"><span data-stu-id="c94be-129">GitHub issue tracker</span></span>](https://github.com/Microsoft/BashOnWindows/issues)
+
