@@ -6,12 +6,12 @@ ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: 635e4335bd3fe5dd1629faba0168ec4fa331e190
-ms.sourcegitcommit: 6f6b7b67dd35b5fc7b582bb7ac27b9936dedb23d
+ms.openlocfilehash: a8f298a69acf44f152da626a0ba571f6bba1970c
+ms.sourcegitcommit: 07eb5f2e1f4517928165dda4510012599b0d0e1e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681641"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520555"
 ---
 # <a name="user-experience-changes-between-wsl-1-and-wsl-2"></a>Alterações de experiência do usuário entre WSL 1 e WSL 2
 
@@ -42,7 +42,12 @@ A figura abaixo mostra um exemplo disso conectando-se a um servidor node. js em 
 
 ![Acessando aplicativos de rede Linux do Windows](media/wsl2-network-l2w.png)
 
-### <a name="accessing-linux-applications-from-windows-only-in-builds-lower-than-18945"></a>Acessando aplicativos Linux do Windows (somente em compilações inferiores a 18945)
+### <a name="accessing-linux-applications-from-windows"></a>Acessando aplicativos Linux do Windows
+
+Dependendo da versão do Windows que você está usando, talvez seja necessário recuperar o endereço IP da máquina virtual. Se sua compilação for 18945 ou superior, você poderá usar `localhost` assim como o normal. 
+
+#### <a name="accessing-linux-on-builds-lower-than-18945httpsblogswindowscomwindowsexperience20190726announcing-windows-10-insider-preview-build-18945"></a>Acessando o Linux em builds menores que [18945](https://blogs.windows.com/windowsexperience/2019/07/26/announcing-windows-10-insider-preview-build-18945/)
+
 Se você tiver um servidor em um WSL distribuição, precisará encontrar o endereço IP da máquina virtual que está ligando seu distribuição e conectar-se a ele com esse endereço IP. Você pode fazer isso seguindo estas etapas:
 
 - Obtenha o endereço IP do seu distribuição executando o comando `ip addr` dentro de seu WSL distribuição e encontrando-o sob o valor `inet` da interface `eth0`.
@@ -52,8 +57,6 @@ Se você tiver um servidor em um WSL distribuição, precisará encontrar o ende
 A figura abaixo mostra um exemplo disso conectando-se a um servidor node. js usando o navegador Edge.
 
 ![Acessando aplicativos de rede Linux do Windows](media/wsl2-network-w2l.jpg)
-
-Se sua compilação for 18945 ou superior, você poderá usar localhost da mesma forma que o normal. 
 
 ### <a name="other-networking-considerations"></a>Outras considerações de rede
 
