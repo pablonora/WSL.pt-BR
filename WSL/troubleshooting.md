@@ -2,19 +2,43 @@
 title: Solução de problemas do Subsistema Windows para Linux
 description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
-ms.date: 11/15/2017
+ms.date: 01/20/2020
 ms.topic: article
-ms.assetid: 6753f1b2-200e-49cc-93a5-4323e1117246
-ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 24a899df78e705630c6cb95f8719594aec340c5c
-ms.sourcegitcommit: 600853005bd2b42d6e47bf36ebed4b868ff2af26
+ms.openlocfilehash: ec456c314ac4a1588ccb5c1aa35e22a2d33a39b0
+ms.sourcegitcommit: 07eb5f2e1f4517928165dda4510012599b0d0e1e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72987522"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520525"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
+
+Para obter suporte com problemas relacionados ao WSL, consulte nosso repositório do GitHub:
+
+## <a name="search-for-any-existing-issues-related-to-your-problem"></a>Procure problemas existentes relacionados ao seu problema
+
+Para problemas técnicos, use o repositório do produto: https://github.com/Microsoft/wsl/issues
+
+Para problemas relacionados ao conteúdo desta documentação, use o repositório de documentos: https://github.com/MicrosoftDocs/wsl/issues
+
+## <a name="submit-a-bug-report"></a>Enviar um relatório de bugs
+
+Para bugs relacionados a funções ou recursos do WSL, registre um problema no repositório do produto: https://github.com/Microsoft/wsl/issues
+
+## <a name="submit-a-feature-request"></a>Enviar uma solicitação de recurso
+
+Para solicitar um novo recurso relacionado à funcionalidade ou à compatibilidade do WSL, registre um problema no repositório do produto: https://github.com/Microsoft/wsl/issues
+
+## <a name="contribute-to-the-docs"></a>Contribuir com os documentos
+
+Para contribuir com a documentação do WSL, envie uma solicitação de pull no repositório de documentos: https://github.com/MicrosoftDocs/wsl/issues
+
+## <a name="terminal-or-command-line"></a>Terminal ou Linha de comando
+
+Por fim, se o problema estiver relacionado ao Terminal do Windows, ao console do Windows ou à interface do usuário da linha de comando, use o repositório de terminal do Windows: https://github.com/microsoft/terminal
+
+## <a name="common-issues"></a>Problemas comuns
 
 ### <a name="bash-loses-network-connectivity-once-connected-to-a-vpn"></a>O Bash perde conectividade de rede quando conectado a uma VPN
 
@@ -22,7 +46,7 @@ Se, depois de se conectar a uma VPN no Windows, o Bash perder a conectividade de
 
 1. Anote o servidor DNS da VPN ao fazer `ipconfig.exe /all`
 2. Faça uma cópia do `sudo cp /etc/resolv.conf /etc/resolv.conf.new` do resolv.conf existente
-3. Desvincule o `sudo unlink /etc/resolv.conf` do resolv.con atual
+3. Desvincule o `sudo unlink /etc/resolv.conf` do resolv.conf atual
 4. `sudo mv /etc/resolv.conf.new /etc/resolv.conf`
 5. Abra `/etc/resolv.conf` e <br/>
    a. Exclua a primeira linha do arquivo, que diz "\# Este arquivo foi gerado automaticamente pelo WSL. Para interromper a geração automática deste arquivo, remova esta linha". <br/>
@@ -30,6 +54,7 @@ Se, depois de se conectar a uma VPN no Windows, o Bash perder a conectividade de
    c. Feche o arquivo. <br/>
 
 Depois de desconectar a VPN, você precisará reverter as alterações para `/etc/resolv.conf`. Para isso, faça o seguinte:
+
 1. `cd /etc`
 2. `sudo mv resolv.conf resolv.conf.new`
 3. `sudo ln -s ../run/resolvconf/resolv.conf resolv.conf`
@@ -40,13 +65,13 @@ Siga [estas instruções](https://github.com/Microsoft/WSL/blob/master/CONTRIBUT
 
 ### <a name="updating-bash-on-ubuntu-on-windows"></a>Como atualizar o Bash do Ubuntu no Windows
 
-Há dois componentes do Bash do Ubuntu no Windows que podem exigir atualização. 
+Há dois componentes do Bash do Ubuntu no Windows que podem exigir atualização.
 
 1. O Subsistema Windows para Linux
   
-   Atualizar essa parte do Bash do Ubuntu no Windows permitirá novas correções destacadas nas [notas sobre a versão](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes). Certifique-se de que você está inscrito no Programa Windows Insider e que seu build está atualizado. Para obter um controle mais detalhado, incluindo a redefinição da instância do Ubuntu, confira a [página de referência de comando](https://msdn.microsoft.com/en-us/commandline/wsl/reference).
+   Atualizar essa parte do Bash do Ubuntu no Windows permitirá novas correções destacadas nas [notas sobre a versão](./release-notes.md). Certifique-se de que você está inscrito no Programa Windows Insider e que seu build está atualizado. Para obter um controle mais detalhado, incluindo a redefinição da instância do Ubuntu, confira a [página de referência de comando](./reference.md).
 
-2. Os binários de usuário do Ubuntu 
+2. Os binários de usuário do Ubuntu
 
    A atualização dessa parte do Bash do Ubuntu no Windows instalará todas as atualizações nos binários de usuário do Ubuntu, incluindo os aplicativos que você instalou via apt-get. Para fazer isso, execute os seguintes comandos no Bash:
   
@@ -54,6 +79,7 @@ Há dois componentes do Bash do Ubuntu no Windows que podem exigir atualização
    2. `apt-get upgrade`
   
 ### <a name="apt-get-upgrade-errors"></a>Erros de atualização do apt-get
+
 Alguns pacotes usam recursos que ainda não implementamos. `udev`, por exemplo, ainda não é compatível e causa vários erros de `apt-get upgrade`.
 
 Para corrigir problemas relacionados ao `udev`, siga as seguintes etapas:
@@ -65,18 +91,21 @@ Para corrigir problemas relacionados ao `udev`, siga as seguintes etapas:
    exit 101
    ```
   
-2. Adicione permissões de execução a `/usr/sbin/policy-rc.d`
+2. Adicione permissões de execução a `/usr/sbin/policy-rc.d`:
+
    ``` BASH
    chmod +x /usr/sbin/policy-rc.d
    ```
   
-3. Execute os comandos a seguir
+3. Execute os comandos a seguir:
+
    ``` BASH
    dpkg-divert --local --rename --add /sbin/initctl
    ln -s /bin/true /sbin/initctl
    ```
   
 ### <a name="error-0x80040306-on-installation"></a>"Error: 0x80040306" na instalação
+
 Isso tem a ver com o fato de não damos suporte ao console herdado.
 Para desligar o console herdado:
 
@@ -85,50 +114,62 @@ Para desligar o console herdado:
 1. Clique em OK
 
 ### <a name="error-0x80040154-after-windows-update"></a>"Error: 0x80040154" após atualização do Windows
-O recurso Subsistema Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema Windows para Linux podem ser encontradas no [Guia de instalação](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide#enable-the-windows-subsystem-for-linux-feature-gui).
+
+O recurso Subsistema Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema Windows para Linux podem ser encontradas no [Guia de instalação](./install-win10.md).
 
 ### <a name="changing-the-display-language"></a>Como alterar o idioma de exibição
+
 A instalação do WSL tentará alterar automaticamente a localidade do Ubuntu para corresponder à localidade da instalação do Windows.  Se você não quiser esse comportamento, poderá executar esse comando para alterar a localidade do Ubuntu após a conclusão da instalação.  Você precisará reiniciar o bash.exe para que essa alteração entre em vigor.
 
 O exemplo abaixo altera a localidade para en-US:
+
 ``` BASH
 sudo update-locale LANG=en_US.UTF8
 ```
 
 ### <a name="installation-issues-after-windows-system-restore"></a>Problemas de instalação após a restauração do sistema do Windows
-1.  Exclua a pasta `%windir%\System32\Tasks\Microsoft\Windows\Windows Subsystem for Linux`. <br/>
+
+1. Exclua a pasta `%windir%\System32\Tasks\Microsoft\Windows\Windows Subsystem for Linux`. <br/>
   **Observação: Não faça isso se o recurso opcional estiver totalmente instalado e funcionando.**
-2.  Habilitar o recurso opcional do WSL (se ainda não estiver habilitado)
-3.  Reinicialização
-4.  lxrun /uninstall /full
-5.  Instale o Bash
+2. Habilitar o recurso opcional do WSL (se ainda não estiver habilitado)
+3. Reinicialização
+4. lxrun /uninstall /full
+5. Instale o Bash
 
 ### <a name="no-internet-access-in-wsl"></a>Sem acesso à Internet no WSL
+
 Alguns usuários relataram problemas com aplicativos de firewall específicos que bloqueiam o acesso à Internet no WSL.  Os firewalls relatados são:
 
 1. Kaspersky
-1. AVG
-1. Avast
+2. AVG
+3. Avast
 
 Em alguns casos, desligar o firewall permite o acesso.  Em alguns casos, simplesmente ter o firewall instalado bloqueia o acesso.
 
 ### <a name="permission-denied-error-when-using-ping"></a>Erro de permissão negada ao usar ping
-#### <a name="anniversary-updatehttpsmsdnmicrosoftcomen-uscommandlinewslrelease_notesbuild-14388-to-windows-10-anniversary-update"></a>[Atualização de aniversário](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14388-to-windows-10-anniversary-update) 
 
-São necessários privilégios de administrador no Windows para executar o ping no WSL.  Para executar o ping, execute o Bash do Ubuntu no Windows como administrador ou execute bash.exe em um prompt do CMD/PowerShell com privilégios de administrador.
+Para a [Atualização de Aniversário do Windows, versão 1607](./release-notes.md#build-14388-to-windows-10-anniversary-update), são necessários **privilégios de administrador** no Windows para executar o ping no WSL.  Para executar o ping, execute o Bash do Ubuntu no Windows como administrador ou execute bash.exe em um prompt do CMD/PowerShell com privilégios de administrador.
 
-#### <a name="build-14926httpsmsdnmicrosoftcomen-uscommandlinewslrelease_notesbuild-14926"></a>[Build 14926+](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14926)
-  Os privilégios de administrador não são mais necessários.
+Para versões posteriores do Windows, [Build 14926 e posteriores](./release-notes.md#build-14926), os privilégios de administrador não são mais necessários.
 
 ### <a name="bash-is-hung"></a>Bash suspenso
-Se, ao trabalhar com o Bash, você descobrir que ele está suspenso (ou em deadlock) e não está respondendo às entradas, ajude-nos a diagnosticar o problema coletando e relatando um despejo de memória. Observe que essas etapas apresentarão falha no sistema. Não faça isso se não estiver familiarizado ou salve seu trabalho antes.  <br/>
-Para coletar um despejo de memória:
+
+Se, ao trabalhar com o Bash, você descobrir que ele está suspenso (ou em deadlock) e não está respondendo às entradas, ajude-nos a diagnosticar o problema coletando e relatando um despejo de memória. Observe que essas etapas apresentarão falha no sistema. Não faça isso se não estiver familiarizado ou salve seu trabalho antes.
+
+Para coletar um despejo de memória
+
 1. Altere o tipo de despejo de memória para "despejo de memória completo". Ao alterar o tipo de despejo, anote seu tipo atual.
+
 2. Use as [etapas](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/How-to-Force-a-Diagnostic-Memory-Dump-When-a-Computer-Hangs/ba-p/257809) para configurar a falha usando o controle de teclado.
+
 3. Reproduza o travamento ou o deadlock.
+
 4. Cause uma falha no sistema usando a sequência de teclas de (2).
+
 5. O sistema falhará e coletará o despejo de memória.
+
 6. Após a reinicialização do sistema, relate o memory.dmp a secure@microsoft.com. A localização padrão do arquivo de despejo será %SystemRoot%\memory.dmp ou C:\Windows\memory.dmp se a unidade do sistema for C:. No email, observe que o despejo é para o WSL ou Bash na equipe do Windows.
+
 7. Restaure o tipo de despejo de memória para a configuração original.
 
 ### <a name="check-your-build-number"></a>Verifique o número de build
@@ -137,34 +178,44 @@ Para encontrar a arquitetura do seu PC e o número de build do Windows, abra
 **Configurações** > **Sistema** > **Sobre**
 
 Procure os campos **Build do SO** e **Tipo de Sistema**.  
-    ![Captura de tela dos campos Build e Tipo de Sistema](media/system.png) 
-
+    ![Captura de tela dos campos Build e Tipo de Sistema](media/system.png)
 
 Para localizar o número de build do Windows Server, execute o seguinte no PowerShell:  
+
 ``` PowerShell
 systeminfo | Select-String "^OS Name","^OS Version"
 ```
 
 ### <a name="confirm-wsl-is-enabled"></a>Confirme se o WSL está habilitado
+
 É possível confirmar se o Subsistema Windows para Linux está habilitado executando o seguinte no PowerShell:  
+
 ``` PowerShell
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
 ### <a name="openssh-server-connection-issues"></a>Problemas de conexão do servidor OpenSSH
+
 Falha ao tentar conectar seu servidor SSH com o seguinte erro: "Conexão encerrada pela porta 22, 127.0.0.1".
+
 1. Verifique se o servidor OpenSSH está em execução:
+
    ``` BASH
    sudo service ssh status
    ```
+
    e que você seguiu este tutorial: https://help.ubuntu.com/lts/serverguide/openssh-server.html.en
+
 2. Interrompa o serviço SSHD e inicie o SSHD no modo de depuração:
+
    ``` BASH
    sudo service ssh stop
    sudo /usr/sbin/sshd -d
    ```
+
 3. Verifique os logs de inicialização e certifique-se de que as HostKeys estejam disponíveis e que você não veja mensagens de log, como:
-   ```
+
+   ```BASH
    debug1: sshd version OpenSSH_7.2, OpenSSL 1.0.2g  1 Mar 2016
    debug1: key_load_private: incorrect passphrase supplied to decrypt private key
    debug1: key_load_public: No such file or directory
@@ -181,6 +232,7 @@ Falha ao tentar conectar seu servidor SSH com o seguinte erro: "Conexão encerra
    ```
 
 Se você vir essas mensagens e as chaves estiverem ausentes em `/etc/ssh/`, será necessário regenerar as chaves ou apenas limpar e instalar o servidor OpenSSH:
+
 ```BASH
 sudo apt-get purge openssh-server
 sudo apt-get install openssh-server
@@ -190,6 +242,8 @@ sudo apt-get install openssh-server
 
 Este erro está relacionado a um estado de instalação inadequado. Conclua as etapas a seguir para tentar corrigir esse problema:
 
-* Se você estiver executando o comando Habilitar recurso WSL do PowerShell, tente usar a GUI em vez de abrir o menu Iniciar, pesquisando "Ativar ou desativar recursos do Windows" e, na lista, selecione "Subsistema do Windows para Linux", que instalará o componente opcional.
-* Atualize sua versão do Windows acessando Configurações, Atualizações e clicando em "Verificar se há atualizações"
-* Se ambas falharem e você precisar acessar o WSL, considere atualizar no local reinstalando o Windows 10 com uma mídia de instalação e selecionando "Manter Tudo" para que seus aplicativos e arquivos sejam preservados. É possível encontrar instruções para fazer isso na [página Reinstalar o Windows 10](https://support.microsoft.com/en-us/help/4000735/windows-10-reinstall).
+- Se você estiver executando o comando Habilitar recurso WSL do PowerShell, tente usar a GUI em vez de abrir o menu Iniciar, pesquisando "Ativar ou desativar recursos do Windows" e, na lista, selecione "Subsistema do Windows para Linux", que instalará o componente opcional.
+
+- Atualize sua versão do Windows acessando Configurações, Atualizações e clicando em "Verificar se há atualizações"
+
+- Se ambas falharem e você precisar acessar o WSL, considere atualizar no local reinstalando o Windows 10 com uma mídia de instalação e selecionando "Manter Tudo" para que seus aplicativos e arquivos sejam preservados. É possível encontrar instruções para fazer isso na [página Reinstalar o Windows 10](https://support.microsoft.com/help/4000735/windows-10-reinstall).
