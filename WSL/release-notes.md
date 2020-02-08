@@ -8,14 +8,32 @@ ms.topic: article
 ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 2e1b8a2ae37568af273ac311572881daa8b55d4b
-ms.sourcegitcommit: 3be576f946611cf36e27745bdb7c4c52af1b9928
+ms.openlocfilehash: 31bf975afb202a6cfd9a2879cff29a77b2969fce
+ms.sourcegitcommit: 7069b8d452308c32cc7fa31d1158fcb130d42e06
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74200223"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76911700"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
+
+## <a name="build-19555"></a>Build 19555
+Para obter informações gerais do Windows sobre o build 19555, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/01/30/announcing-windows-10-insider-preview-build-19555/).
+
+* [WSL2] Use um cgroup de memória para limitar a quantidade de memória usada pelas operações de instalação e conversão [GH 4669]
+* Torne o wsl.exe presente quando o componente opcional do Subsistema do Windows para Linux não estiver habilitado para aprimorar a descoberta de recursos.
+* Altere o wsl.exe para imprimir o texto de ajuda se o componente opcional do WSL não estiver instalado
+* Corrija a condição de corrida ao criar instâncias
+* Crie wslclient.dll que contém todas as funcionalidades de linha de comando
+* Impeça falhas durante a interrupção do serviço LxssManagerUser
+* Corrija a falha rápida wslapi.dll quando o parâmetro distroName for NULL
+
+## <a name="build-19041"></a>Build 19041
+Para obter informações gerais do Windows sobre o build 19041, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/12/10/announcing-windows-10-insider-preview-build-19041/).
+
+* [WSL2] Limpe a máscara de sinal antes de iniciar os processos
+* [WSL2] Atualize o kernel do Linux para 4.19.84
+* Manipule a criação do symlink /etc/resolv.conf quando o symlink não for relativo
 
 ## <a name="build-19028"></a>Build 19028
 Para obter informações gerais do Windows sobre o build 19028, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2019/11/19/announcing-windows-10-insider-preview-build-19028/).
@@ -498,7 +516,7 @@ Para obter informações gerais do Windows sobre o Build 17133, visite o [blog d
 Para obter informações gerais do Windows sobre o Build 17128, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2018/03/23/announcing-windows-10-insider-preview-build-17128-for-fast/).
 
 ### <a name="wsl"></a>WSL
-* Nenhuma
+* Não
 
 ## <a name="build-17627-skip-ahead"></a>Build 17627 (ignorar e prosseguir)
 Para obter informações gerais do Windows sobre o Build 17627, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2018/03/21/announcing-windows-10-insider-preview-build-17627-for-skip-ahead/).
@@ -657,7 +675,7 @@ Para obter informações gerais do Windows sobre o Build 17063, visite o [blog d
 
 ### <a name="wsl"></a>WSL
 * O DrvFs dá suporte a metadados adicionais do Linux. Isso permite definir o proprietário e o modo de arquivos usando chmod/chown e também criar arquivos especiais, tais como FIFOs, soquetes Unix e arquivos de dispositivo. Por enquanto, isso é desabilitado por padrão, pois ainda é experimental.
-**Observação:**  Corrigimos um bug no formato de metadados usado pelo DrvFs. Embora os metadados funcionem nesse Build para experimentação, os builds futuros não leem corretamente os metadados criados por esse build.  Talvez seja necessário atualizar manualmente o proprietário para arquivos modificados e os dispositivos com uma ID de dispositivo personalizada precisarão ser recriados.
+**Observação**:  Corrigimos um bug no formato de metadados usado pelo DrvFs. Embora os metadados funcionem nesse Build para experimentação, os builds futuros não leem corretamente os metadados criados por esse build.  Talvez seja necessário atualizar manualmente o proprietário para arquivos modificados e os dispositivos com uma ID de dispositivo personalizada precisarão ser recriados.
 
   Para habilitar, monte o DrvFs com a opção de metadados (para habilitá-lo em uma montagem existente, você precisa primeiro desmontá-lo):
 

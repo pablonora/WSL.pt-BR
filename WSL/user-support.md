@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: f70e685f-24c6-4908-9546-bf4f0291d8fd
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 85bd8f05d041181c2cfb16f6fb55aaeea15b332c
-ms.sourcegitcommit: 07eb5f2e1f4517928165dda4510012599b0d0e1e
+ms.openlocfilehash: 30dea11adb68639f645ca800a695b0404661845a
+ms.sourcegitcommit: e5fb773dd44abab7bcf289340da00f59528b88f7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520575"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76973676"
 ---
 # <a name="create-and-update-user-accounts-for-wsl-distributions"></a>Criar e atualizar contas de usuário para distribuições do WSL
 
@@ -38,7 +38,7 @@ Se você esqueceu a senha da sua distribuição do Linux:
 
 1. Abra o PowerShell e insira a raiz da distribuição do WSL padrão usando o comando: `wsl -u root`
 
-Se você precisa atualizar a senha que foi esquecida em uma distribuição que não seja a padrão, use o comando: `wsl -d Debian -u root`, substituindo `Debian` pelo nome da sua distribuição de destino.
+> Se você precisa atualizar a senha que foi esquecida em uma distribuição que não seja a padrão, use o comando: `wsl -d Debian -u root`, substituindo `Debian` pelo nome da sua distribuição direcionada.
 
 2. Depois que a distribuição do WSL tiver sido aberta no nível raiz dentro do PowerShell, você poderá usar esse comando para atualizar a senha: `passwd`
 
