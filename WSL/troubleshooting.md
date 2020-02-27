@@ -1,18 +1,18 @@
 ---
-title: Solução de problemas do Subsistema Windows para Linux
-description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema Windows para Linux.
+title: Solução de problemas do Subsistema do Windows para Linux
+description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema do Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ec456c314ac4a1588ccb5c1aa35e22a2d33a39b0
-ms.sourcegitcommit: 07eb5f2e1f4517928165dda4510012599b0d0e1e
+ms.openlocfilehash: b66392f6ad37af9d61e8b4fb6bb477d0d774ccb6
+ms.sourcegitcommit: f1e471bca7a65073135365e49c0d4e59227bdf25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520525"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575281"
 ---
-# <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
+# <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema do Windows para Linux
 
 Para obter suporte com problemas relacionados ao WSL, consulte nosso repositório do GitHub:
 
@@ -67,13 +67,13 @@ Siga [estas instruções](https://github.com/Microsoft/WSL/blob/master/CONTRIBUT
 
 Há dois componentes do Bash do Ubuntu no Windows que podem exigir atualização.
 
-1. O Subsistema Windows para Linux
+1. O Subsistema do Windows para Linux
   
    Atualizar essa parte do Bash do Ubuntu no Windows permitirá novas correções destacadas nas [notas sobre a versão](./release-notes.md). Certifique-se de que você está inscrito no Programa Windows Insider e que seu build está atualizado. Para obter um controle mais detalhado, incluindo a redefinição da instância do Ubuntu, confira a [página de referência de comando](./reference.md).
 
 2. Os binários de usuário do Ubuntu
 
-   A atualização dessa parte do Bash do Ubuntu no Windows instalará todas as atualizações nos binários de usuário do Ubuntu, incluindo os aplicativos que você instalou via apt-get. Para fazer isso, execute os seguintes comandos no Bash:
+   A atualização dessa parte do Bash do Ubuntu no Windows instalará todas as atualizações nos binários de usuário do Ubuntu, incluindo os aplicativos que você instalou via apt-get. Para atualizar, execute os seguintes comandos no Bash:
   
    1. `apt-get update`
    2. `apt-get upgrade`
@@ -115,7 +115,7 @@ Para desligar o console herdado:
 
 ### <a name="error-0x80040154-after-windows-update"></a>"Error: 0x80040154" após atualização do Windows
 
-O recurso Subsistema Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema Windows para Linux podem ser encontradas no [Guia de instalação](./install-win10.md).
+O recurso Subsistema do Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema do Windows para Linux podem ser encontradas no [Guia de instalação](./install-win10.md).
 
 ### <a name="changing-the-display-language"></a>Como alterar o idioma de exibição
 
@@ -188,7 +188,7 @@ systeminfo | Select-String "^OS Name","^OS Version"
 
 ### <a name="confirm-wsl-is-enabled"></a>Confirme se o WSL está habilitado
 
-É possível confirmar se o Subsistema Windows para Linux está habilitado executando o seguinte no PowerShell:  
+É possível confirmar se o Subsistema do Windows para Linux está habilitado executando o seguinte no PowerShell:  
 
 ``` PowerShell
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -247,3 +247,24 @@ Este erro está relacionado a um estado de instalação inadequado. Conclua as e
 - Atualize sua versão do Windows acessando Configurações, Atualizações e clicando em "Verificar se há atualizações"
 
 - Se ambas falharem e você precisar acessar o WSL, considere atualizar no local reinstalando o Windows 10 com uma mídia de instalação e selecionando "Manter Tudo" para que seus aplicativos e arquivos sejam preservados. É possível encontrar instruções para fazer isso na [página Reinstalar o Windows 10](https://support.microsoft.com/help/4000735/windows-10-reinstall).
+
+### <a name="correct-ssh-related-permission-errors"></a>Erros de permissão corretos (relacionados a SSH)
+
+Se você vir este erro:
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for '/home/artur/.ssh/private-key.pem' are too open.
+```
+
+Para corrigi-lo, acrescente o seguinte ao arquivo ```/etc/wsl.conf```:
+
+```
+[automount]
+enabled = true
+options = metadata,uid=1000,gid=1000,umask=0022
+```
+
+Ao adicionar esse comando, você incluirá metadados e modificará as permissões do arquivo nos arquivos Windows vistos em WSL. Confira as [Permissões do sistema de arquivos](./file-permissions.md) para saber mais.
