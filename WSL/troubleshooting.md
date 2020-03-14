@@ -1,18 +1,18 @@
 ---
-title: Solução de problemas do Subsistema do Windows para Linux
-description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema do Windows para Linux.
+title: Solução de problemas do Subsistema Windows para Linux
+description: Fornece informações detalhadas sobre erros comuns e problemas que as pessoas têm ao executar o Linux no Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: b66392f6ad37af9d61e8b4fb6bb477d0d774ccb6
-ms.sourcegitcommit: f1e471bca7a65073135365e49c0d4e59227bdf25
+ms.openlocfilehash: 9028f1e89e92da94d82b16603b3af60876a4cb86
+ms.sourcegitcommit: 8795e1c4c5d2efdc8a9c78af05fb7be3ac1eef3d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77575281"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79318140"
 ---
-# <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema do Windows para Linux
+# <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
 
 Para obter suporte com problemas relacionados ao WSL, consulte nosso repositório do GitHub:
 
@@ -67,13 +67,13 @@ Siga [estas instruções](https://github.com/Microsoft/WSL/blob/master/CONTRIBUT
 
 Há dois componentes do Bash do Ubuntu no Windows que podem exigir atualização.
 
-1. O Subsistema do Windows para Linux
+1. O Subsistema Windows para Linux
   
    Atualizar essa parte do Bash do Ubuntu no Windows permitirá novas correções destacadas nas [notas sobre a versão](./release-notes.md). Certifique-se de que você está inscrito no Programa Windows Insider e que seu build está atualizado. Para obter um controle mais detalhado, incluindo a redefinição da instância do Ubuntu, confira a [página de referência de comando](./reference.md).
 
 2. Os binários de usuário do Ubuntu
 
-   A atualização dessa parte do Bash do Ubuntu no Windows instalará todas as atualizações nos binários de usuário do Ubuntu, incluindo os aplicativos que você instalou via apt-get. Para atualizar, execute os seguintes comandos no Bash:
+   A atualização dessa parte do Bash do Ubuntu no Windows instalará todas as atualizações nos binários de usuário do Ubuntu, incluindo os aplicativos que você instalou via apt-get. Para fazer isso, execute os seguintes comandos no Bash:
   
    1. `apt-get update`
    2. `apt-get upgrade`
@@ -86,20 +86,20 @@ Para corrigir problemas relacionados ao `udev`, siga as seguintes etapas:
 
 1. Grave o seguinte no `/usr/sbin/policy-rc.d` e salve suas alterações.
   
-   ``` BASH
+   ```bash
    #!/bin/sh
    exit 101
    ```
   
 2. Adicione permissões de execução a `/usr/sbin/policy-rc.d`:
 
-   ``` BASH
+   ```bash
    chmod +x /usr/sbin/policy-rc.d
    ```
   
 3. Execute os comandos a seguir:
 
-   ``` BASH
+   ```bash
    dpkg-divert --local --rename --add /sbin/initctl
    ln -s /bin/true /sbin/initctl
    ```
@@ -115,7 +115,7 @@ Para desligar o console herdado:
 
 ### <a name="error-0x80040154-after-windows-update"></a>"Error: 0x80040154" após atualização do Windows
 
-O recurso Subsistema do Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema do Windows para Linux podem ser encontradas no [Guia de instalação](./install-win10.md).
+O recurso Subsistema Windows para Linux pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o Subsistema Windows para Linux podem ser encontradas no [Guia de instalação](./install-win10.md).
 
 ### <a name="changing-the-display-language"></a>Como alterar o idioma de exibição
 
@@ -123,7 +123,7 @@ A instalação do WSL tentará alterar automaticamente a localidade do Ubuntu pa
 
 O exemplo abaixo altera a localidade para en-US:
 
-``` BASH
+```bash
 sudo update-locale LANG=en_US.UTF8
 ```
 
@@ -188,7 +188,7 @@ systeminfo | Select-String "^OS Name","^OS Version"
 
 ### <a name="confirm-wsl-is-enabled"></a>Confirme se o WSL está habilitado
 
-É possível confirmar se o Subsistema do Windows para Linux está habilitado executando o seguinte no PowerShell:  
+É possível confirmar se o Subsistema Windows para Linux está habilitado executando o seguinte no PowerShell:  
 
 ``` PowerShell
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -200,7 +200,7 @@ Falha ao tentar conectar seu servidor SSH com o seguinte erro: "Conexão encerra
 
 1. Verifique se o servidor OpenSSH está em execução:
 
-   ``` BASH
+   ```bash
    sudo service ssh status
    ```
 
@@ -208,7 +208,7 @@ Falha ao tentar conectar seu servidor SSH com o seguinte erro: "Conexão encerra
 
 2. Interrompa o serviço SSHD e inicie o SSHD no modo de depuração:
 
-   ``` BASH
+   ```bash
    sudo service ssh stop
    sudo /usr/sbin/sshd -d
    ```
