@@ -69,7 +69,7 @@ Veja abaixo erros relacionados e correções sugeridas. Consulte a [página de s
 
 * **Falha na instalação com o erro 0x80070003**
     * O Subsistema Windows para Linux é executado somente na unidade do sistema (normalmente, a unidade `C:`). Verifique se as distribuições estão armazenadas na unidade do sistema:  
-    * Abra **Configurações** -> **Armazenamento** -> **Mais configurações de armazenamento: Altere onde o novo conteúdo é salvo**
+    * Abra **Configurações** -> **Armazenamento** -> **Mais Configurações de Armazenamento: Altere onde o novo conteúdo é salvo**
     ![Imagem das configurações do sistema para instalar aplicativos na unidade C:](media/AppStorage.png)
     
     
