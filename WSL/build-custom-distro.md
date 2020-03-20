@@ -21,7 +21,7 @@ Este projeto permite:
 * Os mantenedores de distribuição do Linux para empacotar e enviar uma distribuição do Linux como um Appx executado no WSL
 * Desenvolvedores para criar distribuições personalizadas do Linux que podem ser sideloaddas em sua máquina de desenvolvimento
 
-## <a name="background"></a>Informações preliminares
+## <a name="background"></a>Tela de fundo
 Distribuímos o Linux distribuições para WSL como aplicativos UWP por meio do Microsoft Store. Você pode instalar os aplicativos que serão executados em WSL-o subsistema que reside no kernel do Windows. Esse mecanismo de entrega tem muitos benefícios como discutidos em uma [postagem no blog anterior](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/).
 
 ## <a name="sideloading-a-custom-linux-distro-package"></a>Sideload de um pacote personalizado de distribuição do Linux
@@ -29,9 +29,9 @@ Você pode criar um pacote personalizado do Linux distribuição como um aplicat
 Para configurar seu computador para aplicativos Sideload, você precisará habilitá-lo nas configurações do sistema em "para desenvolvedores".  Certifique-se de ter o modo de desenvolvedor ou aplicativos Sideload selecionados
 
 ## <a name="for-linux-distro-maintainers"></a>Para os mantenedores do Linux distribuição
-Para enviar para a loja, você precisará trabalhar conosco para receber aprovação de publicação. Se você for um proprietário de distribuição do Linux interessado em adicionar sua distribuição ao Microsoft Store, entre wslpartners@microsoft.comem contato com.
+Para enviar para a loja, você precisará trabalhar conosco para receber aprovação de publicação. Se você for um proprietário de distribuição do Linux interessado em adicionar sua distribuição à Microsoft Store, entre em contato com wslpartners@microsoft.com.
 
-## <a name="getting-started"></a>Guia de Introdução
+## <a name="getting-started"></a>Introdução
 Siga as instruções no [repositório GitHub do iniciador do distribuição](https://github.com/Microsoft/WSL-DistroLauncher) para criar um pacote personalizado do distribuição do Linux.
 
  
@@ -39,7 +39,7 @@ Siga as instruções no [repositório GitHub do iniciador do distribuição](htt
 *  [Abrir o fornecimento de um exemplo de WSL para os mantenedores de distribuição do Linux e distribuição personalizada do Linux de Sideload](https://blogs.msdn.microsoft.com/commandline/2018/03/26/wsl-distro-launcher/)
 * [Blog de linha de comando](https://blogs.msdn.microsoft.com/commandline/)
 
-## <a name="provide-feedback"></a>Envie comentários
+## <a name="provide-feedback"></a>Fornecer comentários
 * [Repositório GitHub do iniciador distribuição](https://github.com/Microsoft/WSL-DistroLauncher)
 * [Rastreador de problemas do GitHub para WSL](https://github.com/Microsoft/BashOnWindows/issues)
-* [Portal do UserVoice de linha de comando](https://wpdev.uservoice.com/forums/266908-command-prompt-console-bash-on-ubuntu-on-windo/category/161892-bash)
+* [Portal UserVoice de linha de comando](https://wpdev.uservoice.com/forums/266908-command-prompt-console-bash-on-ubuntu-on-windo/category/161892-bash)

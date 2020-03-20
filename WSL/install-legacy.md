@@ -27,7 +27,7 @@ Se você não puder atualizar para a atualização de criadores de outono ou pos
 
 1. Ativar o modo de desenvolvedor para executar o WSL na atualização de aniversário do Windows 10 ou na atualização de criadores, você deve habilitar o modo de desenvolvedor:
 
-    Abrir **configurações** -> **atualização e segurança** -> **para desenvolvedores**
+    Abrir **configurações** ->  -> de **atualização e segurança** **para desenvolvedores**
 
     Selecione o botão de opção modo de desenvolvedor  
     ![Habilitar o modo de desenvolvedor](media/updateAndSecurity.png)
@@ -43,7 +43,7 @@ Se você não puder atualizar para a atualização de criadores de outono ou pos
     Na primeira vez que você executar o bash no Ubuntu no Windows, será solicitado que você crie um nome de usuário e senha UNIX. Siga as [instruções da nova instância do distribuição](initialize-distro.md) para concluir a instalação
 
 1. Inicie um novo shell do Ubuntu por meio de:
-    * Executando `bash` a partir de um prompt de comando
+    * Executando `bash` de um prompt de comando
     * Clicando no atalho "bash no Ubuntu no Windows" do menu iniciar
 
     
@@ -59,11 +59,11 @@ wsl --unregister Legacy
 Se você não estiver usando o Windows versão 1903 ou superior, talvez seja necessário executar `wslconfig /u Legacy` ou `lxrun /uninstall /full` em vez disso. 
 
 ### <a name="manually-deleting-the-legacy-distro"></a>Excluindo manualmente o distribuição herdado
-Se desejar, você pode excluir manualmente sua instância herdada. Isso pode ser necessário se você encontrar problemas ao desinstalar o distribuição herdado usando `lxrun.exe`ou estiver executando a atualização do Windows 10 Spring 2018 (ou posterior) que não são fornecidos `lxrun.exe`com o.
+Se desejar, você pode excluir manualmente sua instância herdada. Isso pode ser necessário se você encontrar problemas ao desinstalar o distribuição herdado usando `lxrun.exe`ou estiver executando a atualização do Windows 10 Spring 2018 (ou posterior) que não são fornecidos com o `lxrun.exe`.
 
-Para excluir de modo forçado seu distribuição WSL herdado, `%localappdata%\lxss\` exclua a pasta (e o seu subconteúdo) usando o Windows ' Explorador de arquivos ou a linha de comando:
+Para excluir de forma forçada seu distribuição WSL herdado, exclua a pasta `%localappdata%\lxss\` (e todo o subconteúdo) usando o Windows ' Explorador de arquivos ou a linha de comando:
 
-Usando o PowerShell
+Uso do PowerShell
 ```powershell
 rm -Recurse $env:localappdata/lxss/
 ```
