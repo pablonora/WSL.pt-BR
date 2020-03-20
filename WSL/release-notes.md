@@ -968,7 +968,7 @@ Veja abaixo uma lista de syscalls novas ou aprimoradas que têm alguma implement
 `prlimit64`<br/>
 
 ### <a name="known-issues"></a>Problemas conhecidos
-#### <a name="github-issue-2392-windows-folders-not-recognized-by-wsl-httpsgithubcommicrosoftbashonwindowsissues2392"></a>[Problema do GitHub n. 2392: Pastas do Windows não reconhecidas pelo WSL...](https://github.com/Microsoft/BashOnWindows/issues/2392)
+#### <a name="github-issue-2392-windows-folders-not-recognized-by-wsl-"></a>[Problema do GitHub n. 2392: Pastas do Windows não reconhecidas pelo WSL...](https://github.com/Microsoft/BashOnWindows/issues/2392)
 No build 16257, o WSL tem problemas para enumerar arquivos/pastas do Windows via `/mnt/c/...`.
 Esse problema foi corrigido e deve ser liberado no build do Insiders durante a semana que começa em 14/08/2017.
 

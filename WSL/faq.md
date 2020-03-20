@@ -1,6 +1,6 @@
 ---
 title: Perguntas frequentes (FAQ)
-description: Perguntas frequentes sobre o Subsistema do Windows para Linux.
+description: Perguntas frequentes sobre o Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, faq
 ms.date: 9/4/2018
 ms.topic: article
@@ -13,11 +13,11 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 02/26/2020
 ms.locfileid: "77624930"
 ---
-# <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o Subsistema do Windows para Linux
+# <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o Subsistema Windows para Linux
 
-## <a name="what-is-windows-subsystem-for-linux-wsl"></a>O que é o WSL (Subsistema do Windows para Linux)?
+## <a name="what-is-windows-subsystem-for-linux-wsl"></a>O que é o WSL (Subsistema Windows para Linux)?
 
-O WSL (Subsistema do Windows para Linux) é um novo recurso do Windows 10 que habilita e execução de ferramentas de linha de comando nativas do Linux diretamente no Windows, juntamente com sua área de trabalho tradicional do Windows e os aplicativos de loja modernos.
+O Subsistema Windows para Linux (WSL) é um novo recurso do Windows 10 que habilita e execução de ferramentas de linha de comando nativas do Linux diretamente no Windows, juntamente com sua área de trabalho tradicional do Windows e os aplicativos de loja modernos.
 
 Consulte a [página Sobre](./about.md) para obter mais detalhes.
 
@@ -71,7 +71,7 @@ Além disso, embora você possa executar muitos aplicativos de servidor populare
 
 ## <a name="what-windows-skus-is-wsl-included-in"></a>Em quais SKUs do Windows o WSL está incluído?
 
-O Subsistema do Windows para Linux está disponível na versão de área de trabalho do Windows para a Atualização de Aniversário do Windows 10 e a Atualização do Windows 10 para Criadores ou posterior.
+O Subsistema Windows para Linux está disponível na versão de área de trabalho do Windows para a Atualização de Aniversário do Windows 10 e a Atualização do Windows 10 para Criadores ou posterior.
 
 Iniciando na Fall Creators Update, o WSL estará disponível nas SKUs de desktop e de servidor do Windows.
 
@@ -177,7 +177,7 @@ O WSL não é compatível com a execução em um console herdado. Para desligar 
 
 ## <a name="why-do-i-get-error-0x80040154-when-i-run-bashexe-after-upgrading-windows"></a>Por que obtenho "Erro: 0x80040154" quando executo o bash.exe após a atualização do Windows?
 
-O recurso “Subsistema do Windows para Linux” pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o recurso “Subsistema do Windows para Linux” podem ser encontradas no [Guia de instalação](https://docs.microsoft.com/windows/wsl/install-win10#install-the-windows-subsystem-for-linux).
+O recurso “Subsistema Windows para Linux” pode ser desabilitado durante uma atualização do Windows. Se isso acontecer, o recurso do Windows deverá ser habilitado novamente. As instruções para habilitar o recurso “Subsistema Windows para Linux” podem ser encontradas no [Guia de instalação](https://docs.microsoft.com/windows/wsl/install-win10#install-the-windows-subsystem-for-linux).
 
 ## <a name="how-do-i-change-the-display-language-of-wsl"></a>Como alterar o idioma de exibição do WSL?
 

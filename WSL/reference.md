@@ -96,7 +96,7 @@ Esse comando permite que você configure a distribuição do WSL. Veja abaixo um
 
 Usando: `wslconfig [Argument] [Options...]`
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argumentos
 * **/l, /list [Options]**
   
   Lista as distribuições registradas.
