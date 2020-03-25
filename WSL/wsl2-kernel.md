@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.localizationpriority: high
 ms.custom: seodec18
-ms.openlocfilehash: f7fce13c2acc65e3afa2cc56873e40bc55a460bc
-ms.sourcegitcommit: 506272bd7fc1cbda7e32146d54a8bdd02af3e0c4
+ms.openlocfilehash: a1a2f23fb05c426f80878e12e82026a96c71354e
+ms.sourcegitcommit: 4b7b8bb0ac20c2336fcdbf44e6b3b2ed336bf4d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319706"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447746"
 ---
 # <a name="updating-the-wsl-2-linux-kernel"></a>Atualizar o kernel do WSL 2 Linux
 
@@ -20,7 +20,7 @@ Para atualizar manualmente o kernel do Linux dentro do WSL2, siga estas etapas.
 
 ## <a name="download-the-linux-kernel-update-package"></a>Baixar o pacote de atualização do kernel do Linux
 
-Clique [neste link](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) para baixar o pacote de atualização do kernel do WSL2 Linux mais recente para computadores AMD64.
+Clique [neste link](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) para baixar o pacote de atualização do kernel do WSL2 para Linux mais recente para computadores x64.
 
 > [!NOTE] 
 > Se você estiver usando um computador ARM64, baixe [este pacote](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi).
