@@ -23,7 +23,7 @@ Consulte a [página Sobre](./about.md) para obter mais detalhes.
 
 ## <a name="who-is-wsl-for"></a>Para quem é o WSL?
 
-Ela é basicamente uma ferramenta para desenvolvedores – especialmente desenvolvedores da Web e aqueles que trabalham em ou com projetos de software livre. Isso permite que aqueles que desejam/precisam usar Bash, ferramentas comuns do Linux (`sed`, `awk`, etc.) e muitas ferramentas do Linux (Ruby, Python, etc.) usem suas ferramentas no Windows.
+Ela é basicamente uma ferramenta para desenvolvedores – especialmente desenvolvedores da Web e aqueles que trabalham em ou com projetos de software livre. Isso permite que aqueles que desejam/precisam usar Bash, ferramentas comuns do Linux (`sed`, `awk`, etc.) e muitas linguagens de programação (Ruby, Python, etc.) usem suas ferramentas no Windows.
 
 ## <a name="what-can-i-do-with-wsl"></a>O que posso fazer com o WSL?
 
@@ -197,7 +197,7 @@ Alguns usuários relataram problemas com aplicativos de firewall específicos qu
 1. AVG
 1. Avast
 
-Em alguns casos, desligar o firewall permite o acesso. Em alguns casos, simplesmente ter o firewall instalado bloqueia o acesso.
+Em alguns casos, desligar o firewall permite o acesso. Em outros, simplesmente ter o firewall instalado bloqueia o acesso.
 
 ## <a name="how-do-i-access-a-port-from-wsl-in-windows"></a>Como acessar uma porta do WSL no Windows?
 O WSL compartilha o endereço IP do Windows, pois ele é executado no Windows. Assim, você pode acessar qualquer porta no localhost, por exemplo, se você tivesse conteúdo da Web na porta 1234, poderia https://localhost:1234 no seu navegador do Windows.
