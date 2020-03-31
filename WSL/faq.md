@@ -23,7 +23,7 @@ Consulte a [página Sobre](./about.md) para obter mais detalhes.
 
 ## <a name="who-is-wsl-for"></a>Para quem é o WSL?
 
-Ela é basicamente uma ferramenta para desenvolvedores – especialmente desenvolvedores da Web e aqueles que trabalham em ou com projetos de software livre. Isso permite que aqueles que desejam/precisam usar Bash, ferramentas comuns do Linux (`sed`, `awk`, etc.) e muitas linguagens de programação (Ruby, Python, etc.) usem suas ferramentas no Windows.
+Ela é basicamente uma ferramenta para desenvolvedores – especialmente desenvolvedores da Web e aqueles que trabalham em ou com projetos de software livre. Isso permite que aqueles que desejam/precisam usar Bash, ferramentas comuns do Linux (`sed`, `awk`, etc.) e muitas linguagens para Linux (Ruby, Python, etc.) usem suas cadeias de ferramentas no Windows.
 
 ## <a name="what-can-i-do-with-wsl"></a>O que posso fazer com o WSL?
 
