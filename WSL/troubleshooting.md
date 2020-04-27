@@ -6,10 +6,10 @@ ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
 ms.openlocfilehash: 9028f1e89e92da94d82b16603b3af60876a4cb86
-ms.sourcegitcommit: 8795e1c4c5d2efdc8a9c78af05fb7be3ac1eef3d
+ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "79318140"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Solução de problemas do Subsistema Windows para Linux
@@ -144,7 +144,7 @@ Alguns usuários relataram problemas com aplicativos de firewall específicos qu
 2. AVG
 3. Avast
 
-Em alguns casos, desligar o firewall permite o acesso.  Em alguns casos, simplesmente ter o firewall instalado bloqueia o acesso.
+Em alguns casos, desligar o firewall permite o acesso.  Em outros, simplesmente ter o firewall instalado bloqueia o acesso.
 
 ### <a name="permission-denied-error-when-using-ping"></a>Erro de permissão negada ao usar ping
 

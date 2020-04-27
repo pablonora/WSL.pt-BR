@@ -9,10 +9,10 @@ ms.assetid: 36ea641e-4d49-4881-84eb-a9ca85b1cdf4
 ms.custom: seodec18
 ms.localizationpriority: high
 ms.openlocfilehash: 31bf975afb202a6cfd9a2879cff29a77b2969fce
-ms.sourcegitcommit: 7069b8d452308c32cc7fa31d1158fcb130d42e06
+ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "76911700"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
@@ -1839,7 +1839,7 @@ Para obter informações gerais do Windows sobre o Build 14361, visite o [blog d
 - Tamanho da pilha de thread inicial atualizado para corresponder à configuração padrão do Ubuntu e relatando o tamanho corretamente para a syscall get_rlimit (GH 172, 258)
 - Relatório aprimorado de nomes de imagem de processo do pico (por exemplo, para auditoria)
 - Implementado o /proc/mountinfo para o comando df
-- Corrigido o código de erro de symlink para o nome do filho. e ..
+- Corrigido o código de erro de symlink para o nome do filho. e .
 - Correções de bug e melhorias adicionais
 
 ### <a name="syscall-support"></a>Suporte a syscall
