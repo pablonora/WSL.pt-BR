@@ -4,12 +4,12 @@ description: Listagem de referência e configuração de várias distribuições
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: 59419919be138a20ab57e1a6d26a411e1531bf9f
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: e72822bdec0ef5788bd384a5795a91d746428800
+ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235898"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343888"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>Comandos do WSL e configurações de inicialização
 
@@ -161,6 +161,17 @@ Para reinstalar, localize a distribuição na Microsoft Store e selecione "Inici
 
 Execute o WSL como o usuário especificado. Observe que o usuário deve existir dentro da distribuição do WSL.
 
+## <a name="change-the-default-user-for-a-distribution"></a>Alterar o usuário padrão para uma distribuição
+
+`<DistributionName> config --default-user <Username>`
+
+Altere o usuário padrão para o seu logon de distribuição. O usuário já deve existir dentro da distribuição para se tornar o usuário padrão. 
+
+Por exemplo: `ubuntu config --default-user johndoe` alteraria o usuário padrão para a distribuição do Ubuntu para o usuário "davibarros".
+
+> [!NOTE]
+> Se você estiver tendo problemas para descobrir o nome da sua distribuição, consulte [listar distribuições](https://docs.microsoft.com/windows/wsl/wsl-config#list-distributions) para o comando para listar o nome oficial das distribuições instaladas. 
+
 ## <a name="run-a-specific-distribution"></a>Executar uma distribuição específica
 
 `wsl -d <DistributionName>`, `wsl --distribution <DistributionName>`
@@ -247,16 +258,16 @@ O WSL é compatível com duas seções: `automount` e `network`.
 
 Seção: `[automount]`
 
-| chave        | value                          | default      | HDInsight                                                                                                                                                                                                                                                                                                                          |
+| key        | value                          | default      | observações                                                                                                                                                                                                                                                                                                                          |
 |:-----------|:-------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Habilitado    | booleano                        | true         | `true` causa unidades fixas (ou seja, `C:/` ou `D:/`) a ser montado automaticamente com DrvFs em `/mnt`.  `false`significa que as unidades não serão montadas automaticamente, mas você ainda poderá montá-las manualmente ou por meio do `fstab` .                                                                                                             |
-| mountFsTab | booleano                        | true         | O `true` define o `/etc/fstab` para ser processado no início do WSL. /etc/fstab é um arquivo no qual você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de arquivos automaticamente no WSL na inicialização.                                                                                                                |
-| root       | String                         | `/mnt/`      | Define o diretório em que as unidades fixas serão montadas automaticamente. Por exemplo, se tiver um diretório no WSL no `/windir/` e especificá-lo como a raiz, você poderá esperar ver suas unidades fixas montadas em `/windir/c`                                                                                              |
+| habilitado    | booliano                        | verdadeiro         | `true` causa unidades fixas (ou seja, `C:/` ou `D:/`) a ser montado automaticamente com DrvFs em `/mnt`.  `false`significa que as unidades não serão montadas automaticamente, mas você ainda poderá montá-las manualmente ou por meio do `fstab` .                                                                                                             |
+| mountFsTab | booliano                        | verdadeiro         | O `true` define o `/etc/fstab` para ser processado no início do WSL. /etc/fstab é um arquivo no qual você pode declarar outros sistemas de arquivos, como um compartilhamento SMB. Assim, você pode montar esses sistemas de arquivos automaticamente no WSL na inicialização.                                                                                                                |
+| raiz       | Cadeia de caracteres                         | `/mnt/`      | Define o diretório em que as unidades fixas serão montadas automaticamente. Por exemplo, se tiver um diretório no WSL no `/windir/` e especificá-lo como a raiz, você poderá esperar ver suas unidades fixas montadas em `/windir/c`                                                                                              |
 | opções    | lista de valores separados por vírgulas | cadeia de caracteres vazia | Esse valor é acrescentado à cadeia de caracteres de opções padrão de montagem DrvFs. **Somente opções específicas do DrvFs podem ser especificadas.** As opções que o binário de montagem normalmente analisa em um sinalizador não são compatíveis. Se você quiser especificar explicitamente essas opções, deverá incluir todas as unidades para as quais deseja fazer isso em /etc/fstab. |
 
 Por padrão, o WSL define o UID e o GID como o valor do usuário padrão (na distribuição do Ubuntu, o usuário padrão é criado com UID = 1.000, GID = 1.000). Se o usuário especificar uma opção GID ou UID explicitamente por meio dessa chave, o valor associado será substituído. Caso contrário, o valor padrão será sempre acrescentado.
 
-**Observação:** Essas opções são aplicadas como opções de montagem para todas as unidades montadas automaticamente. Para alterar as opções somente para uma unidade específica, use/etc/fstab.
+**Observação**: Essas opções são aplicadas como opções de montagem para todas as unidades montadas automaticamente. Para alterar as opções somente para uma unidade específica, use/etc/fstab.
 
 #### <a name="mount-options"></a>Opções de montagem
 
@@ -270,16 +281,16 @@ A configuração de diferentes opções de montagem para unidades do Windows (Dr
 |fmask | Uma máscara octal de permissões a serem excluídas para todos os arquivos | 000
 |dmask | Uma máscara octal de permissões a serem excluídas para todos os diretórios | 000
 
-**Observação:** As máscaras de permissão são colocadas por meio de uma operação OR lógica antes de serem aplicadas a arquivos ou diretórios. 
+**Observação**: as máscaras de permissão passam por uma operação OR lógica antes de serem aplicadas a arquivos ou diretórios. 
 
 #### <a name="network"></a>rede
 
 Rótulo da seção: `[network]`
 
-| chave | value | default | HDInsight|
+| key | value | default | observações|
 |:----|:----|:----|:----|
-| generateHosts | booleano | `true` | O `true` define o WSL para gerar `/etc/hosts`. O arquivo `hosts` contém um mapa estático do endereço IP correspondente de nomes de host. |
-| generateResolvConf | booleano | `true` | O `true` define o WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que é capaz de resolver um determinado nome de host para seu endereço IP. | 
+| generateHosts | booliano | `true` | O `true` define o WSL para gerar `/etc/hosts`. O arquivo `hosts` contém um mapa estático do endereço IP correspondente de nomes de host. |
+| generateResolvConf | booliano | `true` | O `true` define o WSL para gerar `/etc/resolv.conf`. O `resolv.conf` contém uma lista DNS que é capaz de resolver um determinado nome de host para seu endereço IP. | 
 
 #### <a name="interop"></a>interop
 
@@ -287,10 +298,10 @@ Rótulo da seção: `[interop]`
 
 Essas opções estão disponíveis no Insider Build 17713 e posterior.
 
-| chave | value | default | HDInsight|
+| key | value | default | observações|
 |:----|:----|:----|:----|
-| Habilitado | booleano | `true` | Definir essa chave determinará se o WSL dará suporte à inicialização de processos do Windows. |
-| appendWindowsPath | booleano | `true` | Definir essa chave determinará se o WSL adicionará elementos de caminho do Windows à variável de ambiente $PATH. |
+| habilitado | booliano | `true` | Definir essa chave determinará se o WSL dará suporte à inicialização de processos do Windows. |
+| appendWindowsPath | booliano | `true` | Definir essa chave determinará se o WSL adicionará elementos de caminho do Windows à variável de ambiente $PATH. |
 
 #### <a name="user"></a>usuário
 

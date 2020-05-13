@@ -5,7 +5,7 @@ Se você encontrar problemas/erros no documento ou tiver uma melhoria que gostar
 
 > **Observação:** O Issue Tracker do repositório é apenas para relatar problemas com os documentos do WSL. Outros repositórios de problemas relacionados:
 > * WSLhttps://github.com/Microsoft/WSL/
-> * Console do Windows:https://github.com/Microsoft/Console/
+> * Console do Windows:https://github.com/Microsoft/Terminal/
 
 ## <a name="external-links"></a>Links externos
 
