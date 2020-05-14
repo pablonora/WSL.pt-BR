@@ -1,172 +1,157 @@
 ---
 title: Interoperabilidade do Windows com o Linux
 description: Descreve a interoperabilidade do Windows com distribuições do Linux em execução no Subsistema Windows para Linux.
-ms.date: 12/20/2017
+ms.date: 05/12/2020
 ms.topic: article
-ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
-ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: f8b0150c044f5011b84e80cac4befd752c4dc552
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: b1c7a64a86cf088159d1abee3b341328151428f6
+ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "71269800"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83270840"
 ---
-# <a name="windows-subsystem-for-linux-interoperability-with-windows"></a>Subsistema Windows para interoperabilidade do Linux com o Windows
-
-> **Atualização do Fall Creators Update.**  
-Se você estiver executando a Atualização para Criadores ou a Atualização de Aniversário, vá para a [seção Atualização de Aniversário/Atualização para Criadores](interop.md#creators-update-and-anniversary-update).
+# <a name="windows-interoperability-with-linux"></a>Interoperabilidade do Windows com o Linux
 
 O WSL (Subsistema Windows para Linux) está melhorando continuamente a integração entre o Windows e o Linux.  Você pode:
 
-1. Invocar os binários do Windows no console do Linux.
-1. Invocar os binários do Linux no console do Windows.
-1. **Windows Insiders Builds 17063 e posteriores** Compartilhar variáveis de ambiente entre o Linux e o Windows.
+* Executar as ferramentas do Windows (por exemplo, notepad.exe) de uma linha de comando do Linux (por exemplo, Ubuntu).
+* Executar ferramentas do Linux (por exemplo, grep) de uma linha de comando do Windows (por exemplo, PowerShell).
+* Compartilhar variáveis de ambiente entre o Linux e o Windows. (Build 17063e posteriores)
 
-Isso proporciona uma experiência simples entre o Windows e o WSL.  Os detalhes técnicos estão no [blog do WSL](https://blogs.msdn.microsoft.com/wsl/2016/10/19/windows-and-ubuntu-interoperability/).
+> [!NOTE]
+> Se você estiver executando a Atualização para Criadores (outubro de 2017, Build 16299) ou a Atualização de Aniversário (agosto de 2016, Build 14393), vá para as [versões anteriores do Windows 10](#earlier-versions-of-windows-10).
 
 ## <a name="run-linux-tools-from-a-windows-command-line"></a>Execute ferramentas do Linux usando uma linha de comando do Windows
 
-Execute binários do Linux no prompt de comando do Windows (CMD ou PowerShell) usando o `wsl.exe <command>`.
-
-Binários invocados desta maneira:
-
-1. Use o mesmo diretório de trabalho que o prompt do CMD ou do PowerShell atual.
-1. Execute como usuário padrão do WSL.
-1. Tenha os mesmos direitos administrativos do Windows que o processo de chamada e o terminal.
+Execute binários do Linux no prompt de comando do Windows (CMD) ou PowerShell usando o `wsl <command>` (ou `wsl.exe <command>`).
 
 Por exemplo:
 
-```console
+```powershell
 C:\temp> wsl ls -la
 <- contents of C:\temp ->
 ```
 
-O comando do Linux após `wsl.exe` é tratado como qualquer comando executado no WSL.  Coisas como sudo, piping e redirecionamento de arquivo funcionam.
+Binários invocados desta maneira:
 
-Exemplo usando o sudo:
+* Use o mesmo diretório de trabalho que o prompt do CMD ou do PowerShell atual.
+* Execute como usuário padrão do WSL.
+* Tenha os mesmos direitos administrativos do Windows que o processo de chamada e o terminal.
 
-```console
+O comando do Linux após `wsl` (ou `wsl.exe`) é tratado como qualquer comando executado no WSL.  Coisas como sudo, piping e redirecionamento de arquivo funcionam.
+
+Exemplo usando o sudo para atualizar sua distribuição padrão do Linux:
+
+```powershell
 C:\temp> wsl sudo apt-get update
-[sudo] password for username:
-Hit:1 https://archive.ubuntu.com/ubuntu xenial InRelease
-Get:2 https://security.ubuntu.com/ubuntu xenial-security InRelease [94.5 kB]
 ```
 
-Exemplos que misturam comandos do WSL e do Windows:
+Seu nome de usuário de distribuição do Linux padrão será listado após a execução desse comando e você será solicitado a fornecer sua senha. Depois de inserir sua senha corretamente, sua distribuição baixará as atualizações.
 
-```console
-C:\temp> wsl ls -la | findstr "foo"
--rwxrwxrwx 1 root root     14 Sep 27 14:26 foo.bat
+## <a name="mixing-linux-and-windows-commands"></a>Como mesclar comandos do Windows e do Linux
 
-C:\temp> dir | wsl grep foo
-09/27/2016  02:26 PM                14 foo.bat
+Aqui estão alguns exemplos de como mesclar comandos do Linux e do Windows usando o PowerShell.
 
+Para usar o comando `ls -la` do Linux para listar arquivos e o comando `findstr` do PowerShell para filtrar os resultados de palavras que contenham "git", combine os comandos:
+
+```powershell
+wsl ls -la | findstr "git"
+```
+
+Para usar o comando `dir` do PowerShell para listar arquivos e o comando `grep` do Linux para filtrar os resultados de palavras que contenham "git", combine os comandos:
+
+```powershell
+C:\temp> dir | wsl grep git
+```
+
+Para usar o comando `ls -la` do Linux para listar arquivos e o comando `> out.txt` do PowerShell para imprimir a lista em um arquivo de texto chamado "out.txt", combine os comandos:
+
+```powershell
 C:\temp> wsl ls -la > out.txt
 ```
 
 Os comandos passados para `wsl.exe` são encaminhados para o processo do WSL sem modificação.  Os caminhos de arquivo devem ser especificados no formato do WSL.
 
-Exemplo com caminhos:
+Para usar o comando `ls -la` do Linux para listar arquivos no caminho do sistema de arquivos `/proc/cpuinfo` do Linux usando o PowerShell:
 
-```console
+```powershell
 C:\temp> wsl ls -la /proc/cpuinfo
--r--r--r-- 1 root root 0 Sep 28 11:28 /proc/cpuinfo
-
-C:\temp> wsl ls -la "/mnt/c/Program Files"
-<- contents of C:\Program Files ->
 ```
 
-## <a name="run-windows-tools-from-wsl"></a>Executar ferramentas do Windows usando o WSL
+Para usar o comando `ls -la` do Linux para listar arquivos no caminho do sistema de arquivos `C:\Program Files` do Windows usando o PowerShell:
 
-O WSL pode invocar os binários do Windows diretamente da linha de comando do WSL usando `[binary name].exe`.  Por exemplo, `notepad.exe`.  Para facilitar a execução dos executáveis do Windows, o caminho do Windows está incluído no Linux `$PATH` no Fall Creators Update.
+```powershell
+C:\temp> wsl ls -la "/mnt/c/Program Files"
+```
+
+## <a name="run-windows-tools-from-linux"></a>Executar ferramentas do Windows no Linux
+
+O WSL pode executar as ferramentas do Windows diretamente da linha de comando do WSL usando `[tool-name].exe`.  Por exemplo, `notepad.exe`.
+
+<!-- Craig - could you help add a section with an example here to explain this scenario: "To access your Linux files using a Windows tool, use `\\wsl$\<distroName>\'` as the file path." Currently it I can just enter `notepad.exe foo.txt` and it seems to work fine, so explaining a situation where the file path is needed would be helpful. -->
 
 Os aplicativos executados dessa maneira têm as seguintes propriedades:
 
-1. Mantenha o diretório de trabalho como o prompt de comando do WSL (em grande parte – as exceções são explicadas abaixo).
-1. Tenha os mesmos direitos de permissão que o processo do WSL.
-1. Execute como usuário ativo do Windows.
-1. É exibido no Gerenciador de Tarefas do Windows como se fosse executado diretamente no prompt do CMD.
-
-Exemplo:
-
-``` BASH
-$ notepad.exe
-```
+* Mantenha o diretório de trabalho como o prompt de comando do WSL (em grande parte – as exceções são explicadas abaixo).
+* Tenha os mesmos direitos de permissão que o processo do WSL.
+* Execute como usuário ativo do Windows.
+* É exibido no Gerenciador de Tarefas do Windows como se fosse executado diretamente no prompt do CMD.
 
 Os executáveis do Windows executados no WSL são tratados de forma semelhante aos executáveis do Linux nativos – piping, redirecionamentos e até mesmo o trabalho em segundo plano conforme o esperado.
 
-Exemplo usando pipes:
+Para executar a ferramenta `ipconfig.exe` do Windows, use a ferramenta `grep` do Linux para filtrar os resultados de "IPv4", e use a ferramenta `cut` do Linux para remover os campos de coluna. De uma distribuição do Linux (por exemplo, Ubuntu), insira:
 
-``` BASH
-$ ipconfig.exe | grep IPv4 | cut -d: -f2
-172.21.240.1
-10.159.21.24
+```bash
+ipconfig.exe | grep IPv4 | cut -d: -f2
 ```
 
-Exemplo usando comandos mistos do Windows e do WSL:
+Vamos tentar mesclar comandos do Windows e do Linux. Abra sua distribuição do Linux (por exemplo, Ubuntu) e crie um arquivo de texto: `touch foo.txt`. Agora, use o comando `ls -la` do Linux para listar os arquivos diretos e seus detalhes de criação, além da ferramenta `findstr.exe` do Windows PowerShell para filtrar os resultados para que apenas o arquivo `foo.txt` seja exibido nos resultados:
 
-``` BASH
-$ ls -la | findstr.exe foo.txt
-
-$ cmd.exe /c dir
-<- contents of C:\ ->
+```bash
+ls -la | findstr.exe foo.txt
 ```
 
-Os binários do Windows devem incluir a extensão do arquivo, corresponder o caso do arquivo e ser executáveis.  Não executáveis, incluindo scripts do lote.  Comandos nativos do CMD, como `dir`, podem ser executados com o comando `cmd.exe /C`.
+As ferramentas do Windows devem incluir a extensão do arquivo, corresponder o caso do arquivo e ser executáveis.  Não executáveis, incluindo scripts do lote.  Comandos nativos do CMD, como `dir`, podem ser executados com o comando `cmd.exe /C`.
 
-Exemplos:
+Por exemplo, liste o conteúdo de seu diretório C:\ do sistema de arquivos do Windows, digitando:
 
-``` BASH
-$ cmd.exe /C dir
-<- contents of C:\ ->
-
-$ PING.EXE www.microsoft.com
-Pinging e1863.dspb.akamaiedge.net [2600:1409:a:5a2::747] with 32 bytes of data:
-Reply from 2600:1409:a:5a2::747: time=2ms
+```bash
+cmd.exe /C dir
 ```
 
-Os parâmetros são passados para o binário do Windows não modificado.
+Ou use o comando `ping` para enviar uma solicitação de eco para o site microsoft.com:
 
-Por exemplo, os seguintes comandos abrirão `C:\temp\foo.txt` no `notepad.exe`:
-
-``` BASH
-$ notepad.exe "C:\temp\foo.txt"
-$ notepad.exe C:\\temp\\foo.txt
+```bash
+ping.exe www.microsoft.com
 ```
 
-A modificação de arquivos localizados em VolFs (arquivos que não estão em `/mnt/<x>`) com um aplicativo do Windows no WSL não é compatível.
+Os parâmetros são passados para o binário do Windows não modificado. Por exemplo, o seguinte comando abrirá `C:\temp\foo.txt` no `notepad.exe`:
 
-Por padrão, o WSL tenta manter o diretório de trabalho do binário do Windows como o diretório do WSL atual, mas fará fallback no diretório de criação da instância se o diretório de trabalho estiver em VolFs.
+```bash
+notepad.exe "C:\temp\foo.txt"
+```
 
-Por exemplo, `wsl.exe` é inicialmente iniciado de `C:\temp` e o diretório do WSL atual é alterado para a página inicial do usuário.  Quando `notepad.exe` é chamado do diretório base do usuário, o WSL é revertido automaticamente para `C:\temp` como o diretório de trabalho do notepad.exe:
+Isso também funcionará:
 
-``` BASH
-C:\temp> wsl
-/mnt/c/temp/$ cd ~
-~$ notepad.exe foo.txt
-~$ ls | grep foo.txt
-~$ exit
-
-exit
-C:\temp>dir | findstr foo.txt
-09/27/2016  02:15 PM                14 foo.txt
+```bash
+notepad.exe C:\\temp\\foo.txt
 ```
 
 ## <a name="share-environment-variables-between-windows-and-wsl"></a>Compartilhar variáveis de ambiente entre o Windows e o WSL
 
-> Disponível no Participante do Programa Windows Insider builds 17063 e posteriores.
+O WSL e o Windows compartilham o `WSLENV`, uma variável de ambiente especial criada para vincular distribuições do Windows e do Linux em execução no WSL.
 
-Antes do 17063, a única variável de ambiente do Windows que o WSL podia acessar era `PATH` (portanto, era possível iniciar os executáveis do Win32 no WSL).
-
-Começando no 17063, o WSL e o Windows compartilham o `WSLENV`, uma variável de ambiente especial criada para vincular distribuições do Windows e do Linux em execução no WSL.
-
-Propriedades de `WSLENV`:
+Propriedades da variável `WSLENV`:
 
 * Ele é compartilhado e existe em ambientes do Windows e do WSL.
 * É uma lista de variáveis de ambiente a serem compartilhadas entre o Windows e o WSL.
 * Pode formatar variáveis de ambiente para funcionamento no Windows e no WSL.
+
+> [!NOTE]
+> Antes do 17063, a única variável de ambiente do Windows que o WSL podia acessar era `PATH` (portanto, era possível iniciar os executáveis do Win32 no WSL). O `WSLENV` passa a ter suporte no 17063 e posteriores.
+
+## <a name="wslenv-flags"></a>Sinalizadores de WSLENV
 
 Há quatro sinalizadores disponíveis no `WSLENV` para influenciar como essa variável de ambiente é convertida.
 
@@ -179,130 +164,76 @@ Há quatro sinalizadores disponíveis no `WSLENV` para influenciar como essa var
 
 Os sinalizadores podem ser combinados conforme necessário.
 
-## <a name="disable-interop"></a>Desabilitar interoperabilidade
+## <a name="disable-interoperability"></a>Desabilitar interoperabilidade
 
-Os usuários podem desabilitar a capacidade de executar binários do Windows para uma única sessão do WSL executando o seguinte comando como raiz:
+Os usuários podem desabilitar a capacidade de executar ferramentas do Windows para uma sessão do WSL executando o seguinte comando como raiz:
 
-``` BASH
-$ echo 0 > /proc/sys/fs/binfmt_misc/WSLInterop
+```bash
+echo 0 > /proc/sys/fs/binfmt_misc/WSLInterop
 ```
 
 Para reabilitar os binários do Windows, saia de todas as sessões do WSL e execute o bash.exe novamente ou execute o seguinte comando como raiz:
 
-``` BASH
-$ echo 1 > /proc/sys/fs/binfmt_misc/WSLInterop
+```bash
+echo 1 > /proc/sys/fs/binfmt_misc/WSLInterop
 ```
 
 Desabilitar a interoperabilidade não persistirá entre as sessões do WSL – a interoperabilidade será habilitada novamente quando uma nova sessão for iniciada.
 
-## <a name="creators-update-and-anniversary-update"></a>Atualização para Criadores e Atualização de Aniversário
+## <a name="earlier-versions-of-windows-10"></a>Versões anteriores do Windows 10
 
-Embora a experiência de interoperabilidade que a atualização anterior ao Falls Creator Update seja semelhante às experiências de interoperabilidade mais recentes, há algumas diferenças importantes.
+Há várias diferenças nos comandos de interoperabilidade em versões anteriores do Windows 10. Se você estiver executando uma Atualização para Criadores (outubro de 2017, Build 16299) ou uma Atualização de Aniversário (agosto de 2016, Build 14393) do Windows 10, recomendamos que você [atualize para a versão mais recente do Windows](ms-settings:windowsupdate), mas, se isso não for possível, descrevemos algumas das diferenças de interoperabilidade abaixo.
 
-Para resumir:
+Resumo:
 
-* `bash.exe` foi preterido e substituído por `wsl.exe`.
+* `bash.exe` foi substituído por `wsl.exe`.
 * A opção `-c` para executar um único comando não é necessária com o `wsl.exe`.
-* O caminho do Windows está incluído no WSL `$PATH`
+* O caminho do Windows está incluído no WSL `$PATH`.
+* O processo para desabilitar a interoperabilidade não é alterado.
 
-O processo para desabilitar a interoperabilidade não é alterado.
+Os comandos do Linux podem ser executados no prompt de comando do Windows ou no PowerShell, mas, para versões anteriores do Windows, você precisa usar o comando `bash`. Por exemplo:
 
-### <a name="invoking-wsl-from-the-windows-command-line"></a>Como invocar o WSL da linha de comando do Windows
-
-Os binários do Linux podem ser invocados no prompt de comando do Windows ou no PowerShell.  Os binários invocados dessa maneira têm as seguintes propriedades:
-
-1. Use o mesmo diretório de trabalho que o prompt do CMD ou do PowerShell.
-1. Execute como usuário padrão do WSL.
-1. Tenha os mesmos direitos administrativos do Windows que o processo de chamada e o terminal.
-
-Exemplo:
-
-```console
+```powershell
 C:\temp> bash -c "ls -la"
 ```
 
-Os comandos do Linux chamados dessa maneira são tratados como qualquer outro aplicativo do Windows.  Coisas como inserção, piping e redirecionamento de arquivo funcionam.
-
-Exemplos:
-
-```console
-C:\temp>bash -c "sudo apt-get update"
-[sudo] password for username:
-Hit:1 https://archive.ubuntu.com/ubuntu xenial InRelease
-Get:2 https://security.ubuntu.com/ubuntu xenial-security InRelease [94.5 kB]
-```
-
-```console
-C:\temp> bash -c "ls -la" | findstr foo
-C:\temp> dir | bash -c "grep foo"
-C:\temp> bash -c "ls -la" > out.txt
-```
+Coisas como inserção, piping e redirecionamento de arquivo funcionam.
 
 Os comandos do WSL passados para `bash -c` são encaminhados para o processo do WSL sem modificação.  Os caminhos de arquivo devem ser especificados no formato do WSL e é necessário ter cuidado com os caracteres de escape relevantes. Exemplo:
 
 ```console
 C:\temp> bash -c "ls -la /proc/cpuinfo"
--r--r--r-- 1 root root 0 Sep 28 11:28 /proc/cpuinfo
+```
 
+Ou...
+
+```powershell
 C:\temp> bash -c "ls -la \"/mnt/c/Program Files\""
-<- contents of C:\Program Files ->
 ```
 
-### <a name="invoking-windows-binaries-from-wsl"></a>Como invocar binários do Windows usando o WSL
+Ao chamar uma ferramenta do Windows de uma distribuição do WSL em uma versão anterior do Windows 10, será necessário especificar o caminho do diretório. Por exemplo, na linha de comando do WSL, digite:
 
-O Subsistema Windows para Linux pode invocar os binários do Windows diretamente da linha de comando do WSL.  Os aplicativos executados dessa maneira têm as seguintes propriedades:
-
-1. Mantenha o diretório de trabalho como o prompt de comando do WSL, exceto no cenário explicado abaixo.
-1. Tenha os mesmos direitos de permissão que o processo `bash.exe`. 
-1. Execute como usuário ativo do Windows.
-1. É exibido no Gerenciador de Tarefas do Windows como se fosse executado diretamente no prompt do CMD.
-
-Exemplo:
-
-``` BASH
-$ /mnt/c/Windows/System32/notepad.exe
+```bash
+/mnt/c/Windows/System32/notepad.exe
 ```
 
-No WSL, esses executáveis são tratados de forma semelhante aos executáveis do Linux nativos.  Isso significa que adicionar diretórios ao piping e ao caminho do Linux entre comandos funciona conforme o esperado.  Exemplos:
+No WSL, esses executáveis são tratados de forma semelhante aos executáveis do Linux nativos.  Isso significa que adicionar diretórios ao piping e ao caminho do Linux entre comandos funciona conforme o esperado.  Por exemplo:
 
-``` BASH
-$ export PATH=$PATH:/mnt/c/Windows/System32
-$ notepad.exe
-$ ipconfig.exe | grep IPv4 | cut -d: -f2
-$ ls -la | findstr.exe foo.txt
-$ cmd.exe /c dir
+```bash
+export PATH=$PATH:/mnt/c/Windows/System32
+```
+Ou
+
+```bash
+ipconfig.exe | grep IPv4 | cut -d: -f2
 ```
 
-O binário do Windows deve incluir a extensão do arquivo, corresponder o caso do arquivo e ser executável.  Os não executáveis, incluindo scripts do lote e comandos como `dir`, podem ser executados com o comando `/mnt/c/Windows/System32/cmd.exe /C`.
+O binário do Windows deve incluir a extensão do arquivo, corresponder o caso do arquivo e ser executável.  Os não executáveis, incluindo scripts do lote e comandos como `dir`, podem ser executados com o comando `/mnt/c/Windows/System32/cmd.exe /C`. Por exemplo:
 
-Exemplos:
-
-``` BASH
-$ /mnt/c/Windows/System32/cmd.exe /C dir
-$ /mnt/c/Windows/System32/PING.EXE www.microsoft.com
+```bash
+/mnt/c/Windows/System32/cmd.exe /C dir
 ```
 
-Os parâmetros são passados para o binário do Windows não modificado.  
+## <a name="additional-resources"></a>Recursos adicionais
 
-Por exemplo, os seguintes comandos abrirão `C:\temp\foo.txt` no `notepad.exe`:
-
-``` BASH
-$ notepad.exe "C:\temp\foo.txt"
-$ notepad.exe C:\\temp\\foo.txt
-```
-
-A modificação de arquivos localizados em VolFs (arquivos que não estão em `/mnt/<x>`) com um aplicativo do Windows não é compatível.  Por padrão, o WSL tenta manter o diretório de trabalho do binário do Windows como o diretório do WSL atual, mas fará fallback no diretório de criação da instância se o diretório de trabalho estiver em VolFs.
-
-Por exemplo, `bash.exe` é inicialmente iniciado de `C:\temp` e o diretório do WSL atual é alterado para a página inicial do usuário.  Quando `notepad.exe` é chamado do diretório base do usuário, o WSL é revertido automaticamente para `C:\temp` como o diretório de trabalho do notepad.exe:
-
-``` BASH
-C:\temp> bash
-/mnt/c/temp/$ cd ~
-~$ notepad.exe foo.txt
-~$ ls | grep foo.txt
-~$ exit
-exit
-
-C:\temp> dir | findstr foo.txt
-09/27/2016  02:15 PM                14 foo.txt
-```
+* [Postagem do blog do WSL sobre interoperabilidade de 2016](https://blogs.msdn.microsoft.com/wsl/2016/10/19/windows-and-ubuntu-interoperability/)

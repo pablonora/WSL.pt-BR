@@ -1,22 +1,20 @@
 ---
-title: Criar e atualizar contas de usuário para distribuições do WSL
+title: Criar e atualizar contas de usuário para distribuições do Linux
 description: Referência para contas de usuário e gerenciamento de permissões com o Subsistema Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, user accounts
-ms.date: 01/20/2020
+ms.date: 05/12/2020
 ms.topic: article
-ms.assetid: f70e685f-24c6-4908-9546-bf4f0291d8fd
-ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 30dea11adb68639f645ca800a695b0404661845a
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 551cc66b1648a66717163d1d8e19a78d28bff342
+ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76973676"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235916"
 ---
-# <a name="create-and-update-user-accounts-for-wsl-distributions"></a>Criar e atualizar contas de usuário para distribuições do WSL
+# <a name="create-a-user-account-and-password-for-your-new-linux-distribution"></a>Criar uma conta de usuário e uma senha para sua nova distribuição do Linux
 
-Depois que você habilitar o WSL e instalar uma distribuição do Linux da Microsoft Store, a primeira etapa que será solicitada ao abrir sua distribuição do Linux recém-instalada será a criação de uma conta, incluindo um **nome de usuário** e **senha**.
+Depois que você [habilitar o WSL e instalar uma distribuição do Linux da Microsoft Store](./install-win10.md), a primeira etapa a ser realizada ao abrir a distribuição do Linux recém-instalada será a criação de uma conta, incluindo um **Nome de Usuário** e **Senha**.
 
 - O **nome de usuário** e a **senha** são específicos da sua distribuição do Linux e não têm nenhuma influência sobre seu nome de usuário do Windows.
 
@@ -26,19 +24,31 @@ Depois que você habilitar o WSL e instalar uma distribuição do Linux da Micro
 
 - Cada distribuição do Linux em execução no Subsistema Windows para Linux tem suas próprias contas de usuário e senhas do Linux.  Você precisará configurar uma conta de usuário do Linux sempre que adicionar uma distribuição, reinstalação ou redefinição.
 
+![Desempacotamento do Ubuntu no console do Windows](media/UbuntuInstall.png)
+
+## <a name="update-and-upgrade-packages"></a>Pacotes de atualização e upgrade
+
+A maioria das distribuições é fornecida com um catálogo de pacotes vazio ou mínimo. É altamente recomendável atualizar regularmente seu catálogo de pacotes e fazer upgrade de seus pacotes instalados usando o gerenciador de pacotes preferencial da distribuição. No Debian/Ubuntu, use apt:
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+O Windows não atualiza ou faz upgrade automaticamente de suas distribuições do Linux. Essa é uma tarefa que a maioria dos usuários do Linux prefere controlar por conta própria.
+
 ## <a name="reset-your-linux-password"></a>Redefinir sua senha do Linux
 
 Para alterar sua senha, abra a distribuição do Linux (Ubuntu, por exemplo) e insira o comando: `passwd`
 
 Você será solicitado a inserir a senha atual, inserir a nova senha e, em seguida, confirmar a nova senha.
 
-### <a name="forgot-your-password"></a>Esqueceu sua senha
+## <a name="forgot-your-password"></a>Esqueceu sua senha
 
 Se você esqueceu a senha da sua distribuição do Linux:
 
 1. Abra o PowerShell e insira a raiz da distribuição do WSL padrão usando o comando: `wsl -u root`
 
-> Se você precisa atualizar a senha que foi esquecida em uma distribuição que não seja a padrão, use o comando: `wsl -d Debian -u root`, substituindo `Debian` pelo nome da sua distribuição direcionada.
+    > Se você precisa atualizar a senha que foi esquecida em uma distribuição que não seja a padrão, use o comando: `wsl -d Debian -u root`, substituindo `Debian` pelo nome da sua distribuição direcionada.
 
 2. Depois que a distribuição do WSL tiver sido aberta no nível raiz dentro do PowerShell, você poderá usar esse comando para atualizar a senha: `passwd`
 

@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 6a70cf1c3a139610785ff506d78b8c3621620b4c
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 35edad06775e75eef6d81d018355d8f28d772deb
+ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80307456"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235890"
 ---
-# <a name="wsl-2-faq"></a>Perguntas frequentes sobre o WSL 2
+# <a name="wsl-2-faqs"></a>Perguntas frequentes sobre o WSL 2
 
 Veja abaixo uma lista de perguntas frequentes sobre o Subsistema do Windows para Linux 2.
 
@@ -32,7 +32,7 @@ No momento, não temos planos para substituir o WSL 1. Você pode executar as di
 
 Alguns aplicativos de terceiros não funcionam quando o Hyper-V está em uso, o que significa que eles não poderão ser executados quando o WSL 2 estiver habilitado, como VMware e VirtualBox. No entanto, recentemente, o VirtualBox e o VMware lançaram versões compatíveis com Hyper-V e WSL2! Você pode saber mais sobre as [alterações no VirtualBox aqui][1] e sobre as [alterações no VMware aqui][4].
 
-Estamos investigando maneiras de ajudar a resolver esse problema. Por exemplo, expomos um conjunto de APIs, chamado [Plataforma de hipervisor][2], que provedores de virtualização de terceiros podem usar para tornar o software compatível com o Hyper-V. Isso permite que os aplicativos usem a arquitetura do Hyper-V para emulação, como [o Google Android Emulator][3] e o VirtualBox 6 e superiores, que agora são compatíveis com o Hyper-V.
+Estamos investigando maneiras de ajudar a resolver esse problema. Por exemplo, expomos um conjunto de APIs, chamado [Plataforma de Hipervisor][2], que provedores de virtualização de terceiros podem usar para tornar o software compatível com o Hyper-V. Isso permite que os aplicativos usem a arquitetura do Hyper-V para emulação, como [o Google Android Emulator][3] e o VirtualBox 6 e superiores, que agora são compatíveis com o Hyper-V.
 
 ## <a name="can-i-access-the-gpu-in-wsl-2-are-there-plans-to-increase-hardware-support"></a>Posso acessar a GPU no WSL 2? Há planos para aumentar o suporte a hardware?
 
@@ -52,9 +52,9 @@ Substitua '&lt;VMName&gt;' pelo nome da máquina virtual.
 
 ## <a name="can-i-use-wslconf-in-wsl-2"></a>Posso usar wsl.conf no WSL 2?
 
-O WSL 2 é compatível com o mesmo arquivo wsl.conf que o WSL 1 usa. Isso significa que todas as opções de configuração que você definiu em uma distribuição do WSL 1 (como a montagem automática de unidades do Windows, a habilitação ou desabilitação da interoperabilidade, a alteração do diretório em que as unidades do Windows serão montadas etc.) funcionarão dentro do WSL 2. Saiba mais sobre as opções de configuração do WSL na página [Gerenciamento da distribuição](./wsl-config.md). 
+O WSL 2 é compatível com o mesmo arquivo wsl.conf que o WSL 1 usa. Isso significa que todas as opções de configuração que você definiu em uma distribuição do WSL 1 (como a montagem automática de unidades do Windows, a habilitação ou desabilitação da interoperabilidade, a alteração do diretório em que as unidades do Windows serão montadas etc.) funcionarão dentro do WSL 2. Saiba mais sobre as opções de configuração do WSL na página [Gerenciamento da distribuição](./wsl-config.md).
 
  [1]: https://www.virtualbox.org/wiki/Changelog-6.0
- [2]: https://docs.microsoft.com/en-us/virtualization/api/
+ [2]: https://docs.microsoft.com/virtualization/api/
  [3]: https://devblogs.microsoft.com/visualstudio/hyper-v-android-emulator-support/
  [4]: https://blogs.vmware.com/workstation/2020/01/vmware-workstation-tech-preview-20h1.html
