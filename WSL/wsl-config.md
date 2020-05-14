@@ -4,12 +4,12 @@ description: Listagem de referência e configuração de várias distribuições
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: e72822bdec0ef5788bd384a5795a91d746428800
-ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
+ms.openlocfilehash: 914bce22b789d379420823d44d063bc84ec39ac1
+ms.sourcegitcommit: 509691ed3d42c9e0171e6a44e09003d4eb24f9ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343888"
+ms.locfileid: "83380423"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>Comandos do WSL e configurações de inicialização
 
@@ -311,25 +311,38 @@ Essas opções estão disponíveis no Build 18980 e posterior.
 
 | chave | value | default | HDInsight|
 |:----|:----|:----|:----|
-| default | string | O nome de usuário inicial criado na primeira execução | Definir essa chave especifica qual usuário executar como ao iniciar pela primeira vez uma sessão WSL. |
+| default | cadeia de caracteres | O nome de usuário inicial criado na primeira execução | Definir essa chave especifica qual usuário executar como ao iniciar pela primeira vez uma sessão WSL. |
 
 ## <a name="configure-global-options-with-wslconfig"></a>Configurar opções globais com. wslconfig
 
 > **Disponível no Windows Build 19041 e posterior**
 
-Você pode configurar opções de WSL globais colocando um `.wslconfig` arquivo no diretório raiz da pasta Users: `C:\Users\<yourUserName>\.wslconfig` . Esse arquivo pode conter as seguintes opções:
+Você pode configurar opções de WSL globais colocando um `.wslconfig` arquivo no diretório raiz da pasta Users: `C:\Users\<yourUserName>\.wslconfig` . 
+
+Aqui está um arquivo. wslconfig de exemplo:
+
+```console
+[wsl2]
+kernel=C:\\temp\\myCustomKernel
+memory=4GB # Limits VM memory in WSL 2 to 4 GB
+processors=2 # Makes the WSL 2 VM use two virtual processors
+```
+
+Esse arquivo pode conter as seguintes opções:
 
 ### <a name="wsl-2-settings"></a>Configurações do WSL 2
 
-Essas configurações afetam a VM que alimenta qualquer distribuição WSL 2. 
+Rótulo da seção: `[wsl2]`
+
+Essas configurações afetam a VM que alimenta qualquer distribuição WSL 2.
 
 | chave | value | default | HDInsight|
 |:----|:----|:----|:----|
-| kernel | string | A caixa de entrada fornecida pelo kernel criado pela Microsoft | Um caminho absoluto do Windows para um kernel personalizado do Linux. |
+| kernel | cadeia de caracteres | A caixa de entrada fornecida pelo kernel criado pela Microsoft | Um caminho absoluto do Windows para um kernel personalizado do Linux. |
 | memória | tamanho | 80% da memória total no Windows | A quantidade de memória a ser atribuída à VM WSL 2. |
 | processadores | número | O mesmo número de processadores no Windows | Quantos processadores atribuir à VM WSL 2. |
 | localhostForwarding | booleano | `true` | Booliano especificando se as portas vinculadas ao curinga ou localhost na VM WSL 2 devem ser conectadas do host via localhost: Port. |
-| kernelCommandLine | string | Em branco | Argumentos de linha de comando de kernel adicionais. |
+| kernelCommandLine | cadeia de caracteres | Em branco | Argumentos de linha de comando de kernel adicionais. |
 | swap | tamanho | 25% do tamanho da memória no Windows arredondado para os GB mais próximos | Quanto espaço de permuta adicionar à VM WSL 2, 0 para nenhum arquivo de permuta. |
 | Permuta | tamanho | %USERPROFILE%\AppData\Local\Temp\swap.vhdx | Um caminho absoluto do Windows para o disco rígido virtual de permuta. |
 
