@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: f11aed3a5583d1a68f4a0e095103eb0315ca2c45
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 70044105820dd485246ae3fc731cbd6f06183f8a
+ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80256379"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343878"
 ---
 # <a name="about-wsl-2"></a>Sobre o WSL 2
 
@@ -34,4 +34,4 @@ Operações com uso intensivo de arquivos, como `git clone`, `npm install`, `apt
 
 ## <a name="full-system-call-compatibility"></a>Compatibilidade total com a chamada do sistema
 
-Os binários do Linux usam chamadas do sistema para executar muitas funções, como acessar arquivos, solicitar memória, criar processos e muito mais. Enquanto o WSL 1 usava uma camada de conversão criada pela equipe do WSL, o WSL 2 inclui o próprio kernel Linux com compatibilidade total com a chamada do sistema. Ele introduz um conjunto totalmente novo de aplicativos que você pode executar dentro do WSL, como o Docker e muito mais. Além disso, todas as atualizações para o kernel Linux podem estar imediatamente prontas para serem adicionadas ao seu computador, em vez de esperar que a equipe do WSL implemente as alterações e, em seguida, as adicione.
+Os binários do Linux usam chamadas do sistema para executar muitas funções, como acessar arquivos, solicitar memória, criar processos e muito mais. Enquanto o WSL 1 usava uma camada de conversão criada pela equipe do WSL, o WSL 2 inclui o próprio kernel Linux com compatibilidade total com a chamada do sistema. Ele introduz um conjunto totalmente novo de aplicativos que você pode executar dentro do WSL, como o Docker e muito mais. Além disso, todas as atualizações no kernel do Linux podem ser imediatamente adicionadas ao computador, em vez de você precisar aguardar a equipe do WSL implementar as alterações e adicioná-las.

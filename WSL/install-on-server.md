@@ -2,64 +2,74 @@
 title: Instalar o Subsistema Linux no Windows Server
 description: Instruções de instalação para o Subsistema Linux no Windows Server.
 keywords: BashOnWindows, bash, wsl, windows, subsistema do windows para linux, windowssubsystem, ubuntu, windows server
-ms.date: 05/22/2018
+ms.date: 05/12/2020
 ms.topic: article
-ms.assetid: 9281ffa2-4fa9-4078-bf6f-b51c967617e3
-ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 8859929fe45c9989d367af5f82191162963e6b4f
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 86fd7de0ef45af760f46bb2a18932f513b813609
+ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80256389"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83270880"
 ---
 # <a name="windows-server-installation-guide"></a>Guia de instalação do Windows Server
 
-> Aplica-se ao Windows Server 2019 e posteriores
+O Subsistema do Windows para Linux está disponível para instalação no Windows Server 2019 (versão 1709) e posterior. Este guia explicará as etapas de habilitação do WSL em seu computador.
 
-No //Build2017, a Microsoft anunciou que o Subsistema do Windows para Linux estará [disponível no Windows Server](https://blogs.technet.microsoft.com/hybridcloud/2017/05/10/windows-server-for-developers-news-from-microsoft-build-2017/).  Essas instruções demonstram como executar o Subsistema do Windows para Linux no Windows Server 1709 e versões posteriores.
-
-## <a name="enable-the-windows-subsystem-for-linux-wsl"></a>Habilitar o WSL (Subsistema do Windows para Linux)
+## <a name="enable-the-windows-subsystem-for-linux"></a>Habilitar o Subsistema do Windows para Linux
 
 Para poder executar as distribuições do Linux no Windows, você deverá habilitar o recurso opcional "Subsistema do Windows para Linux" e reiniciar.
 
-1. Abra o PowerShell como administrador e execute:
-    ```powershell
+Abra o PowerShell como administrador e execute:
+
+```powershell
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-    ```
 
-2. Reinicie seu computador quando solicitado. **Essa reinicialização é necessária** para que o WSL possa ser iniciado em um ambiente de execução confiável.
+```
 
-## <a name="download-a-linux-distro"></a>Baixar uma distribuição do Linux
+**Se você estiver procurando 100% de compatibilidade com a chamada do sistema e desempenho de E/S mais rápido, leia abaixo para instalar o WSL 2!**
+
+O WSL 2 só está disponível no Windows 10, versão 2004, Build 19041 ou superiores. Você precisará [atualizar sua versão do Windows](ms-settings:windowsupdate) e [participar do Programa Windows Insider](https://insider.windows.com/insidersigninboth/) no anel "Versão Prévia" até a versão pública ser disponibilizada no final de maio.
+
+**Se continuar com o WSL 1, reinicie o computador quando solicitado e continue com a instalação [aqui](./install-on-server.md#download-a-linux-distribution)**
+
+## <a name="enable-the-virtual-machine-platform-optional-component"></a>Habilitar o componente opcional "Plataforma de Máquina Virtual"
+
+Verifique se o componente opcional "Plataforma de Máquina Virtual" está instalado. Você pode fazer isso executando o seguinte comando no PowerShell:
+
+```powershell
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+## <a name="download-a-linux-distribution"></a>Baixar uma distribuição do Linux
 
 Siga [estas instruções](install-manual.md) para baixar sua distribuição favorita do Linux.
 
-## <a name="extract-and-install-a-linux-distro"></a>Extrair e instalar uma distribuição do Linux
-Agora que você baixou uma distribuição, extraia o conteúdo dela e instale-a manualmente:
+## <a name="extract-and-install-a-linux-distribution"></a>Extrair e instalar uma distribuição do Linux
 
-1. Extraia o conteúdo `<distro>.appx` do pacote, por exemplo, usando o PowerShell:
+Agora que você baixou uma distribuição do Linux, para extrair o conteúdo e instalá-lo manualmente, siga estas etapas:
+
+1. Extraia o conteúdo do pacote `<distro>.appx` usando o PowerShell:
 
     ```powershell
     Rename-Item .\Ubuntu.appx .\Ubuntu.zip
     Expand-Archive .\Ubuntu.zip .\Ubuntu
     ```
 
-2. Execute o inicializador da distribuição para concluir a instalação e execute o aplicativo inicializador da distribuição na pasta de destino, denominada `<distro>.exe`. Por exemplo: `ubuntu.exe` etc.
+2. Execute o aplicativo inicializador de distribuição na pasta de destino. O inicializador normalmente é chamado de `<distro>.exe` (por exemplo, `ubuntu.exe`).
 
     ![Expansão da distribuição do Ubuntu no Windows Server](media/server-appx-expand.png)
 
-    > **Solução de problemas**
-    > * **Falha na instalação com o erro 0x8007007e**: Esse erro ocorre quando o sistema não é compatível com o WSL. Certifique-se de que:
-    >   * Você está executando o Windows Build 16215 ou posterior. [Verifique seu build](troubleshooting.md#check-your-build-number).
-    >   * O componente opcional do Subsistema Windows para Linux está habilitado e o computador foi reiniciado.  [Verifique se o WSL está habilitado](troubleshooting.md#confirm-wsl-is-enabled).
-    
-3. Adicione o caminho da distribuição ao caminho do ambiente do Windows (`C:\Users\Administrator\Ubuntu`, neste exemplo), por exemplo, usando o PowerShell:
-        
-    ```powershell
-    $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
-    [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
-    ```
-    Agora você pode iniciar a distribuição em qualquer caminho digitando `<distro>.exe`. Por exemplo: `ubuntu.exe`
+> [!CAUTION]
+> **Falha na instalação com o erro 0x8007007e**: Esse erro ocorre quando o sistema não é compatível com o WSL. Garanta que você está executando o Windows Build 16215 ou posterior. [Verifique seu build](troubleshooting.md#check-your-build-number). Certifique-se também de [confirmar se o WSL está habilitado](troubleshooting.md#confirm-wsl-is-enabled) e se o computador foi reiniciado após a habilitação do recurso.  
 
-Agora que a distribuição do Linux está instalada, você deve [inicializar a nova instância de distribuição](initialize-distro.md) antes de usar sua distribuição.
+3. Adicione o caminho da distribuição ao caminho do ambiente do Windows (`C:\Users\Administrator\Ubuntu`, neste exemplo) usando o PowerShell:
+
+```powershell
+$userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
+[System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
+```
+
+Agora você pode iniciar sua distribuição em qualquer caminho digitando `<distro>.exe`. Por exemplo: `ubuntu.exe`.
+
+Agora que a distribuição está instalada, você deve [inicializar a nova instância de distribuição](initialize-distro.md) antes de usar a distribuição.

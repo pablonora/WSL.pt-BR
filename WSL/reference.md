@@ -4,20 +4,49 @@ description: Lista de comandos que gerenciam o Subsistema Windows para Linux
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
 ms.date: 07/31/2017
 ms.topic: article
-ms.assetid: 82908295-a6bd-483c-a995-613674c2677e
-ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: d74a6926fd797f2e1ede0fd5d8d080d0f1ce3f6b
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 72b78a73bf68b28dd14b4826943a0c81ea04bbad
+ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "71269838"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83270870"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Referência de comandos para o Subsistema Windows para Linux
 
-A melhor maneira de interagir com o Subsistema Windows para Linux é usar o comando `wsl.exe`. 
+A melhor maneira de interagir com o Subsistema Windows para Linux é usar o comando `wsl.exe`.
 
+## <a name="set-wsl-2-as-your-default-version"></a>Definir o WSL 2 como sua versão padrão
+
+Execute o seguinte comando no PowerShell para definir o WSL 2 como a versão padrão ao instalar uma nova distribuição do Linux:
+
+```powershell
+wsl --set-default-version 2
+```
+
+## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Definir a versão de distribuição para WSL 1 ou WSL 2
+
+Verifique a versão do WSL atribuída a cada uma das distribuições do Linux instaladas abrindo a linha de comando do PowerShell e inserindo o comando (disponível somente no [Windows Build 19041 ou superiores](ms-settings:windowsupdate)): `wsl -l -v`
+
+```bash
+wsl --list --verbose
+```
+
+Para definir uma distribuição para ter suporte de qualquer versão do WSL, execute:
+
+```bash
+wsl --set-version <distribution name> <versionNumber>
+```
+
+Assegure-se de substituir `<distribution name>` pelo nome real da sua distribuição e `<versionNumber>` pelo número '1' ou '2'. Você pode retornar ao WSL 1 a qualquer momento executando o mesmo comando acima, mas substituindo “2” por “1”.
+
+Além disso, se quiser tornar o WSL 2 sua arquitetura padrão, você poderá fazê-lo com este comando:
+
+```bash
+wsl --set-default-version 2
+```
+
+Isso definirá a versão de qualquer nova distribuição instalada no WSL 2.
 
 ## `wsl.exe`
 
@@ -25,7 +54,7 @@ Abaixo está uma lista que contém todas as opções ao usar o `wsl.exe` da vers
 
 Usando: `wsl [Argument] [Options...] [CommandLine]`
 
-### <a name="arguments-for-running-linux-binaries"></a>Argumentos para executar binários do Linux
+### <a name="arguments-for-running-linux-commands"></a>Argumentos para executar comandos do Linux
 
 * **Sem argumentos**
 
@@ -65,11 +94,11 @@ Os comandos acima também aceitam as seguintes opções:
 
   Opções:
   * **--all**
-      
+
     Liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
 
   * **--running**
-      
+
     Liste somente as distribuições que estão em execução no momento.
 
 * **--set-default, -s \<Distro>**
@@ -82,13 +111,13 @@ Os comandos acima também aceitam as seguintes opções:
 
 * **--unregister \<Distro>**
   
-  Cancela o registro da distribuição.
-   
+  Cancelar o registro da distribuição.
+
 * **--help** Exiba as informações de uso.
 
 ## <a name="additional-commands"></a>Comandos adicionais
 
-Também há comandos históricos para interagir com o Subsistema Windows para Linux. Sua funcionalidade é englobada no `wsl.exe`, mas ainda estão disponíveis para uso. 
+Também há comandos históricos para interagir com o Subsistema Windows para Linux. Sua funcionalidade é englobada no `wsl.exe`, mas ainda estão disponíveis para uso.
 
 ### `wslconfig.exe`
 
@@ -96,35 +125,25 @@ Esse comando permite que você configure a distribuição do WSL. Veja abaixo um
 
 Usando: `wslconfig [Argument] [Options...]`
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argumentos
+
 * **/l, /list [Options]**
   
   Lista as distribuições registradas.
   
-  Opções:
-    * **/all**
-    
-      Como opção, liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
+Opções:
 
-    * **/running**
-      
-      Liste somente as distribuições que estão em execução no momento.
+* **/all** Como opção, liste todas as distribuições, incluindo distribuições que estão sendo instaladas ou desinstaladas no momento.
 
-* **/s, /setdefault \<Distro>**
-  
-  Define a distribuição como o padrão.
+* **/running** Liste somente as distribuições que estão em execução no momento.
 
-* **/t, /terminate \<Distro>**
-  
-  Termina a distribuição.
+* **/s, /setdefault \<Distro>** Define a distribuição como o padrão.
 
-* **/u, /unregister \<Distro>**
-  
-  Cancela o registro da distribuição.
-   
-* **/upgrade \<Distro>**
-  
-  Atualiza a distribuição para o formato do sistema de arquivos WslFs.
+* **/t, /terminate \<Distro>** Termina a distribuição.
+
+* **/u, /unregister \<Distro>** Cancela o registro da distribuição.
+
+* **/upgrade \<Distro>** Atualiza a distribuição para o formato do sistema de arquivos WslFs.
 
 ### `bash.exe`
 
@@ -143,14 +162,14 @@ Usando: `bash [Options...]`
 * **-c "\<command>"**
   
   Executa o comando, imprime a saída e sai de volta para o prompt de comando do Windows.
-    
+
   Exemplo: `bash -c "ls"`.
 
 ## <a name="deprecated-commands"></a>Comandos preteridos
 
 O `lxrun.exe` foi o primeiro comando usado para instalar e gerenciar o Subsistema Windows para Linux. Ele foi preterido no Windows 10 1803 e versões posteriores.
 
-O comando `lxrun.exe` pode ser usado para interagir diretamente com o [WSL (Subsistema Windows para Linux)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#what-windows-subsystem-for-linux-wsl-).  Esses comandos são instalados no diretório `\Windows\System32` e podem ser executados em um prompt de comando do Windows ou no PowerShell.
+O comando `lxrun.exe` pode ser usado para interagir diretamente com o [WSL (Subsistema Windows para Linux)](https://msdn.microsoft.com/commandline/wsl/faq#what-windows-subsystem-for-linux-wsl-).  Esses comandos são instalados no diretório `\Windows\System32` e podem ser executados em um prompt de comando do Windows ou no PowerShell.
 
 | Comando                     | Descrição                     |
 |:----------------------------|:---------------------------|

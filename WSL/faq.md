@@ -6,12 +6,12 @@ ms.date: 9/4/2018
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: 5651b0869ff97899a768985ce6efa006afa77a9b
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: 3c3681b0e0e8317917b4ec7c37c9bb2f0bbe9c95
+ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77624930"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343890"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o Subsistema Windows para Linux
 
@@ -202,9 +202,9 @@ Em alguns casos, desligar o firewall permite o acesso. Em outros, simplesmente t
 ## <a name="how-do-i-access-a-port-from-wsl-in-windows"></a>Como acessar uma porta do WSL no Windows?
 O WSL compartilha o endereço IP do Windows, pois ele é executado no Windows. Assim, você pode acessar qualquer porta no localhost, por exemplo, se você tivesse conteúdo da Web na porta 1234, poderia https://localhost:1234 no seu navegador do Windows.
 
-## <a name="how-can-i-back-up-my-wsl-distros"></a>Como posso fazer backup de minhas distribuições do WSL?
+## <a name="how-can-i-back-up-my-wsl-distros-or-move-them-from-one-drive-to-another"></a>Como fazer backup das distribuições do WSL ou movê-las de uma unidade para outra?
 
-A melhor maneira de fazer backup de suas distribuições está disponível no Windows versão 1809 e posterior. Você pode exportar toda a distribuição para um tarball usando o comando `wsl --export`. Em seguida, você pode importar essa distribuição de volta para o WSL usando o comando `wsl --import`, permitindo que você faça backup e salve os estados de suas distribuições do WSL. 
+A melhor maneira de fazer backup das distribuições ou movê-las é por meio dos comandos de exportação/importação disponíveis no Windows, versão 1809 e posteriores. Você pode exportar toda a distribuição para um tarball usando o comando `wsl --export`. Em seguida, importe essa distribuição novamente para o WSL usando o comando `wsl --import`, que pode nomear um novo local de unidade para a importação, permitindo que você faça backup dos estados das distribuições do WSL ou salve-os (ou mova-os). 
 
 Observe que os serviços de backup tradicionais que fazem backup de arquivos em suas pastas AppData (como o backup do Windows) não corromperão os arquivos do Linux.
 
