@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, subsistema do windows para linux, w
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 86fd7de0ef45af760f46bb2a18932f513b813609
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: 805b7d266020c62e0c6f58889541517d44db3726
+ms.sourcegitcommit: 90f7caeefe886bf6c0ba2b90c1b56b5f9795ad1b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270880"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153075"
 ---
 # <a name="windows-server-installation-guide"></a>Guia de instalação do Windows Server
 
@@ -29,7 +29,7 @@ Abra o PowerShell como administrador e execute:
 
 **Se você estiver procurando 100% de compatibilidade com a chamada do sistema e desempenho de E/S mais rápido, leia abaixo para instalar o WSL 2!**
 
-O WSL 2 só está disponível no Windows 10, versão 2004, Build 19041 ou superiores. Você precisará [atualizar sua versão do Windows](ms-settings:windowsupdate) e [participar do Programa Windows Insider](https://insider.windows.com/insidersigninboth/) no anel "Versão Prévia" até a versão pública ser disponibilizada no final de maio.
+O WSL 2 só está disponível no Windows 10, versão 2004, Build 19041 ou superiores. Você pode precisar [atualizar sua versão do Windows](ms-settings:windowsupdate).
 
 **Se continuar com o WSL 1, reinicie o computador quando solicitado e continue com a instalação [aqui](./install-on-server.md#download-a-linux-distribution)**
 

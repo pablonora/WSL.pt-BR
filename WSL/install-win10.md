@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, window
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ec24bbe6ed3ecc4413e623d12d12f9a92c6db9e6
-ms.sourcegitcommit: f0b33cdd1ce7b461e7f657d44e9798094ef55b55
+ms.openlocfilehash: 3914e8d3be84f922424cba1000ea45ea8ce22cd8
+ms.sourcegitcommit: 09f5eb0f6062642e5c86deb1f34307ce3429163a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683034"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84211722"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Guia de instalação do Subsistema Windows para Linux para Windows 10
 
@@ -31,9 +31,6 @@ Para instalar apenas o WSL 1, você deve reiniciar o computador e passar para [I
 Para atualizar para o WSL 2, você deve atender aos seguintes critérios:
 
 - Executar o Windows 10, [atualizado para a versão 2004](ms-settings:windowsupdate), **Build 19041** ou superiores.
-
-> [!IMPORTANT]
-> Atualmente, para fazer a atualização para o Windows 10, versão 2004 (Build 19041), você precisará [ingressar no Programa Windows Insider](https://insider.windows.com/insidersigninboth/) e selecionar o anel "Versão Prévia". A versão pública deverá ser disponibilizada até o final de maio.
 
 - Verifique sua versão do Windows selecionando a **tecla do logotipo do Windows + R**, digite **winver**, selecione **OK**. (Ou digite o comando `ver` no prompt de comando do Windows). [Faça a atualização para a última versão do Windows](ms-settings:windowsupdate) se o build for anterior ao 19041. [Obtenha o Assistente do Windows Update](https://www.microsoft.com/software-download/windows10).
 
@@ -57,6 +54,9 @@ Execute o seguinte comando no PowerShell para definir o WSL 2 como a versão pad
 wsl --set-default-version 2
 ```
 
+> [!NOTE]
+> A atualização da WSL 1 para a WSL 2 pode levar vários minutos para ser concluída, dependendo do tamanho da sua distribuição alvo.
+
 ## <a name="install-your-linux-distribution-of-choice"></a>Instalar a distribuição do Linux de sua escolha
 
 1. Abra a [Microsoft Store](https://aka.ms/wslstore) e escolha sua distribuição do Linux favorita.
@@ -67,6 +67,7 @@ wsl --set-default-version 2
 
     - [Ubuntu 16.04 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9)
     - [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+    - [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
     - [OpenSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
     - [SUSE Linux Enterprise Server 12 SP5](https://www.microsoft.com/store/apps/9MZ3D1TRP8T1)
     - [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
@@ -124,7 +125,7 @@ Veja abaixo erros relacionados e correções sugeridas. Consulte a [página de s
 
 - **WslRegisterDistribution falhou com o erro 0x8007019e**
   - O componente opcional do Subsistema Windows para Linux não está habilitado:
-  - Abra **Painel de Controle** -> **Programas e Recursos** -> **Ativar ou desativar recursos do Windows** -> marque **Subsistema Windows para Linux** ou use o cmdlet do PowerShell mencionado no início deste artigo.
+  - Abra **Painel de Controle** -> **Programas e Recursos** -> **Ativar ou Desativar Recursos do Windows** -> Selecione **Subsistema do Windows para Linux** ou use o cmdlet PowerShell mencionado no início deste artigo.
 
 - **Ocorreu falha na instalação com o erro 0x80070003 ou 0x80370102**
   - Verifique se a virtualização está habilitada dentro do BIOS do seu computador. As instruções para fazer isso variam de um computador para o outro e muito provavelmente estarão sob opções relacionadas à CPU.

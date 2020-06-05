@@ -5,19 +5,19 @@ keywords: wsl, windows, linux kernel, windows subsystem for linux, kernel
 ms.date: 03/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 89e5755699938b7797aa65a5f3131f93e3e31796
-ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
+ms.openlocfilehash: 1628bea2f1bae590928b055425413e5b085dffef
+ms.sourcegitcommit: 90f7caeefe886bf6c0ba2b90c1b56b5f9795ad1b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343828"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153047"
 ---
 # <a name="updating-the-wsl-2-linux-kernel"></a>Atualizar o kernel do WSL 2 Linux
 
 Para atualizar manualmente o kernel do Linux dentro do WSL2, siga estas etapas.
 
 > [!NOTE] 
-> Se o instalador não conseguir encontrar o WSL 1, clique com o botão direito do mouse no instalador de atualização do kernel do Linux e selecione Desinstalar e execute o instalador novamente
+> Se o instalador não conseguir encontrar a WSL 1, clique com o botão direito do mouse no instalador de atualização do kernel do Linux e pressione "Desinstalar", então execute novamente o instalador.
 
 ## <a name="download-the-linux-kernel-update-package"></a>Baixar o pacote de atualização do kernel do Linux
 

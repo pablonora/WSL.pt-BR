@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubunt
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 299caaaeb1bac60d2af780dfdd10a64b218ab1f1
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: aa656d2e5a301d3f5519065246ba99941e74f642
+ms.sourcegitcommit: 53e6a01cbb989dc1aeaba465af4730afe71beb40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270850"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256681"
 ---
 # <a name="comparing-wsl-2-and-wsl-1"></a>Comparação entre o WSL 2 e o WSL 1
 
@@ -28,12 +28,15 @@ Recurso | WSL 1 | WSL 2
  VM gerenciada| ❌ | ✅
  Kernel do Linux completo| ❌ |✅
  Compatibilidade total com a chamada do sistema| ❌ | ✅
- É executado com o VMware e o VirtualBox| ✅ |❌
+ Funciona com as versões atuais do VM Ware e do VirtualBox| ✅ | ❌
  Desempenho entre sistemas de arquivos do sistema operacional| ✅ | ❌
 
 Já está usando o WSL 1 e deseja atualizar para o WSL 2? Siga as instruções para [atualizar para o WSL 2](./install-win10.md#update-to-wsl-2)!
 
-O WSL 2 só está disponível no Windows 10, versão 2004, Build 19041 ou superiores. Você precisará [atualizar sua versão do Windows](ms-settings:windowsupdate) e [participar do Programa Windows Insider](https://insider.windows.com/insidersigninboth/) no anel "Versão Prévia" até a versão pública ser disponibilizada no final de maio.
+O WSL 2 só está disponível no Windows 10, versão 2004, Build 19041 ou superiores. Verifique sua versão do Windows selecionando a **tecla do logotipo do Windows + R**, digite **winver**, selecione **OK**. (Ou digite o comando `ver` no prompt de comando do Windows). Você pode precisar [atualizar para a última versão do Windows](ms-settings:windowsupdate). Para compilações inferiores à 19041, não há suporte para WSL.
+
+> [!NOTE]
+> O WSL 2 funcionará com [versões prévias do VM Ware](https://blogs.vmware.com/workstation/2020/01/vmware-workstation-tech-preview-20h1.html) e [do VirtualBox 6.x](https://www.virtualbox.org/wiki/Changelog-6.0).
 
 ## <a name="use-the-linux-file-system-for-faster-performance"></a>Usar o sistema de arquivos do Linux para desempenho mais rápido
 
