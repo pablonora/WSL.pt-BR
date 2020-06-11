@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, Bash, git, GitHub, control
 ms.date: 06/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 94166371fc0928d6be3b3cfd6cb595c6fac76608
-ms.sourcegitcommit: d95bdbc2fea991ba14a4c9ec53ee0ec19d6bbdb4
+ms.openlocfilehash: 687a12186d11343a2d4131e0fdeeef3bcec902fb
+ms.sourcegitcommit: 5d3898772851e6ac9a310f219cc0d71278f95d22
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84457788"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671006"
 ---
 # <a name="get-started-using-git-on-windows-subsystem-for-linux"></a>Introdução ao uso do git no subsistema do Windows para Linux
 
@@ -18,12 +18,12 @@ O Git é o sistema de controle de versão mais comumente usado. Com o Git, você
 
 ## <a name="git-can-be-installed-on-windows-and-on-wsl"></a>O Git pode ser instalado no Windows e no WSL
 
-Uma consideração importante: ao habilitar o WSL e instalar uma distribuição do Linux, você está instalando um novo sistema de arquivos, separado do Windows NTFS C:\ em seu computador. No Linux, as unidades não recebem letras. Eles recebem pontos de montagem. A raiz do sistema de arquivos `/` é o ponto de montagem de sua partição raiz, ou pasta, no caso do WSL. Nem tudo `/` está sob a mesma unidade. Por exemplo, em meu laptop, instalei duas versões do Ubuntu (20, 4 e 18, 1), bem como debian. Se eu abrir essas distribuições, selecionar o diretório raiz com o comando `cd ~` e, em seguida, inserir o comando `explorer.exe .` , o explorador de arquivos do Windows será aberto e mostrarei o caminho do diretório para essa distribuição.
+Uma consideração importante: ao habilitar o WSL e instalar uma distribuição do Linux, você está instalando um novo sistema de arquivos, separado do Windows NTFS C:\ em seu computador. No Linux, as unidades não recebem letras. Eles recebem pontos de montagem. A raiz do sistema de arquivos `/` é o ponto de montagem de sua partição raiz, ou pasta, no caso do WSL. Nem tudo `/` está sob a mesma unidade. Por exemplo, em meu laptop, instalei duas versões do Ubuntu (20, 4 e 18, 4), bem como debian. Se eu abrir essas distribuições, selecionar o diretório raiz com o comando `cd ~` e, em seguida, inserir o comando `explorer.exe .` , o explorador de arquivos do Windows será aberto e mostrarei o caminho do diretório para essa distribuição.
 
 | Distribuição Linux | Caminho do Windows para acessar a pasta base |
 | ----------- | ----------- |
 | Ubuntu 20.04 | `\\wsl$\Ubuntu-20.04\home\username` |
-| Ubuntu 18, 1 | `\\wsl$\Ubuntu-18.04\home\username` |
+| Ubuntu 18.04 | `\\wsl$\Ubuntu-18.04\home\username` |
 | Debian | `\\wsl$\Debian\home\username` |
 | Windows PowerShell | `C:\Users\username` |
 
