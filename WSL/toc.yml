@@ -22,6 +22,8 @@
       href: tutorials/wsl-vscode.md
     - name: Introdução ao Git
       href: tutorials/wsl-git.md
+    - name: Configurar aceleração de GPU (NVIDIA CUDA/DirectML)
+      href: tutorials/gpu-compute.md
 - name: Instruções
   items:
     - name: Comandos de interoperabilidade
