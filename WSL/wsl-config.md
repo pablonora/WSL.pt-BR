@@ -4,12 +4,12 @@ description: Listagem de referência e configuração de várias distribuições
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: dc488ab988d8e158b5eff7a486a2fe707dbedfd7
-ms.sourcegitcommit: 90f7caeefe886bf6c0ba2b90c1b56b5f9795ad1b
+ms.openlocfilehash: e97b1030d5891bf8aa1cb656646a4d9e1d480a3d
+ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153114"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85336079"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>Comandos do WSL e configurações de inicialização
 
@@ -317,7 +317,7 @@ Essas opções estão disponíveis no Build 18980 e posterior.
 
 > **Disponível no Windows Build 19041 e posterior**
 
-Você pode configurar opções de WSL globais colocando um `.wslconfig` arquivo no diretório raiz da pasta Users: `C:\Users\<yourUserName>\.wslconfig` . 
+Você pode configurar opções de WSL globais colocando um `.wslconfig` arquivo no diretório raiz da pasta Users: `C:\Users\<yourUserName>\.wslconfig` . Muitos desses arquivos estão relacionados ao WSL 2, tenha em mente que talvez seja necessário executar `wsl --shutdown` para desligar a VM do WSL 2 e reiniciar sua instância do WSL para que essas alterações entrem em vigor.
 
 Aqui está um arquivo. wslconfig de exemplo:
 
@@ -342,7 +342,7 @@ Essas configurações afetam a VM que alimenta qualquer distribuição WSL 2.
 | memória | tamanho | 80% da memória total no Windows | A quantidade de memória a ser atribuída à VM WSL 2. |
 | processadores | número | O mesmo número de processadores no Windows | Quantos processadores atribuir à VM WSL 2. |
 | localhostForwarding | booleano | `true` | Booliano especificando se as portas vinculadas ao curinga ou localhost na VM WSL 2 devem ser conectadas do host via localhost: Port. |
-| kernelCommandLine | string | Em branco | Argumentos de linha de comando de kernel adicionais. |
+| kernelCommandLine | string | Em Branco | Argumentos de linha de comando de kernel adicionais. |
 | swap | tamanho | 25% do tamanho da memória no Windows arredondado para os GB mais próximos | Quanto espaço de permuta adicionar à VM WSL 2, 0 para nenhum arquivo de permuta. |
 | Permuta | string | %USERPROFILE%\AppData\Local\Temp\swap.vhdx | Um caminho absoluto do Windows para o disco rígido virtual de permuta. |
 
