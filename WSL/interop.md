@@ -4,12 +4,12 @@ description: Descreve a interoperabilidade do Windows com distribuições do Lin
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: b1c7a64a86cf088159d1abee3b341328151428f6
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: 2a9b6c8ac65fe28e029ada7f86475c44220a93fe
+ms.sourcegitcommit: cb8a61e7de08b1c18622fc78bc5dfa38786e921a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270840"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663129"
 ---
 # <a name="windows-interoperability-with-linux"></a>Interoperabilidade do Windows com o Linux
 
@@ -147,6 +147,7 @@ Propriedades da variável `WSLENV`:
 * Ele é compartilhado e existe em ambientes do Windows e do WSL.
 * É uma lista de variáveis de ambiente a serem compartilhadas entre o Windows e o WSL.
 * Pode formatar variáveis de ambiente para funcionamento no Windows e no WSL.
+* Pode auxiliar no fluxo entre o WSL e o Win32.
 
 > [!NOTE]
 > Antes do 17063, a única variável de ambiente do Windows que o WSL podia acessar era `PATH` (portanto, era possível iniciar os executáveis do Win32 no WSL). O `WSLENV` passa a ter suporte no 17063 e posteriores.
@@ -163,6 +164,8 @@ Há quatro sinalizadores disponíveis no `WSLENV` para influenciar como essa var
 * `/w` – indica que essa variável de ambiente só deve ser incluída ao executar o Win32 usando o WSL.
 
 Os sinalizadores podem ser combinados conforme necessário.
+
+[Leia mais sobre WSLENV](https://devblogs.microsoft.com/commandline/share-environment-vars-between-wsl-and-windows/), incluindo perguntas frequentes e exemplos de como definir o valor de WSLENV para uma concatenação de outras variáveis de ambiente predefinidas, cada uma delas com uma barra seguida de sinalizadores para especificar como o valor deve ser traduzido, e de como passar variáveis com um script. Este artigo também inclui um exemplo para configurar um ambiente de desenvolvimento com a [linguagem de programação Go](https://golang.org/), configurada para compartilhar um GOPATH entre WSL e Win32.
 
 ## <a name="disable-interoperability"></a>Desabilitar interoperabilidade
 

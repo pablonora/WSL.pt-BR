@@ -6,14 +6,30 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3df4d4b4e0c542a3e87306c01a14b7073eb5e677
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 2fcf24719f037a29bab7652fc75ac82cc0b6176a
+ms.sourcegitcommit: 031a74801e03a90aed4b34c4fd5bfe964fc30994
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235942"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942590"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
+
+## <a name="build-20150"></a>Build 20150
+Para obter informações gerais do Windows sobre o build 20150, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
+
+* Para obter informações sobre a computação GPU do WSL2, confira o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
+* Introdução de wsl.exe – instalação da opção de linha de comando para configurar facilmente o WSL.
+* Introdução de wsl.exe – atualização da opção de linha de comando para gerenciar atualizações do kernel WSL2. 
+* Definição de WSL2 como o padrão.
+* Aumento do tempo limite de desligamento normal da VM WSL2.
+* Correção da condição de corrida virtio-9p ao mapear a memória do dispositivo.
+* Não execução de um servidor 9p elevado se UAC estiver desabilitado.
+
+## <a name="build-19640"></a>Build 19640
+Para obter informações gerais do Windows sobre o build 19640, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/06/03/announcing-windows-10-insider-preview-build-19640/).
+
+* [WSL2] Aprimoramentos de estabilidade para virtio-9p (drvfs).
 
 ## <a name="build-19555"></a>Build 19555
 Para obter informações gerais do Windows sobre o build 19555, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/01/30/announcing-windows-10-insider-preview-build-19555/).

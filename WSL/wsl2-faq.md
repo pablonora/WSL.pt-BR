@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 35edad06775e75eef6d81d018355d8f28d772deb
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 89b8a29f0c2d24a3c97d9661db3d83963629f34f
+ms.sourcegitcommit: cb8a61e7de08b1c18622fc78bc5dfa38786e921a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235890"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663109"
 ---
 # <a name="wsl-2-faqs"></a>Perguntas frequentes sobre o WSL 2
 
@@ -32,7 +32,7 @@ No momento, não temos planos para substituir o WSL 1. Você pode executar as di
 
 Alguns aplicativos de terceiros não funcionam quando o Hyper-V está em uso, o que significa que eles não poderão ser executados quando o WSL 2 estiver habilitado, como VMware e VirtualBox. No entanto, recentemente, o VirtualBox e o VMware lançaram versões compatíveis com Hyper-V e WSL2! Você pode saber mais sobre as [alterações no VirtualBox aqui][1] e sobre as [alterações no VMware aqui][4].
 
-Estamos investigando maneiras de ajudar a resolver esse problema. Por exemplo, expomos um conjunto de APIs, chamado [Plataforma de Hipervisor][2], que provedores de virtualização de terceiros podem usar para tornar o software compatível com o Hyper-V. Isso permite que os aplicativos usem a arquitetura do Hyper-V para emulação, como [o Google Android Emulator][3] e o VirtualBox 6 e superiores, que agora são compatíveis com o Hyper-V.
+Estamos trabalhando consistentemente em soluções para dar suporte à integração de terceiros do Hyper-V. Por exemplo, expomos um conjunto de APIs, chamado [Plataforma de Hipervisor][2] que provedores de virtualização de terceiros podem usar para tornar o software compatível com o Hyper-V. Isso permite que os aplicativos usem a arquitetura do Hyper-V para emulação, como [o Google Android Emulator][3] e o VirtualBox 6 e superiores, que agora são compatíveis com o Hyper-V.
 
 ## <a name="can-i-access-the-gpu-in-wsl-2-are-there-plans-to-increase-hardware-support"></a>Posso acessar a GPU no WSL 2? Há planos para aumentar o suporte a hardware?
 
