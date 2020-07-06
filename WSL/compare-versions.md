@@ -97,7 +97,7 @@ O WSL 2 usa uma VM de utilitário leve em um kernel real do Linux com um pequeno
 
 ### <a name="accessing-linux-networking-apps-from-windows-localhost"></a>Como acessar aplicativos de rede do Linux no Windows (localhost)
 
-Se você estiver criando um aplicativo de rede (por exemplo, um aplicativo em execução em um NodeJS ou SQL Server) em sua distribuição do Linux, poderá acessá-lo de um aplicativo do Windows (como seu navegador de Internet Edge ou Chrome) usando `localhost` (assim como faria normalmente).
+Se você estiver criando um aplicativo de rede (por exemplo, um aplicativo em execução em um NodeJS ou SQL Server) em sua distribuição do Linux, poderá acessá-lo de um aplicativo do Windows (como seu navegador de Internet Microsoft Edge ou Chrome) usando `localhost` (assim como faria normalmente).
 
 No entanto, se você estiver executando uma versão mais antiga do Windows (Build 18945 ou anterior), será necessário obter o endereço IP da VM host do Linux (ou [atualizar para a versão mais recente do Windows](ms-settings:windowsupdate)).
 
