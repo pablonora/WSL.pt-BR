@@ -5,12 +5,12 @@ keywords: wsl, windows, linux kernel, windows subsystem for linux, kernel
 ms.date: 03/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 1628bea2f1bae590928b055425413e5b085dffef
-ms.sourcegitcommit: 90f7caeefe886bf6c0ba2b90c1b56b5f9795ad1b
+ms.openlocfilehash: bef722f5653380d9f6d104f1a7c116a7599658c9
+ms.sourcegitcommit: ba52d673c123fe8ae61e872a33e218cfc30a1f82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153047"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033042"
 ---
 # <a name="updating-the-wsl-2-linux-kernel"></a>Atualizar o kernel do WSL 2 Linux
 
@@ -39,3 +39,23 @@ Para instalar o pacote de atualização do kernel do Linux:
 ## <a name="future-plans-for-updating-the-wsl2-linux-kernel"></a>Planos futuros para atualizar o kernel do WSL2 Linux
 
 Para obter mais informações, leia o artigo [Alterações na atualização do kernel do Linux para o WSL 2](https://devblogs.microsoft.com/commandline/wsl2-will-be-generally-available-in-windows-10-version-2004), disponível no [blog da linha de comando do Windows](https://aka.ms/cliblog).
+
+## <a name="troubleshooting"></a>Solução de problemas
+
+### <a name="this-update-only-applies-to-machines-with-the-windows-subsystem-for-linux"></a>Essa atualização se aplica somente a computadores com o Subsistema do Windows para Linux
+Para instalar o kernel do MSI, o WSL é necessário e deve ser habilitado primeiro. Se ele falhar, você verá a mensagem: `This update only applies to machines with the Windows Subsytem for Linux`. 
+
+Há três motivos possíveis para você ver essa mensagem:
+
+1. Você ainda está usando uma versão antiga do Windows, que não dá suporte ao WSL 2. Verifique os [requisitos do WSL 2](https://docs.microsoft.com/windows/wsl/install-win10#update-to-wsl-2) e faça as atualizações necessárias para usá-lo. 
+2. O `Windows Subsystem for Linux` não está habilitado. Siga o [guia de instalação do Subsistema do Windows para Linux](https://docs.microsoft.com/windows/wsl/install-win10).
+3. Depois que você habilitar o `Windows Subsystem for Linux`, uma reinicialização será necessária para que ele entre em vigor. Reinicialize o computador e tente novamente.
+
+### `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`
+
+Cada vez que o kernel estiver ausente em %SystemRoot%\system32\lxss\tools\,, você deverá encontrar o erro acima.
+
+Aqui estão algumas maneiras possíveis de solucioná-lo:
+
+1. Instale o kernel do Linux manualmente seguindo as instruções em: https://aka.ms/wsl2kernel
+2. Desinstale o MSI em 'Adicionar ou Remover Programas' e instale-o novamente
