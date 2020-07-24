@@ -4,19 +4,21 @@ description: Explore a documentação do Subsistema do Windows para Linux.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: eac5ab3a4406d7e3b1ba89c0d9e6212fa602d852
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 81ff05f03172e3e3a167ffba4ce846ec2edb3d1c
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270484"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948580"
 ---
 # <a name="windows-subsystem-for-linux-documentation"></a>Documentação do Subsistema Windows para Linux
+
+O Subsistema do Windows para Linux permite que os desenvolvedores executem um ambiente GNU/Linux, incluindo a maioria das ferramentas de linha de comando, utilitários e aplicativos, diretamente no Windows, sem modificações e sem a sobrecarga de uma máquina virtual tradicional ou instalação dualboot.
 
 ## <a name="learn-more-here"></a>Saiba mais aqui
 
 * [O que é o Subsistema do Windows para Linux?](about.md)
-* [Novidades no WSL2](wsl2-index.md)
+* [Novidades no WSL 2](wsl2-index.md)
 * [Comparar o WSL 2 com o WSL 1](compare-versions.md)
 * [Leia as perguntas frequentes](faq.md)
 

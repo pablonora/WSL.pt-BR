@@ -6,12 +6,12 @@ ms.date: 9/4/2018
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: 3c3681b0e0e8317917b4ec7c37c9bb2f0bbe9c95
-ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
+ms.openlocfilehash: 8e3ebb44c139b5e7b8c25e8e813766b0107426dc
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343890"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948630"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Perguntas frequentes sobre o Subsistema Windows para Linux
 
@@ -34,6 +34,10 @@ O WSL fornece um aplicativo chamado Bash.exe que, quando iniciado, abre um conso
 Você também pode acessar o sistema de arquivos do computador local de dentro do shell do Linux Bash – você encontrará as unidades locais montadas na pasta `/mnt`. Por exemplo, sua unidade `C:` está montada em `/mnt/c`:  
 
 ![Captura de tela da unidade C montada](media/ls.png)
+
+## <a name="could-you-describe-a-typical-development-workflow-that-incorporates-wsl"></a>Você poderia descrever um fluxo de trabalho de desenvolvimento típico que incorpora o WSL?
+
+O WSL é destinado a desenvolvedores, com a intenção de ser usado como parte de um loop de desenvolvimento interno. Digamos que Pedro esteja criando um pipeline de CI/CD (integração contínua e entrega contínua) e queira testá-lo primeiro em um computador local (laptop) antes de implantá-lo na nuvem. O Pedro poderá habilitar o WSL (e o WSL 2 para melhorar a velocidade e o desempenho) e, em seguida, usar uma instância do Linux Ubuntu autêntica localmente (no laptop) com quaisquer comandos e ferramentas de bash que preferir. Depois de verificar o pipeline de desenvolvimento localmente, Pedro pode enviar por push esse pipeline de CI/CD para a nuvem (ou seja, para o Azure), colocando-o em um contêiner do Docker e enviando o contêiner para uma instância de nuvem em que ele é executado em uma VM Ubuntu pronta para produção.
 
 ## <a name="what-is-bash"></a>O que é o Bash?
 
@@ -83,7 +87,7 @@ O WSL é compatível com CPUs x64 e ARM.
 
 Pontos de montagem para discos rígidos no computador local são criados automaticamente e fornecem acesso fácil ao sistema de arquivos do Windows.
 
-**/mnt/\<letra da unidade>/**
+**/mnt/\<drive letter>/**
 
 Um uso de exemplo seria `cd /mnt/c` para acessar c:\
 

@@ -6,14 +6,24 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 2fcf24719f037a29bab7652fc75ac82cc0b6176a
-ms.sourcegitcommit: 031a74801e03a90aed4b34c4fd5bfe964fc30994
+ms.openlocfilehash: 1de8f5e287d70c4992e9e6694d8980cbd305957b
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942590"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948680"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Notas sobre a versão do subsistema Windows para Linux
+
+## <a name="build-20175"></a>Build 20175
+Para obter informações gerais do Windows sobre o build 20175, visite o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/07/22/announcing-windows-10-insider-preview-build-20175/).
+
+* Ajuste a atribuição de memória padrão da VM WSL2 para ser 50% da memória do host ou 8 GB, o que for menor [GH 4166].
+* Altere o prefixo \\\\wsl$ para \\\\wsl a fim de dar suporte à análise de URI. O antigo caminho \\\\wsl$ ainda é compatível.
+* Habilite a virtualização aninhada para WSL2 por padrão em amd64. Você pode desabilitar isso por meio de %userprofile%\\.wslconfig ([wsl2] nestedVirtualization=false).
+* Faça com que a demanda wsl.exe --update inicie o Microsoft Update.
+* Dê suporte à renomeação em um arquivo somente leitura no DrvFs.
+* Verifique se as mensagens de erro são sempre impressas na página de código correta.
 
 ## <a name="build-20150"></a>Build 20150
 Para obter informações gerais do Windows sobre o build 20150, acesse o [blog do Windows](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
@@ -1547,13 +1557,13 @@ Para obter informações gerais do Windows sobre o Build 14951, visite o [blog d
 ### <a name="new-feature-windows--ubuntu-interoperability"></a>Novo recurso: Interoperabilidade entre Windows/Ubuntu
 Os binários do Windows agora podem ser chamados diretamente da linha de comando do WSL.  Isso dá aos usuários a capacidade de interagir com o ambiente e o sistema do Windows de uma maneira que não era possível.  Como um exemplo rápido, agora é possível que os usuários executem os seguintes comandos:
 
-    ```
-    $ export PATH=$PATH:/mnt/c/Windows/System32
-    $ notepad.exe
-    $ ipconfig.exe | grep IPv4 | cut -d: -f2
-    $ ls -la | findstr.exe foo.txt
-    $ cmd.exe /c dir
-    ```
+```bash
+$ export PATH=$PATH:/mnt/c/Windows/System32
+$ notepad.exe
+$ ipconfig.exe | grep IPv4 | cut -d: -f2
+$ ls -la | findstr.exe foo.txt
+$ cmd.exe /c dir
+```
 
 Mais informações podem ser encontradas em:
 

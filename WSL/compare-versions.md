@@ -1,18 +1,18 @@
 ---
-title: Uma visão geral do Subsistema do Windows para Linux
+title: Comparando as versões 1 e 2 do WSL
 description: Saiba mais sobre o Subsistema do Windows para Linux, as diferentes versões e as maneiras pelas quais você pode usá-las.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubuntu, debian, suse, windows 10, UX changes, WSL 2, linux kernel, network applications, localhost, IPv6, Virtual Hardware Disk, VHD, VHD limitations, VHD error
-ms.date: 05/12/2020
+ms.date: 07/22/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 8354e9c35d1e97f38c4cf6aa53a861c2c5e290be
-ms.sourcegitcommit: 386d47a1c53a85b91f5a2b0f1f99ce2c46b20a77
+ms.openlocfilehash: 139bf2200b47f7d1465312f16ed0a3449491dc89
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86093277"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948640"
 ---
-# <a name="comparing-wsl-2-and-wsl-1"></a>Comparação entre o WSL 2 e o WSL 1
+# <a name="comparing-wsl-1-and-wsl-2"></a>Comparação entre o WSL 1 e o WSL 2
 
 As principais metas da atualização do Subsistema do Windows para Linux para uma nova versão são **aumentar o desempenho do sistema de arquivos** e dar suporte à **compatibilidade completa de chamada do sistema**. 
 
@@ -77,7 +77,7 @@ O [kernel do Linux do WSL 2 é de software livre](https://github.com/microsoft/W
 
 ### <a name="increased-file-io-performance"></a>Maior desempenho de E/S de arquivo
 
-Operações intensivas de arquivo, como comandos git clone, npm install, apt update, apt upgrade e muito mais, são visivelmente mais rápidas com WSL 2.
+Operações com uso intensivo de arquivo, como comandos git clone, npm install, apt update, apt upgrade e muito mais, são visivelmente mais rápidas com o WSL 2.
 
 O aumento da velocidade real dependerá de qual aplicativo você está executando e de como ele está interagindo com o sistema de arquivos. As versões iniciais do WSL 2 são executadas até 20 vezes mais rapidamente em comparação com o WSL 1 ao desempacotar um tarball compactado e de duas a cinco vezes mais rapidamente ao usar os comandos git clone, npm install e cmake em vários projetos.
 
