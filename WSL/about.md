@@ -2,16 +2,16 @@
 title: Sobre o Subsistema do Windows para Linux
 description: Saiba mais sobre o Subsistema do Windows para Linux, as diferentes versões e as maneiras pelas quais você pode usá-las.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
-ms.date: 05/12/2020
+ms.date: 07/21/2020
 ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
-ROBOTS: NOINDEX
-ms.openlocfilehash: ddc242360adf67e3c5b6cd14d35fb6c869b83b2d
-ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
+ms.localizationpriority: high
+ms.openlocfilehash: 512b5dc96892e2b66721e5e164301f2e9be6cd65
+ms.sourcegitcommit: b494c8a76f867d69fa7fff4878c4e38140eaeb8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86948620"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87235450"
 ---
 # <a name="what-is-the-windows-subsystem-for-linux"></a>O que é o Subsistema do Windows para Linux?
 
@@ -24,10 +24,17 @@ Você pode:
 * Execute scripts de shell do Bash e aplicativos de linha de comando do GNU/Linux, incluindo:  
     * Ferramentas: vim, emacs, tmux
     * Linguagens: [Node.js](https://docs.microsoft.com/windows/nodejs/setup-on-wsl2), Javascript, [Python](https://docs.microsoft.com/windows/python/web-frameworks), Ruby, C/C++, C# & F#, Rust, Go etc.
-    * Serviços: SSHD, MySQL, Apache, lighttpd, [MongoDB](https://docs.microsoft.com/windows/nodejs/databases), [PostgreSQL](https://docs.microsoft.com/windows/python/databases).
+    * Serviços: SSHD, [MySQL](./tutorials/wsl-database.md), Apache, lighttpd, [MongoDB](./tutorials/wsl-database.md), [PostgreSQL](./tutorials/wsl-database.md).
 * Instale o software adicional usando o gerenciador de pacotes de distribuição do GNU/Linux.
 * Invoque aplicativos do Windows usando um shell de linha de comando do UNIX.
 * Invoque aplicativos do GNU/Linux no Windows.
+
+> [!div class="nextstepaction"]
+> [Instalar o WSL](install-win10.md)
+
+<br>
+
+> [!VIDEO https://www.youtube.com/embed/48k317kOxqg]
 
 ## <a name="what-is-wsl-2"></a>O que é o WSL 2?
 
@@ -36,6 +43,10 @@ O WSL 2 é uma nova versão da arquitetura do Subsistema do Windows para Linux q
 Essa nova arquitetura altera como esses binários do Linux interagem com o Windows e o hardware do computador, mas ainda fornece a mesma experiência do usuário que no WSL 1 (a versão atual amplamente disponível).
 
 As distribuições individuais do Linux podem ser executadas com a arquitetura do WSL 1 ou do WSL 2. Cada distribuição pode passar por upgrade ou downgrade a qualquer momento e você pode executar distribuições do WSL 1 e do WSL 2 lado a lado. O WSL 2 usa uma arquitetura totalmente nova que se beneficia do uso de um kernel Linux real.
+
+<br>
+
+> [!VIDEO https://www.youtube.com/embed/MrZolfGm8Zk]
 
 ## <a name="next-steps"></a>Próximas etapas
 
