@@ -4,12 +4,12 @@ description: Listagem de referência e configuração de várias distribuições
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: e97b1030d5891bf8aa1cb656646a4d9e1d480a3d
-ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
+ms.openlocfilehash: b8aa740233f3ac9517744212eb7b362a18378822
+ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85336079"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039409"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>Comandos do WSL e configurações de inicialização
 
@@ -339,12 +339,14 @@ Essas configurações afetam a VM que alimenta qualquer distribuição WSL 2.
 | chave | value | default | HDInsight|
 |:----|:----|:----|:----|
 | kernel | string | A caixa de entrada fornecida pelo kernel criado pela Microsoft | Um caminho absoluto do Windows para um kernel personalizado do Linux. |
-| memória | tamanho | 80% da memória total no Windows | A quantidade de memória a ser atribuída à VM WSL 2. |
+| memória | tamanho | 80% da memória total no Windows * | A quantidade de memória a ser atribuída à VM WSL 2. |
 | processadores | número | O mesmo número de processadores no Windows | Quantos processadores atribuir à VM WSL 2. |
 | localhostForwarding | booleano | `true` | Booliano especificando se as portas vinculadas ao curinga ou localhost na VM WSL 2 devem ser conectadas do host via localhost: Port. |
 | kernelCommandLine | string | Em Branco | Argumentos de linha de comando de kernel adicionais. |
 | swap | tamanho | 25% do tamanho da memória no Windows arredondado para os GB mais próximos | Quanto espaço de permuta adicionar à VM WSL 2, 0 para nenhum arquivo de permuta. |
 | Permuta | string | %USERPROFILE%\AppData\Local\Temp\swap.vhdx | Um caminho absoluto do Windows para o disco rígido virtual de permuta. |
+
+* Observação: esse valor é verdadeiro para a compilação 19041 do Windows e pode ser diferente no Windows Builds no programa pessoas internas
 
 As entradas com o `path` valor devem ser caminhos do Windows com barras invertidas de escape, por exemplo:`C:\\Temp\\myCustomKernel`
 
