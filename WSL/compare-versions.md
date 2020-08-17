@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux, ubunt
 ms.date: 07/22/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ea2c92030a895076be17ad2b99fe34719f84a47f
-ms.sourcegitcommit: b494c8a76f867d69fa7fff4878c4e38140eaeb8a
+ms.openlocfilehash: f64eff318ead5b74356a1b7db435952d4d4e669b
+ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87235460"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039419"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Comparação entre o WSL 1 e o WSL 2
 
@@ -136,6 +136,11 @@ Por exemplo, talvez seja necessário associar seu aplicativo a `0.0.0.0` em vez 
 Ao usar uma distribuição do WSL 1, se o computador tiver sido configurado para ser acessado pela sua LAN, os aplicativos executados no WSL também poderão ser acessados em sua LAN.
 
 Esse não é o caso padrão no WSL 2. O WSL 2 tem um adaptador Ethernet virtualizado com um endereço IP exclusivo. No momento, para habilitar esse fluxo de trabalho, será necessário percorrer as mesmas etapas que você faria para uma máquina virtual normal. (Estamos analisando maneiras de aprimorar essa experiência.)
+
+Veja um comando do PowerShell de exemplo para adicionar um proxy de porta que escuta na porta 4000 no host e o conecta à porta 4000 para a VM do WSL 2 com o endereço IP 192.168.101.100.
+```powershell
+netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 connectport=4000 connectaddress=192.168.101.100
+```
 
 #### <a name="ipv6-access"></a>Acesso IPv6
 
