@@ -1,16 +1,16 @@
 ---
 title: Subsistema Windows para referência de comandos do Linux
-description: Lista de comandos que gerenciam o Subsistema Windows para Linux
+description: Confira uma lista de comandos que gerenciam o Subsistema do Windows para Linux, como os argumentos para execução de comandos do Linux.
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
 ms.date: 07/31/2017
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 72b78a73bf68b28dd14b4826943a0c81ea04bbad
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: fc5c9e06c597092a3790ba7f9eb06054a33450c1
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270870"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866137"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Referência de comandos para o Subsistema Windows para Linux
 
@@ -139,7 +139,7 @@ Opções:
 
 * **/s, /setdefault \<Distro>** Define a distribuição como o padrão.
 
-* **/t, /terminate \<Distro>** Termina a distribuição.
+* **/t, /terminate \<Distro>** Encerra a distribuição.
 
 * **/u, /unregister \<Distro>** Cancela o registro da distribuição.
 

@@ -1,16 +1,16 @@
 ---
 title: Instalar o WSL (Subsistema Windows para Linux) no Windows 10
-description: Instruções de instalação para o Subsistema Windows para Linux no Windows 10.
+description: Saiba como instalar o Subsistema do Windows para Linux no Windows 10. O Windows 10 precisa ser atualizado para a versão 2004, build 19041 ou superior.
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, debian, suse, windows 10, install, enable, WSL2, version 2
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: bab21722e77a0879db70e21003fb237491d99218
-ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
+ms.openlocfilehash: 23c72c0e82c90c23fc0406b56dbf8accad0e39df
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88039429"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866161"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Guia de instalação do Subsistema Windows para Linux para Windows 10
 
@@ -30,9 +30,9 @@ Para instalar apenas o WSL 1, você deve reiniciar o computador e passar para [I
 
 Para atualizar para o WSL 2, você deve atender aos seguintes critérios:
 
-- Executar o Windows 10, [atualizado para a versão 2004](ms-settings:windowsupdate), **Build 19041** ou superiores.
+- Executar o Windows 10, [atualizado para a versão 1903 ou superior](ms-settings:windowsupdate), **Build 18362** ou superior.
 
-- Verifique sua versão do Windows selecionando a **tecla do logotipo do Windows + R**, digite **winver**, selecione **OK**. (Ou digite o comando `ver` no prompt de comando do Windows). [Faça a atualização para a última versão do Windows](ms-settings:windowsupdate) se o build for anterior ao 19041. [Obtenha o Assistente do Windows Update](https://www.microsoft.com/software-download/windows10).
+- Verifique sua versão do Windows selecionando a **tecla do logotipo do Windows + R**, digite **winver**, selecione **OK**. (Ou digite o comando `ver` no prompt de comando do Windows). [Faça a atualização para a versão mais recente do Windows](ms-settings:windowsupdate) se o build for anterior ao 18361. [Obtenha o Assistente do Windows Update](https://www.microsoft.com/software-download/windows10).
 
 ### <a name="enable-the-virtual-machine-platform-optional-component"></a>Habilite o componente opcional "Plataforma de máquina virtual"
 
@@ -59,7 +59,7 @@ Você poderá ver esta mensagem depois de executar esse comando: `WSL 2 requires
 > [!NOTE]
 > A atualização da WSL 1 para a WSL 2 pode levar vários minutos para ser concluída, dependendo do tamanho da sua distribuição alvo. Se você estiver executando uma instalação mais antiga (herdada) do WSL 1 da Atualização para Criadores ou da Atualização de Aniversário do Windows 10, poderá encontrar um erro de atualização. Siga estas instruções para [desinstalar e remover as distribuições herdadas](https://docs.microsoft.com/windows/wsl/install-legacy#uninstallingremoving-the-legacy-distro). 
 >
-> Se `wsl --set-default-version` resultar como um comando inválido, insira `wsl --help`. Se `--set-default-version` não está listado, isso significa que o sistema operacional não é compatível com ele, e você precisa atualizar para a versão 2004, Build 19041 ou superior.
+> Se `wsl --set-default-version` resultar como um comando inválido, insira `wsl --help`. Se `--set-default-version` não estiver listado, isso significa que o sistema operacional não é compatível com ele, e você precisará atualizá-lo para a versão 1903, Build 18362 ou superior.
 
 ## <a name="install-your-linux-distribution-of-choice"></a>Instalar a distribuição do Linux de sua escolha
 
@@ -96,7 +96,7 @@ Em seguida, você precisará [criar uma conta de usuário e uma senha para sua n
 
 ## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Definir a versão de distribuição para WSL 1 ou WSL 2
 
-Verifique a versão do WSL atribuída a cada uma das distribuições do Linux instaladas abrindo a linha de comando do PowerShell e inserindo o comando (disponível somente no [Windows Build 19041 ou superiores](ms-settings:windowsupdate)): `wsl -l -v`
+Verifique a versão do WSL atribuída a cada uma das distribuições do Linux instaladas abrindo a linha de comando do PowerShell e inserindo o comando (disponível somente no [Windows Build 18362 ou superior](ms-settings:windowsupdate)): `wsl -l -v`
 
 ```powershell
 wsl --list --verbose
@@ -135,7 +135,7 @@ Veja abaixo erros relacionados e correções sugeridas. Consulte a [página de s
   - Verifique se a virtualização está habilitada dentro do BIOS do seu computador. As instruções para fazer isso variam de um computador para o outro e muito provavelmente estarão sob opções relacionadas à CPU.
 
 - **Erro ao tentar fazer upgrade: `Invalid command line option: wsl --set-version Ubuntu 2`**
-  - Verifique se você tem o Subsistema do Windows para Linux habilitado e se está usando o Build do Windows versão 19041 ou superior. Para habilitar o WSL, execute este comando em um prompt do PowerShell com privilégios de administrador: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`.
+  - Verifique se você tem o Subsistema do Windows para Linux habilitado e se está usando o Windows versão do Build 18362 ou superior. Para habilitar o WSL, execute este comando em um prompt do PowerShell com privilégios de administrador: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`.
 
 - **A operação solicitada não pôde ser concluída devido a uma limitação do sistema de disco virtual. Os arquivos do disco rígido virtual devem ser descompactados e descriptografados e não devem ser esparsos.**
   - Desmarque "Compactar conteúdo" (bem como "Criptografar conteúdo", se estiver marcado) abrindo a pasta de perfil da sua distribuição do Linux. Ela deve estar localizada em uma pasta no sistema de arquivos do Windows, algo como: `USERPROFILE%\AppData\Local\Packages\CanonicalGroupLimited...`

@@ -1,16 +1,16 @@
 ---
 title: Instalar o Subsistema Linux no Windows Server
-description: Instruções de instalação para o Subsistema Linux no Windows Server.
+description: Saiba como instalar o Subsistema Linux no Windows Server. O WSL está disponível para instalação no Windows Server 2019 (versão 1709) e posterior.
 keywords: BashOnWindows, bash, wsl, windows, subsistema do windows para linux, windowssubsystem, ubuntu, windows server
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ebcd7f6b10d2b734b1f2a66f64a5e3292855bcf4
-ms.sourcegitcommit: 5d3898772851e6ac9a310f219cc0d71278f95d22
+ms.openlocfilehash: 501bbf78c2d9f59dad945af9c30571317240b79f
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671013"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866141"
 ---
 # <a name="windows-server-installation-guide"></a>Guia de instalação do Windows Server
 

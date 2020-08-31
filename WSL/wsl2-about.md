@@ -1,18 +1,18 @@
 ---
 title: Sobre o WSL 2
-description: Sobre o WSL 2, a nova arquitetura para o Subsistema do Windows para Linux
+description: Conheça mais sobre o WSL 2, a nova arquitetura para o Subsistema do Windows para Linux. Leia uma visão geral da arquitetura e informações sobre o kernel do Linux.
 keywords: BashOnWindows, Bash, WSL, WSL 2, Windows, subsistema do Windows para Linux, subsistema do Windows, Ubuntu, Debian, Suse, Windows 10, instalar
 ms.date: 05/30/2019
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 70044105820dd485246ae3fc731cbd6f06183f8a
-ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
+ms.openlocfilehash: bfb0e14ce53d3022dba06340630cc97a1286a13f
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343878"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866129"
 ---
 # <a name="about-wsl-2"></a>Sobre o WSL 2
 
