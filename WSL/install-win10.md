@@ -30,7 +30,11 @@ Para instalar apenas o WSL 1, você deve reiniciar o computador e passar para [I
 
 Para atualizar para o WSL 2, você deve atender aos seguintes critérios:
 
-- Executar o Windows 10, [atualizado para a versão 1903 ou superior](ms-settings:windowsupdate), **Build 18362** ou superior.
+- Executar o Windows 10, [atualizado para a versão 1903 ou superior](ms-settings:windowsupdate), **Build 18362** ou superior para sistemas x64.
+
+- Executar o Windows 10, atualizado para a versão 2004 ou superior, **Build 19041**, para sistemas ARM64.
+
+- Caso seu Windows 10 esteja na versão 1903 ou 1909, você precisará se certificar que você possui a atualização de retrocompatibilidade, instruções de instalação podem ser encontradas [aqui (em inglês)](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it).
 
 - Verifique sua versão do Windows selecionando a **tecla do logotipo do Windows + R**, digite **winver**, selecione **OK**. (Ou digite o comando `ver` no prompt de comando do Windows). [Faça a atualização para a versão mais recente do Windows](ms-settings:windowsupdate) se o build for anterior ao 18361. [Obtenha o Assistente do Windows Update](https://www.microsoft.com/software-download/windows10).
 
